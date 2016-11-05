@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+profile
+
+npm-debug.log*
+
+node_modules
+
+jscomp
+*.log
+*.html
+*.css
+dist
