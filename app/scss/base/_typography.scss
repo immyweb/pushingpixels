@@ -30,7 +30,9 @@ $baseMargin: 1.2em;
 body {
     font-family: serif;
     font-size: $baseFontSize;
-    color: $global5;
+    color: $light1;
+	// background: linear-gradient($dark3 , $dark1);
+	background: $dark3;
     -webkit-font-smoothing: antialiased;
     text-size-adjust: auto;
 }
