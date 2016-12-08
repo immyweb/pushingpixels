@@ -29,7 +29,8 @@ body {
     color: $light1;
 	// background: linear-gradient($dark3 , $dark1);
 	background: $dark3;
-	
-    -webkit-font-smoothing: antialiased;
-    text-size-adjust: auto;
+}
+
+h1 {
+	font-family: $body-font-family;
 }

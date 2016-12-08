@@ -12,11 +12,11 @@ const config            = require('../config');
 // Compiles Sass to CSS
 gulp.task('sass', () => {
     return gulp.src(config.sass.src)
+		.pipe($.sourcemaps.init())
 		.pipe($.sass({
-			includePaths: 'node_modules/foundation-sites/scss'
+			includePaths: config.sass.foundation
 		}))
         .pipe(customPlumber('Error Running Sass'))
-        .pipe($.sourcemaps.init())
         .pipe($.sass(config.sass.sassOptions))
         .pipe($.autoprefixer(config.sass.autoprefixerOptions))
         .pipe($.sourcemaps.write())
