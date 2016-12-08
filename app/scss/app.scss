@@ -1,12 +1,16 @@
 // Base styles
-@import 'base/normalize';
 @import 'base/settings';
+@import 'foundation';
+@include foundation-global-styles;
 @import 'base/colours';
-// @import 'base/icons';
 @import 'base/typography';
 
+// Grid
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+
 // Utils
-@import 'utils/clearfix';
+@import 'util/mixins';
 
 // Layout
 @import 'layout/splash';

@@ -59,7 +59,7 @@ const config = {
             outputStyle: 'expanded'
         },
         autoprefixerOptions: {
-            browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+            browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']
         }
     },
 

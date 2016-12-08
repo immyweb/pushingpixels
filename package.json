@@ -1,7 +1,7 @@
 {
-  "name": "webanimations",
+  "name": "PushingPixels",
   "version": "1.0.0",
-  "description": "Web development starter kit",
+  "description": "PushingPixels - Portfolio website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -42,9 +42,9 @@
   },
   "dependencies": {
     "enquire.js": "^2.1.1",
+    "foundation-sites": "^6.3.0-rc2",
     "gsap": "^1.19.0",
     "jquery": "^3.1.1",
-    "scrollmagic": "^2.0.5",
-    "youtube-player": "^3.0.4"
+    "scrollmagic": "^2.0.5"
   }
 }
