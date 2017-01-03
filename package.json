@@ -45,6 +45,7 @@
     "foundation-sites": "^6.3.0-rc2",
     "gsap": "^1.19.0",
     "jquery": "^3.1.1",
-    "scrollmagic": "^2.0.5"
+    "scrollmagic": "^2.0.5",
+    "snapsvg": "^0.4.0"
   }
 }

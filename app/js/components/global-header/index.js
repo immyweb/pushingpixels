@@ -9,10 +9,10 @@ export default {
         let globalHeader;
 
         if ( $globalHeader && $globalHeader.length ) {
-          
+
             $globalHeader.each((index, element) => {
                 globalHeader = new GlobalHeader();
-    			      globalHeader.init( $globalHeader );
+    			globalHeader.init( $globalHeader );
             });
         }
     }
