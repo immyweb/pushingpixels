@@ -26,7 +26,7 @@ void setup(){
 		.add(#2c343b)
 		// .add(#52616d, 2)
 		.add(#e6e2d2, 2)
-		.add(#ffffff, 2)
+		.add(#ffffff)
 	;
 
 	drawBg();
@@ -40,7 +40,7 @@ void setup(){
 		y = centerY + sin(angle) * radius;
 		rotation = degrees(angle);
 
-		HRect s1 = new HRect((int)random(35, 75), 1);
+		HRect s1 = new HRect((int)random(15, 75), 1);
 		s1
 			.noStroke()
 			.fill( colors.getColor() )
@@ -89,7 +89,7 @@ void setup(){
 	// ;
 
 
-	// saveVector();
+	saveVector();
 	noLoop();
 }
 
