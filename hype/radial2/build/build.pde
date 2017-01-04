@@ -5,9 +5,9 @@ HColorPool colors;
 
 int centerX;
 int centerY;
-int radius = 358;
+int radius = 495;
 float angle = 0;
-int numObjects = 150;
+int numObjects = 250;
 float slice = PI*2/numObjects;
 float x, y, rotation;
 
@@ -31,8 +31,8 @@ void setup(){
 
 	drawBg();
 
-	centerX = 950;
-	centerY = 675;
+	centerX = 640;
+	centerY = 725;
 
 	for (int i = 0; i < numObjects; i++ ) {
 		angle = i * slice;
@@ -40,7 +40,7 @@ void setup(){
 		y = centerY + sin(angle) * radius;
 		rotation = degrees(angle);
 
-		HRect s1 = new HRect((int)random(50, 175), 1);
+		HRect s1 = new HRect((int)random(25, 150), (int)random(1, 4));
 		s1
 			.noStroke()
 			.fill( colors.getColor() )
@@ -64,43 +64,51 @@ void draw() {
 
 void drawBg() {
 
-	HEllipse e2 = new HEllipse(369);
-	e2
-		.noStroke()
-		.fill(#51616C)
-		.loc(-67, 1)
-	;
-	H.add(e2);
-
-	HEllipse e4 = new HEllipse(173);
-	e4
-		.noStroke()
-		.fill(#1E1E20)
-		.loc(129, 194)
-	;
-	H.add(e4);
-
-	HEllipse e1 = new HEllipse(564);
+	HEllipse e1 = new HEllipse(458);
 	e1
 		.noStroke()
-		.fill(#2C343B)
-		.loc(339, 77)
+		.fill(#E5E1D1)
+		.loc(-411, 420)
 	;
 	H.add(e1);
 
-	HEllipse e3 = new HEllipse(358);
+	HEllipse e2 = new HEllipse(458);
+	e2
+		.noStroke()
+		.fill(#E5E1D1)
+		.loc(823, 420)
+	;
+	H.add(e2);
+
+	HEllipse e3 = new HEllipse(495);
 	e3
 		.noStroke()
-		.fill(#1E1E20)
-		.loc(583, 320)
+		.fill(#2C343B)
+		.loc(145, 229)
 	;
 	H.add(e3);
+
+	HEllipse e4 = new HEllipse(273);
+	e4
+		.noStroke()
+		.fill(#51616C)
+		.loc(-272, 676)
+	;
+	H.add(e4);
+
+	HEllipse e5 = new HEllipse(273);
+	e5
+		.noStroke()
+		.fill(#51616C)
+		.loc(1008, 676)
+	;
+	H.add(e5);
 
 }
 
 void saveVector() {
 	PGraphics tmp = null;
-	tmp = beginRecord(PDF, "render1.pdf");
+	tmp = beginRecord(PDF, "render2.pdf");
 
 	if (tmp == null) {
 		H.drawStage();
