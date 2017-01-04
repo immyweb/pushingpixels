@@ -1,3 +1,7 @@
+import hype.*;
+import hype.extended.colorist.HColorPool;
+import hype.extended.layout.HShapeLayout;
+import hype.extended.layout.HGridLayout;
 import processing.pdf.*;
 
 HDrawablePool pool1;

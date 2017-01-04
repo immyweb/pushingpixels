@@ -1,3 +1,5 @@
+import hype.*;
+import hype.extended.colorist.HColorPool;
 import processing.pdf.*;
 
 HDrawablePool pool1;
