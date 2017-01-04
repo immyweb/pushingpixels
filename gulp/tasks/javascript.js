@@ -20,7 +20,8 @@ const bundler = watchify(browserify(config.js.src, watchify.args));
 // Babel transform
 bundler.transform(babelify.configure({
     sourceMapRelative: config.js.babelOptions.sourceMapRelative,
-    presets: config.js.babelOptions.presets
+    presets: config.js.babelOptions.presets,
+    compact: config.js.babelOptions.compact
 }));
 
 // On updates recompile
