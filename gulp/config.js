@@ -34,6 +34,7 @@ const config = {
             sourceMapRelative: 'app/js',
             presets: ['es2015'],
 			plugins: ['transform-object-rest-spread']
+            compact: false
         }
     },
 
