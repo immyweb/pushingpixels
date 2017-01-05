@@ -33,7 +33,7 @@ const config = {
         babelOptions: {
             sourceMapRelative: 'app/js',
             presets: ['es2015'],
-			plugins: ['transform-object-rest-spread']
+			plugins: ['transform-object-rest-spread'],
             compact: false
         }
     },
