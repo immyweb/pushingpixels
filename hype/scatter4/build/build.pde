@@ -1,13 +1,10 @@
 import hype.*;
 import hype.extended.colorist.HColorPool;
 import hype.extended.layout.HShapeLayout;
-import hype.extended.layout.HGridLayout;
 import processing.pdf.*;
 
 HDrawablePool pool1;
 HColorPool colors;
-
-float incrementalAngle = 0.0;
 
 void settings() {
 	size(1280, 1024);
@@ -22,20 +19,20 @@ void setup(){
 		.add(#c44740)
 		.add(#1e1e20)
 		.add(#2c343b)
-		.add(#52616d, 2)
+		// .add(#52616d, 2)
 		.add(#e6e2d2, 2)
 		.add(#ffffff, 2)
 	;
 
 	drawBg();
 
-	HImage hitObj = new HImage("path2.png");
-	hitObj.loc(92,44);
+	HImage hitObj = new HImage("path.png");
+	hitObj.loc(0,592);
 	// H.add(hitObj);
 
 	HShapeLayout hsl = new HShapeLayout().target(hitObj);
 
-	pool1 = new HDrawablePool(20);
+	pool1 = new HDrawablePool(100);
 	pool1.autoAddToStage()
 
 		.add (
@@ -51,9 +48,9 @@ void setup(){
 					d
 						.noStroke()
 						.fill( colors.getColor() )
-						.alpha( (int)random(150,255) )
+						// .alpha( (int)random(150,255) )
 						// .loc( (int)random(width), (int)random(height) )
-						.size( (int)random(50, 75) )
+						.size( (int)random(15) )
 					;
 				}
 			}
@@ -62,47 +59,58 @@ void setup(){
 		.requestAll()
 	;
 
+
+
 	// saveVector();
 	noLoop();
 }
 
 void draw() {
 	H.drawStage();
+
 }
 
 void drawBg() {
 
-	HEllipse e2 = new HEllipse(369);
-	e2
-		.noStroke()
-		.fill(#51616C)
-		.loc(-67, 1)
-	;
-	H.add(e2);
-
-	HEllipse e4 = new HEllipse(173);
-	e4
-		.noStroke()
-		.fill(#1E1E20)
-		.loc(129, 194)
-	;
-	H.add(e4);
-
-	HEllipse e1 = new HEllipse(564);
+	HEllipse e1 = new HEllipse(458);
 	e1
 		.noStroke()
-		.fill(#2C343B)
-		.loc(339, 77)
+		.fill(#E5E1D1)
+		.loc(-411, 420)
 	;
 	H.add(e1);
 
-	HEllipse e3 = new HEllipse(358);
+	HEllipse e2 = new HEllipse(458);
+	e2
+		.noStroke()
+		.fill(#E5E1D1)
+		.loc(823, 420)
+	;
+	H.add(e2);
+
+	HEllipse e3 = new HEllipse(495);
 	e3
 		.noStroke()
-		.fill(#1E1E20)
-		.loc(583, 320)
+		.fill(#2C343B)
+		.loc(145, 229)
 	;
 	H.add(e3);
+
+	HEllipse e4 = new HEllipse(273);
+	e4
+		.noStroke()
+		.fill(#51616C)
+		.loc(-272, 676)
+	;
+	H.add(e4);
+
+	HEllipse e5 = new HEllipse(273);
+	e5
+		.noStroke()
+		.fill(#51616C)
+		.loc(1008, 676)
+	;
+	H.add(e5);
 
 }
 
