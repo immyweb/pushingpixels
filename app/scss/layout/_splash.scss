@@ -1,0 +1,21 @@
+.splash {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+
+.splashSVG-container {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 60%;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+#splashSVG {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

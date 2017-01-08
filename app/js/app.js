@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import globalHeader from './components/global-header/index';
+import splash from './components/splash/index';
 
 // run scripts on DOM ready
 $(document).ready(() => {
-    globalHeader.init();
+    splash.init();
 });
