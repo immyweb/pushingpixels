@@ -18,9 +18,9 @@
 
 
 // Example font loading
-// @include fontface('DropDeadGorgeous', '../fonts/', 'DropDeadGorgeous');
-//
-// $font-hero: "DropDeadGorgeous", sans-serif;
+@include fontface('HelveticaNeue-UltraLight', '../fonts/', 'HelveticaNeue-UltraLight');
+
+$font-hero: "HelveticaNeue-UltraLight", sans-serif;
 
 
 
