@@ -16,12 +16,13 @@ export default class Splash {
 		this.smRadialBlocks = this.panel.find('.splash__sm-radial__blocks');
 		this.smRadialLines = this.panel.find('.splash__sm-radial__lines');
 
-		this.lrgRadialContainer = this.panel.find('.splash__lrg-radial__group');
+		this.lrgRadialContainer = this.panel.find('.splash__lrg-radial');
 		this.lrgRadialLines = this.panel.find('.splash__lrg-radial__lines');
 		this.lrgRadialOuter = this.panel.find('.splash__lrg-radial__outer');
 		this.lrgRadialBlocks = this.panel.find('.splash__lrg-radial__blocks');
 		this.lrgRadialInner = this.panel.find('.splash__lrg-radial__inner');
 
+		this.heading = this.panel.find('.splash__heading');
 
 		this.startMainTl();
     }
@@ -35,7 +36,7 @@ export default class Splash {
 
 			.set(this.cornerCircle, { x: '-40%', y: '80%', scale: 0.75 })
 
-			.set(this.smRadialOuter, { x: '-5%', scale: 0.75 })
+			.set(this.smRadialOuter, { x: '-5%', scale: 0.75 }) // scale = 0.75
 			.set(this.smRadialInner, { x: 115, y: 150, scale: 0.75 })
 			.set(this.smRadialBlocks, { x: 90, y: 124, scale: 0.75 })
 			.set(this.smRadialLines, { x: 72, y: 98, scale: 0.75 })
@@ -50,11 +51,39 @@ export default class Splash {
 		return setStageTl;
 	}
 
+	radialsTl() {
+		const radialsTl = new TimelineMax();
+
+		radialsTl
+			.fromTo(this.smRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 1, ease: Power4.easeInOut })
+			.fromTo(this.lrgRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.4')
+			.fromTo(this.cornerCircle, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.4')
+			.fromTo(this.smRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.4')
+			.fromTo(this.lrgRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.4')
+
+			.add('blocksIn')
+			.fromTo(this.smRadialBlocks, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 0.6, ease: Elastic.easeOut.config(1, 0.4) })
+			.fromTo(this.lrgRadialBlocks, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 0.65, ease: Elastic.easeOut.config(1, 0.4) }, '-=0.35')
+
+			.add('linesIn')
+			.fromTo(this.smRadialLines, 1.5, { scale: 0, transformOrigin: 'center center', rotation: 360 }, { scale: 0.75, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'blocksIn-=0.15')
+			.fromTo(this.lrgRadialLines, 1.5, { scale: 0, transformOrigin: 'center center', rotation: 360 }, { scale: 0.75, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'blocksIn-=0.35')
+
+			.add('dotsIn')
+
+			.add('titleIn')
+			.fromTo(this.heading, 0.75, { top: '+=5%' }, { top: '-=5%', autoAlpha: 1 }, 'linesIn-=0.5')
+		;
+
+		return radialsTl;
+	}
+
 	startMainTl() {
 		const mainTl = new TimelineMax();
 
 		mainTl
 			.add(this.setStage())
+			.add(this.radialsTl())
 		;
 	}
 }

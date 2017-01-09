@@ -18,4 +18,53 @@
 		top: 0;
 		left: 0;
 	}
+
+	&__heading {
+		position: absolute;
+		top: 55%;
+		right: 17%;
+
+		visibility: hidden;
+		opacity: 0;
+
+		h1 {
+			text-transform: uppercase;
+			font-size: 96px;
+			margin: 0;
+			text-align: center;
+			line-height: 0.9;
+			font-family: $font-hero;
+			font-weight: normal;
+
+			span {
+				display: block;
+			}
+		}
+	}
+
+	&__corner-circle {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	&__sm-radial {
+		&__outer, &__inner, &__blocks, &__lines {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&__lrg-radial {
+		&__outer, &__inner, &__blocks, &__lines {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&__dots {
+		&__small, &__large {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
 }
