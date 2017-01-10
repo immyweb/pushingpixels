@@ -1,0 +1,42 @@
+.contact {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+
+	&__svg-container {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		padding-bottom: 60%;
+		vertical-align: middle;
+		overflow: hidden;
+	}
+
+	&__svg {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__content {
+		background: $dark3;
+		position: absolute;
+		width: 52%;
+	    height: 49%;
+	    top: 20%;
+	    left: 37%;
+		padding: 50px;
+
+		h1 {
+			text-transform: uppercase;
+			font-size: 60px;
+			margin: 0 0 25px;
+			line-height: 0.9;
+			font-family: $font-hero;
+			font-weight: normal;
+			border-bottom: 1px solid $red2;
+			padding-bottom: 15px;
+		}
+	}
+}

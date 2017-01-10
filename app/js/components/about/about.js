@@ -23,12 +23,12 @@ export default class About {
 		setStageTl
 			.set(this.circleBeige, { x: '74%', y: '45%', scale: 0.75 })
 			.set(this.circleWhite, { x: -100, y: -250, scale: 0.75 })
-			.set(this.rectLight, { x: 175, y: 275, scale: 0.8 })
-			.set(this.rectMid, { x: 400, y: 75, scaleX: 0.8, scaleY: 0.75 })
-			.set(this.dotsSmall, { x: 125, scale: 0.8 })
-			.set(this.dotsLarge, { x: 150, scale: 0.8 })
-			.set(this.linesBottom, { x: 175, y: '402%', scale: 0.75 })
-			.set(this.linesLeft, { x: 400, scale: 0.75, rotation: 90 })
+			.set(this.rectLight, { x: 125, y: 275, scale: 0.8 })
+			.set(this.rectMid, { x: 350, y: 75, scaleX: 0.9, scaleY: 0.75 })
+			.set(this.dotsSmall, { x: 75, scale: 0.8 })
+			.set(this.dotsLarge, { x: 100, scale: 0.8 })
+			.set(this.linesBottom, { x: 125, y: '402%', scale: 0.75 })
+			.set(this.linesLeft, { x: 350, scale: 0.75, rotation: 90 })
 		;
 
 		return setStageTl;
