@@ -12,7 +12,7 @@ export default {
 
             $splash.each((index, element) => {
                 splash = new Splash();
-    			splash.init( $splash );
+    			splash.init( $(element) );
             });
         }
     }

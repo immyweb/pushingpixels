@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { TimelineMax } from 'gsap';
 
 export default class Splash {
@@ -38,7 +37,7 @@ export default class Splash {
 
 			.set(this.cornerCircle, { x: '-40%', y: '80%', scale: 0.75 })
 
-			.set(this.smRadialOuter, { x: '-5%', scale: 0.75 }) // scale = 0.75
+			.set(this.smRadialOuter, { x: '-5%', scale: 0.75 })
 			.set(this.smRadialInner, { x: 115, y: 150, scale: 0.75 })
 			.set(this.smRadialBlocks, { x: 90, y: 124, scale: 0.75 })
 			.set(this.smRadialLines, { x: 72, y: 98, scale: 0.75 })
