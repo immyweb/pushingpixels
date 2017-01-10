@@ -18,4 +18,25 @@
 		top: 0;
 		left: 0;
 	}
+
+	&__content {
+		background: $dark3;
+		position: absolute;
+		width: 47%;
+		height: 48%;
+		top: 20%;
+		right: 13%;
+		padding: 50px;
+
+		h1 {
+			text-transform: uppercase;
+			font-size: 60px;
+			margin: 0 0 25px;
+			line-height: 0.9;
+			font-family: $font-hero;
+			font-weight: normal;
+			border-bottom: 1px solid $red2;
+			padding-bottom: 15px;
+		}
+	}
 }
