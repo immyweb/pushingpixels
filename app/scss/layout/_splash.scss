@@ -63,8 +63,11 @@
 
 	&__dots {
 		&__small, &__large {
-			visibility: hidden;
-			opacity: 0;
+			&__dot {
+				visibility: hidden;
+				opacity: 0;
+			}
+
 		}
 	}
 }

@@ -6,8 +6,10 @@ export default class Splash {
     init(element) {
 		this.panel = element;
 
-		this.dotsSmall = this.panel.find('.splash__dots__small');
-		this.dotsLarge = this.panel.find('.splash__dots__large');
+		this.dotsSmallGroup = this.panel.find('.splash__dots__small');
+		this.dotsLargeGroup = this.panel.find('.splash__dots__large');
+		this.dotsSmall = this.dotsSmallGroup.find('.splash__dots__small__dot');
+		this.dotsLarge = this.dotsLargeGroup.find('.splash__dots__large__dot');
 
 		this.cornerCircle = this.panel.find('.splash__corner-circle');
 
@@ -31,8 +33,8 @@ export default class Splash {
 		const setStageTl = new TimelineMax();
 
 		setStageTl
-			.set(this.dotsSmall, { x: '12%', scale: 0.80 })
-			.set(this.dotsLarge, { x: '8%', scale: 0.80 })
+			.set(this.dotsSmallGroup, { x: '12%', scale: 0.80 })
+			.set(this.dotsLargeGroup, { x: '8%', scale: 0.80 })
 
 			.set(this.cornerCircle, { x: '-40%', y: '80%', scale: 0.75 })
 
@@ -70,6 +72,8 @@ export default class Splash {
 			.fromTo(this.lrgRadialLines, 1.5, { scale: 0, transformOrigin: 'center center', rotation: 360 }, { scale: 0.75, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'blocksIn-=0.35')
 
 			.add('dotsIn')
+			.staggerTo(this.dotsSmall, 0.75, { autoAlpha: 1, ease: Power4.easeOut }, 0.05, 'blocksIn')
+			.staggerTo(this.dotsLarge, 0.75, { autoAlpha: 1, ease: Power4.easeOut }, 0.05, 'blocksIn')
 
 			.add('titleIn')
 			.fromTo(this.heading, 0.75, { top: '+=5%' }, { top: '-=5%', autoAlpha: 1 }, 'linesIn-=0.5')
