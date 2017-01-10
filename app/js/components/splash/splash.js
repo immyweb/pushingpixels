@@ -56,6 +56,7 @@ export default class Splash {
 		const radialsTl = new TimelineMax();
 
 		radialsTl
+			.add('ellipsesIn')
 			.fromTo(this.smRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 1, ease: Power4.easeInOut })
 			.fromTo(this.lrgRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.4')
 			.fromTo(this.cornerCircle, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 0.75, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.4')
