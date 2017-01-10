@@ -1,0 +1,80 @@
+<svg width="149" height="1261" viewBox="0 0 149 1261" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        lines left
+    </title>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#1E1E20" d="M149 0v3H44V0"/>
+        <path fill="#2C343B" d="M149 15v4H24v-4"/>
+        <path fill="#E6E2D2" d="M149 30v3H32v-3"/>
+        <path fill="#52616D" d="M149 45v1H17v-1"/>
+        <path fill="#2C343B" d="M149 60v4H66v-4"/>
+        <path fill="#52616D" d="M149 75v2H44v-2"/>
+        <path fill="#2C343B" d="M149 90v1H8v-1"/>
+        <path fill="#FFF" d="M149 105v3H46v-3M149 120v1H7v-1"/>
+        <path fill="#C44740" d="M149 135v3H21v-3"/>
+        <path fill="#52616D" d="M149 150v2H12v-2"/>
+        <path fill="#FD6E5E" d="M149 165v3H32v-3"/>
+        <path fill="#FFF" d="M149 180v3H63v-3"/>
+        <path fill="#2C343B" d="M149 195v1H3v-1"/>
+        <path fill="#FFF" d="M149 210v4H2v-4"/>
+        <path fill="#52616D" d="M149 225v3H11v-3"/>
+        <path fill="#FFF" d="M149 240v3H13v-3M149 255v4H22v-4"/>
+        <path fill="#52616D" d="M149 270v3H30v-3"/>
+        <path fill="#FD6E5E" d="M149 285v3H30v-3"/>
+        <path fill="#2C343B" d="M149 300v2H41v-2"/>
+        <path fill="#52616D" d="M149 315v2H45v-2"/>
+        <path fill="#FFF" d="M149 330v2H58v-2"/>
+        <path fill="#E6E2D2" d="M149 345v1H29v-1"/>
+        <path fill="#52616D" d="M149 360v2H72v-2"/>
+        <path fill="#1E1E20" d="M149 375v1H50v-1"/>
+        <path fill="#52616D" d="M149 390v4H67v-4"/>
+        <path fill="#FFF" d="M149 405v4H70v-4"/>
+        <path fill="#52616D" d="M149 420v2H12v-2"/>
+        <path fill="#FFF" d="M149 435v1H70v-1"/>
+        <path fill="#2C343B" d="M149 450v1H24v-1"/>
+        <path fill="#FD6E5E" d="M149 465v3H10v-3"/>
+        <path fill="#C44740" d="M149 480v1H36v-1"/>
+        <path fill="#1E1E20" d="M149 495v1H63v-1"/>
+        <path fill="#52616D" d="M149 510v4H0v-4"/>
+        <path fill="#1E1E20" d="M149 525v3H30v-3"/>
+        <path fill="#C44740" d="M149 540v1H34v-1M149 555v3H59v-3M149 570v2H46v-2"/>
+        <path fill="#FD6E5E" d="M149 585v1H42v-1"/>
+        <path fill="#52616D" d="M149 600v1H62v-1"/>
+        <path fill="#E6E2D2" d="M149 615v2H22v-2M149 630v3H21v-3"/>
+        <path fill="#2C343B" d="M149 645v3H1v-3"/>
+        <path fill="#FFF" d="M149 660v1H37v-1"/>
+        <path fill="#52616D" d="M149 675v4H18v-4"/>
+        <path fill="#2C343B" d="M149 690v3H70v-3"/>
+        <path fill="#FD6E5E" d="M149 705v1H1v-1"/>
+        <path fill="#C44740" d="M149 720v3H61v-3"/>
+        <path fill="#FFF" d="M149 735v4H47v-4"/>
+        <path fill="#52616D" d="M149 750v2H16v-2M149 765v4H48v-4"/>
+        <path fill="#E6E2D2" d="M149 780v3H21v-3M149 795v3H42v-3M149 810v4H28v-4"/>
+        <path fill="#FFF" d="M149 825v3H10v-3M149 840v3H2v-3"/>
+        <path fill="#52616D" d="M149 855v1H21v-1"/>
+        <path fill="#FD6E5E" d="M149 870v2H63v-2"/>
+        <path fill="#FFF" d="M149 885v2H7v-2"/>
+        <path fill="#52616D" d="M149 900v4H16v-4"/>
+        <path fill="#FD6E5E" d="M149 915v1H72v-1"/>
+        <path fill="#C44740" d="M149 930v2H56v-2"/>
+        <path fill="#1E1E20" d="M149 945v2H24v-2"/>
+        <path fill="#E6E2D2" d="M149 960v3H73v-3"/>
+        <path fill="#1E1E20" d="M149 975v4H65v-4"/>
+        <path fill="#FFF" d="M149 990v3H41v-3"/>
+        <path fill="#E6E2D2" d="M149 1005v1H66v-1"/>
+        <path fill="#C44740" d="M149 1020v2H47v-2"/>
+        <path fill="#FD6E5E" d="M149 1035v2H53v-2"/>
+        <path fill="#E6E2D2" d="M149 1050v2H33v-2"/>
+        <path fill="#52616D" d="M149 1065v2H51v-2M149 1080v1H60v-1"/>
+        <path fill="#E6E2D2" d="M149 1095v2H33v-2"/>
+        <path fill="#2C343B" d="M149 1110v3H68v-3"/>
+        <path fill="#FFF" d="M149 1125v1H54v-1"/>
+        <path fill="#52616D" d="M149 1140v4H0v-4"/>
+        <path fill="#1E1E20" d="M149 1155v2H42v-2"/>
+        <path fill="#52616D" d="M149 1170v2H11v-2"/>
+        <path fill="#E6E2D2" d="M149 1185v1H29v-1"/>
+        <path fill="#FFF" d="M149 1200v2H27v-2M149 1215v2H12v-2M149 1230v4H25v-4"/>
+        <path fill="#E6E2D2" d="M149 1245v1H72v-1"/>
+        <path fill="#C44740" d="M149 1260v1H22v-1"/>
+    </g>
+</svg>
