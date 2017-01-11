@@ -43,7 +43,7 @@ void setup(){
 					d
 						.enableStyle(false) // Turns off illustrators svg styles
 						.noStroke()
-						.width((int)random(1, 5))
+						.width((int)random(1, 3))
 						.height((int)random(75, 150))
 						// .loc( (int)random(0), (int)random(0) )
 					;
@@ -55,7 +55,7 @@ void setup(){
 	;
 
 
-	// saveVector();
+	saveVector();
 	noLoop();
 }
 
@@ -65,7 +65,7 @@ void draw() {
 
 void saveVector() {
 	PGraphics tmp = null;
-	tmp = beginRecord(PDF, "render1.pdf");
+	tmp = beginRecord(PDF, "render2.pdf");
 
 	if (tmp == null) {
 		H.drawStage();
