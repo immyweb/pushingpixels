@@ -19,10 +19,10 @@ export default class Gallery {
 		const setStageTl = new TimelineMax();
 
 		setStageTl
-			.set(this.blocksTop, { scale: 0.75, x: '15%', y: '15%' })
-			.set(this.blocksBottom, { scale: 0.75, x: '15%', y: '415%' })
-			.set(this.linesTop, { scale: 0.75, x: '15%' })
-			.set(this.linesBottom, { scale: 0.75, x: '15%', y: '300%' })
+			.set(this.blocksTop, { scale: 0.75, x: '2%', y: '32%' })
+			.set(this.blocksBottom, { scale: 0.75, x: '2%', y: '379%' })
+			.set(this.linesTop, { scale: 0.75, y: '13%' })
+			.set(this.linesBottom, { scale: 0.75, x: '0', y: '397%' })
 			.set(this.bkgnd, { scaleX: 0.8, scaleY: 0.75, y: '10%' })
 			.set(this.frgnd, { scale: 0.8, scaleY: 0.75, y: '10%' })
 		;

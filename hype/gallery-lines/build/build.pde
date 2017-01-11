@@ -1,10 +1,13 @@
+import hype.*;
+import hype.extended.colorist.HColorPool;
+import hype.extended.layout.HGridLayout;
 import processing.pdf.*;
 
 HDrawablePool pool1;
 HColorPool colors;
 
 void settings() {
-	size(1280, 1024);
+	size(1678, 1024);
 }
 
 void setup(){
@@ -22,7 +25,7 @@ void setup(){
 	;
 
 
-	pool1 = new HDrawablePool(85);
+	pool1 = new HDrawablePool(115);
 	pool1.autoAddToStage()
 		.add(new HShape("dash.svg"))
 
@@ -30,7 +33,7 @@ void setup(){
 			new HGridLayout()
 			.startLoc(10, height/2)
 			.spacing(15, 0)
-			.cols(85)
+			.cols(115)
 		)
 
 		.onCreate(
@@ -62,7 +65,7 @@ void draw() {
 
 void saveVector() {
 	PGraphics tmp = null;
-	tmp = beginRecord(PDF, "render5.pdf");
+	tmp = beginRecord(PDF, "render1.pdf");
 
 	if (tmp == null) {
 		H.drawStage();
