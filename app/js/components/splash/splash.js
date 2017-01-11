@@ -32,20 +32,20 @@ export default class Splash {
 		const setStageTl = new TimelineMax();
 
 		setStageTl
-			.set(this.dotsSmallGroup, { x: '12%', scale: 0.80 })
-			.set(this.dotsLargeGroup, { x: '8%', scale: 0.80 })
+			.set(this.dotsSmallGroup, { scale: 0.80, x: '12%' })
+			.set(this.dotsLargeGroup, { scale: 0.80, x: '8%' })
 
-			.set(this.cornerCircle, { x: '-40%', y: '80%', scale: 0.75 })
+			.set(this.cornerCircle, { scale: 0.75, x: '-40%', y: '80%' })
 
-			.set(this.smRadialOuter, { x: '-5%', scale: 0.75 })
-			.set(this.smRadialInner, { x: 115, y: 150, scale: 0.75 })
-			.set(this.smRadialBlocks, { x: 90, y: 124, scale: 0.75 })
-			.set(this.smRadialLines, { x: 72, y: 98, scale: 0.75 })
+			.set(this.smRadialOuter, { scale: 0.75, x: '-5%' })
+			.set(this.smRadialInner, { scale: 0.75, x: 115, y: 150 })
+			.set(this.smRadialBlocks, { scale: 0.75, x: 90, y: 124 })
+			.set(this.smRadialLines, { scale: 0.75, x: 72, y: 98 })
 
-			.set(this.lrgRadialLines, { x: 614, y: 66, scale: 0.75 })
-			.set(this.lrgRadialOuter, { x: 581, y: 36, scale: 0.75 })
-			.set(this.lrgRadialBlocks, { x: 645, y: 93, scale: 0.75 })
-			.set(this.lrgRadialInner, { x: 739, y: 190, scale: 0.75 })
+			.set(this.lrgRadialLines, { scale: 0.75, x: 614, y: 66 })
+			.set(this.lrgRadialOuter, { scale: 0.75, x: 581, y: 36 })
+			.set(this.lrgRadialBlocks, { scale: 0.75, x: 645, y: 93 })
+			.set(this.lrgRadialInner, { scale: 0.75, x: 739, y: 190 })
 			.set(this.lrgRadialContainer, { x: -90, y: 40 })
 		;
 

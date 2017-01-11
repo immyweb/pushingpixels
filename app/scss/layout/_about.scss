@@ -30,7 +30,7 @@
 
 		h1 {
 			text-transform: uppercase;
-			font-size: 60px;
+			font-size: rem-calc(60);
 			margin: 0 0 25px;
 			line-height: 0.9;
 			font-family: $font-hero;
