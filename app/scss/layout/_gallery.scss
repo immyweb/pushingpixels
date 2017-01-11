@@ -18,4 +18,26 @@
 		top: 0;
 		left: 0;
 	}
+
+	&__content {
+		position: absolute;
+		width: 77%;
+		height: 51%;
+		top: 23%;
+		left: 13%;
+		text-align: center;
+
+		h1 {
+			text-transform: uppercase;
+			font-size: rem-calc(60);
+			margin: 0 0 50px;
+			line-height: 0.9;
+			font-family: $font-hero;
+			font-weight: normal;
+			border-bottom: 1px solid $red2;
+			padding-bottom: 15px;
+			text-align: center;
+			display: inline-block;
+		}
+	}
 }
