@@ -12,6 +12,7 @@ export default class Splash {
 
 		this.cornerCircle = this.panel.find('.splash__corner-circle');
 
+		this.smRadialContainer = this.panel.find('.splash__sm-radial');
 		this.smRadialOuter = this.panel.find('.splash__sm-radial__outer');
 		this.smRadialInner = this.panel.find('.splash__sm-radial__inner');
 		this.smRadialBlocks = this.panel.find('.splash__sm-radial__blocks');
@@ -37,16 +38,17 @@ export default class Splash {
 
 			.set(this.cornerCircle, { scale: 0.75, x: '-40%', y: '80%' })
 
-			.set(this.smRadialOuter, { scale: 0.75, x: '-5%' })
-			.set(this.smRadialInner, { scale: 0.75, x: 115, y: 150 })
-			.set(this.smRadialBlocks, { scale: 0.75, x: 90, y: 124 })
-			.set(this.smRadialLines, { scale: 0.75, x: 72, y: 98 })
+			.set(this.smRadialOuter, { scale: 0.75, x: '-4.5%' })
+			.set(this.smRadialInner, { scale: 0.75, x: '33%', y: '43.4%' }) // 115, 150
+			.set(this.smRadialBlocks, { scale: 0.75, x: '22%', y: '30%' }) // 90, 124
+			.set(this.smRadialLines, { scale: 0.75, x: '15.2%', y: '20.4%' }) // 72, 98
+			.set(this.smRadialContainer, { scale: 1.1, y: '-7%' })
 
-			.set(this.lrgRadialLines, { scale: 0.75, x: 614, y: 66 })
-			.set(this.lrgRadialOuter, { scale: 0.75, x: 581, y: 36 })
-			.set(this.lrgRadialBlocks, { scale: 0.75, x: 645, y: 93 })
-			.set(this.lrgRadialInner, { scale: 0.75, x: 739, y: 190 })
-			.set(this.lrgRadialContainer, { x: -90, y: 40 })
+			.set(this.lrgRadialLines, { scale: 0.75, x: '58.8%', y: '6.4%' }) // 614, 66
+			.set(this.lrgRadialOuter, { scale: 0.75, x: '51.5%', y: '3%' }) // 581, 36
+			.set(this.lrgRadialBlocks, { scale: 0.75, x: '65.5%', y: '9.5%' }) // 645, 93
+			.set(this.lrgRadialInner, { scale: 0.75, x: '103.3%', y: '26.6%' }) // 739, 190
+			.set(this.lrgRadialContainer, { scale: 1.1,  x: '-16%', y: '-2%' }) // -90, 40
 		;
 
 		return setStageTl;
