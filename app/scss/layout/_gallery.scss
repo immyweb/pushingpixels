@@ -4,27 +4,29 @@
 	height: 100vh;
 
 	&__svg-container {
-		display: inline-block;
-		position: relative;
-		width: 100%;
-		padding-bottom: 60%;
-		vertical-align: middle;
-		overflow: hidden;
+		// display: inline-block;
+		// position: relative;
+		// width: 100%;
+		// padding-bottom: 60%;
+		// vertical-align: middle;
+		// overflow: hidden;
 	}
 
 	&__svg {
-		display: inline-block;
-		position: absolute;
-		top: 0;
-		left: 0;
+		// display: inline-block;
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		width: 100vw;
+		height: 100vh;
 	}
 
 	&__content {
-		position: absolute;
-		width: 77%;
-		height: 51%;
-		top: 23%;
-		left: 13%;
+		// position: absolute;
+		// width: 77%;
+		// height: 51%;
+		// top: 23%;
+		// left: 13%;
 		text-align: center;
 
 		h1 {
