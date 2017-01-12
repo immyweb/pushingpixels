@@ -13,12 +13,13 @@
 	}
 
 	&__svg {
+		&--top, &--bottom {
+			width: 100vw;
+		}
 		// display: inline-block;
 		// position: absolute;
 		// top: 0;
 		// left: 0;
-		width: 100vw;
-		height: 100vh;
 	}
 
 	&__content {
