@@ -6,8 +6,7 @@
 @import 'base/typography';
 
 // Grid
-@include foundation-flex-classes;
-@include foundation-flex-grid;
+@include foundation-grid;
 
 // Utils
 @import 'util/mixins';
@@ -17,5 +16,3 @@
 @import 'layout/about';
 @import 'layout/gallery';
 @import 'layout/contact';
-
-// Components
