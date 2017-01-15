@@ -6,7 +6,6 @@
 
 	svg {
 		width: 100%;
-		// height: 100vh;
 	}
 
 	&__svg {
@@ -34,15 +33,54 @@
 				}
 			}
 
-			&--blocks, &--lines {
+			&--blocks {
 				transform: scale(1.1) translate(-72px, 0px);
 
 				@include breakpoint(xlarge) {
-					transform: scale(1) translate(-26px, 12px);
+					transform: scale(1) translate(-26px, 14px);
 				}
 
 				@include breakpoint(xxlarge) {
 					transform: scale(0.97) translate(-4px, 12px);
+				}
+			}
+
+			&--lines {
+				transform: scale(1.1) translate(-78px, -22px);
+
+				@include breakpoint(xlarge) {
+					transform: scale(1) translate(-26px, -9px);
+				}
+
+				@include breakpoint(xxlarge) {
+					transform: scale(0.97) translate(-4px, -10px);
+				}
+			}
+		}
+
+		&__dots {
+			display: inline-block;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			z-index: 15;
+			padding-bottom: 100%;
+
+			svg {
+				display: block;
+				position: absolute;
+			    top: 330px;
+			    left: 0;
+			    width: 100%;
+				transform: scale(1.1);
+
+				@include breakpoint(xlarge) {
+					top: 290px;
+				}
+
+				@include breakpoint(xxlarge) {
+					top: 270px;
+					left: 10%;
 				}
 			}
 		}
@@ -68,27 +106,11 @@
 		@include breakpoint(large) {
 			left: -580px;
 		}
-
-		@include breakpoint(xlarge) {
-			// left: -530px;
-		}
-
-		@include breakpoint(xxlarge) {
-			// left: -410px;
-		}
 	}
 
 	&__ellipsebeige--right {
 		@include breakpoint(large) {
 			right: -580px;
-		}
-
-		@include breakpoint(xlarge) {
-			// right: -530px;
-		}
-
-		@include breakpoint(xxlarge) {
-			// right: -410px;
 		}
 	}
 
