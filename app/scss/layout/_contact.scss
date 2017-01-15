@@ -4,62 +4,96 @@
 	height: 100vh;
 	overflow: hidden;
 
-	&__svg-container {
-
+	svg {
+		width: 100%;
+		// height: 100vh;
 	}
 
 	&__svg {
-		width: 100%;
-		height: 100%;
-		position: absolute;
+		&__radials {
+			display: inline-block;
+			width: 100%;
+			position: relative;
+			z-index: 5;
+			margin: 0 auto;
+			padding-bottom: 100%;
+
+			svg {
+				display: block;
+				position: absolute;
+			    bottom: -100px;
+			    left: 0;
+			    width: 100%;
+
+				@include breakpoint(xlarge) {
+					bottom: -70px;
+				}
+
+				@include breakpoint(xxlarge) {
+					bottom: -20px;
+				}
+			}
+
+			&--blocks, &--lines {
+				transform: scale(1.1) translate(-72px, 0px);
+
+				@include breakpoint(xlarge) {
+					transform: scale(1) translate(-26px, 12px);
+				}
+
+				@include breakpoint(xxlarge) {
+					transform: scale(0.97) translate(-4px, 12px);
+				}
+			}
+		}
 	}
 
 
-
+	// Beige ellipses
 	&__ellipsebeige--left, &__ellipsebeige--right {
 		display: none;
 
 		@include breakpoint(large) {
 			background: $light2;
-			width: 915px; // 915
-			height: 915px;
+			width: 1105px; // 915
+			height: 1105px;
 			border-radius: 50%;
 			position: absolute;
-			bottom: -450px;
+			bottom: -530px;
 			display: block;
 		}
 	}
 
 	&__ellipsebeige--left {
 		@include breakpoint(large) {
-			left: -490px;
+			left: -580px;
 		}
 
 		@include breakpoint(xlarge) {
-			left: -530px;
+			// left: -530px;
 		}
 
 		@include breakpoint(xxlarge) {
-			left: -410px;
+			// left: -410px;
 		}
 	}
 
 	&__ellipsebeige--right {
 		@include breakpoint(large) {
-			right: -490px;
+			right: -580px;
 		}
 
 		@include breakpoint(xlarge) {
-			right: -530px;
+			// right: -530px;
 		}
 
 		@include breakpoint(xxlarge) {
-			right: -410px;
+			// right: -410px;
 		}
 	}
 
 
-
+	// Content area
 	&__content {
 
 		&__container {
@@ -116,6 +150,16 @@
 		    left: 105px;
 			text-align: center;
 
+			@include breakpoint(xlarge) {
+				width: 65%;
+				left: 155px;
+			}
+
+			@include breakpoint(xxlarge) {
+				width: 60%;
+				left: 210px;
+			}
+
 			h1 {
 				text-transform: uppercase;
 				font-size: rem-calc(60);
@@ -136,7 +180,7 @@
 	}
 
 
-
+	// Corner ellipses
 	&__ellipsecorner--left, &__ellipsecorner--right {
 		display: none;
 
@@ -151,6 +195,16 @@
 			display: block;
 		}
 
+		@include breakpoint(xlarge) {
+			width: 470px;
+			height: 470px;
+		}
+
+		@include breakpoint(xxlarge) {
+			width: 520px;
+			height: 520px;
+		}
+
 		&__inner {
 			@include breakpoint(large) {
 				background: $dark2;
@@ -161,6 +215,16 @@
 				left: 85px;
 		    	top: 90px;
 				z-index: 6;
+			}
+
+			@include breakpoint(xlarge) {
+				width: 290px;
+				height: 290px;
+			}
+
+			@include breakpoint(xxlarge) {
+				width: 340px;
+				height: 340px;
 			}
 		}
 	}
@@ -173,6 +237,10 @@
 		@include breakpoint(xlarge) {
 			left: -450px;
 		}
+
+		@include breakpoint(xxlarge) {
+			left: -540px;
+		}
 	}
 
 	&__ellipsecorner--right {
@@ -182,6 +250,10 @@
 
 		@include breakpoint(xlarge) {
 			right: -450px;
+		}
+
+		@include breakpoint(xxlarge) {
+			right: -540px;
 		}
 	}
 }
