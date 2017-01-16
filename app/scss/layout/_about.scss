@@ -11,24 +11,42 @@
 	// Background ellipses
 	&__ellipsebkgnd {
 		&--top {
-			background: $light1;
-			position: absolute;
-			width: 50%; // 846
-			padding-bottom: 50%; // 846
-			border-radius: 50%;
-			left: -10%;
-		    top: -40%;
-			opacity: 0.5;
+			@include breakpoint(medium) {
+				display: block;
+				background: $light1;
+				position: absolute;
+				width: 65%;
+				padding-bottom: 65%;
+				border-radius: 50%;
+				left: -10%;
+			    top: -30%;
+				opacity: 0.5;
+			}
+
+			@include breakpoint(large) {
+				width: 50%;
+				padding-bottom: 50%;
+				top: -40%;
+			}
 		}
 
 		&--bottom {
-			background: $light2;
-			position: absolute;
-			width: 50%; // 846
-			padding-bottom: 50%; // 846
-			border-radius: 50%;
-			right: 0;
-		    bottom: -40%;
+			@include breakpoint(medium) {
+				display: block;
+				background: $light2;
+				position: absolute;
+				width: 65%;
+				padding-bottom: 65%;
+				border-radius: 50%;
+				right: 0;
+			    bottom: -30%;
+			}
+
+			@include breakpoint(large) {
+				width: 50%;
+				padding-bottom: 50%;
+				bottom: -40%;
+			}
 		}
 	}
 
@@ -36,27 +54,44 @@
 	&__rect {
 		position: relative;
     	width: 100%;
-    	height: 100vh;
+
+		@include breakpoint(medium) {
+	    	height: 100vh;
+			padding: 0;
+		}
 
 		&--light {
-			background: $dark1;
-			position: absolute;
-			width: 31.5%; // 530
-			padding-bottom: 31.5%; // 530
-			z-index: 5;
-			left: 9%;
-    		top: 42%;
+			display: none;
+
+			@include breakpoint(large) {
+				display: block;
+				background: $dark1;
+				position: absolute;
+				width: 31.5%; // 530
+				padding-bottom: 31.5%; // 530
+				z-index: 5;
+				left: 9%;
+	    		top: 42%;
+			}
 		}
 
 		&--mid {
+			width: 100%;
 			background: $dark2;
-			position: absolute;
-			width: 68%;
-    		height: 72.7%;
-			top: 10.5%;
-			left: 27.3%;
-			z-index: 6;
-			padding: 6% 7% 7% 9%;
+
+			@include breakpoint(medium) {
+
+				position: absolute;
+				width: 68%;
+				top: 10.5%;
+				left: 27.3%;
+				z-index: 6;
+				padding: 6% 7% 7% 9%;
+			}
+
+			@include breakpoint(large) {
+				height: 72.7%;
+			}
 		}
 	}
 
@@ -64,6 +99,13 @@
 	&__content {
 		background: $dark3;
 		padding: 50px;
+		width: 85%;
+    	margin: 0 auto;
+
+		@include breakpoint(medium) {
+			width: auto;
+			margin: 0;
+		}
 
 		h1 {
 			text-transform: uppercase;
@@ -81,12 +123,16 @@
 	&__svg {
 
 		&__lines--bottom {
-			display: inline-block;
-			width: 100%;
-			position: absolute;
-			z-index: 15;
-			top: 83.2%;
-			left: 10%;
+			display: none;
+
+			@include breakpoint(large) {
+				display: inline-block;
+				width: 100%;
+				position: absolute;
+				z-index: 15;
+				top: 83.2%;
+				left: 10%;
+			}
 
 			svg {
 				display: block;
@@ -98,32 +144,66 @@
 		}
 
 		&__lines--left {
-			display: inline-block;
-			width: 100%;
-			position: absolute;
-			z-index: 16;
-			transform-origin: 0 0;
-			transform: rotate(90deg);
-			left: 27.3%;
+			display: none;
+
+			@include breakpoint(medium) {
+				display: inline-block;
+				width: 100%;
+				position: absolute;
+				z-index: 16;
+				transform-origin: 0 0;
+				transform: rotate(90deg);
+				left: 27.3%;
+				top: 0;
+			}
 
 			svg {
 				display: block;
 				width: 100%;
 				overflow: initial;
 				transform-origin: 0 0;
-				transform: scale(0.75);
+				transform: scale(1.3);
+
+				@include breakpoint(large) {
+					transform: scale(0.75);
+				}
 			}
 		}
 
 		&__dots {
-			display: inline-block;
-			width: 100%;
-			position: absolute;
-			z-index: 17;
+			display: none;
+
+			@include breakpoint(large) {
+				display: inline-block;
+				width: 100%;
+				position: absolute;
+				z-index: 17;
+				top: 3%;
+				left: -8%;
+			}
+
+			@include breakpoint(xlarge) {
+				top: 0;
+			}
+
+			@include breakpoint(xxlarge) {
+				top: 0;
+				left: 0;
+			}
 
 			svg {
-				transform-origin: 0 0;
-				transform: scale(0.8);
+				@include breakpoint(large) {
+					transform-origin: 0 0;
+					transform: scale(1.1);
+				}
+
+				@include breakpoint(xlarge) {
+					transform: scale(0.95);
+				}
+
+				@include breakpoint(xxlarge) {
+					transform: scale(0.8);
+				}
 			}
 		}
 	}
