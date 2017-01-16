@@ -16,8 +16,8 @@
 			width: 50%; // 846
 			padding-bottom: 50%; // 846
 			border-radius: 50%;
-			left: -170px;
-		    top: -400px;
+			left: -10%;
+		    top: -40%;
 			opacity: 0.5;
 		}
 
@@ -28,7 +28,7 @@
 			padding-bottom: 50%; // 846
 			border-radius: 50%;
 			right: 0;
-		    bottom: -400px;
+		    bottom: -40%;
 		}
 	}
 
@@ -44,8 +44,8 @@
 			width: 31.5%; // 530
 			padding-bottom: 31.5%; // 530
 			z-index: 5;
-			left: 155px;
-    		top: 395px;
+			left: 9%;
+    		top: 42%;
 		}
 
 		&--mid {
@@ -53,10 +53,10 @@
 			position: absolute;
 			width: 68%;
     		height: 72.7%;
-			top: 100px;
-    		left: 460px;
+			top: 10.5%;
+			left: 27.3%;
 			z-index: 6;
-			padding: 70px 70px 70px 150px;
+			padding: 6% 7% 7% 9%;
 		}
 	}
 
@@ -85,8 +85,8 @@
 			width: 100%;
 			position: absolute;
 			z-index: 15;
-			bottom: -40px;
-			left: 165px;
+			top: 83.2%;
+			left: 10%;
 
 			svg {
 				display: block;
@@ -104,7 +104,7 @@
 			z-index: 16;
 			transform-origin: 0 0;
 			transform: rotate(90deg);
-			left: 460px;
+			left: 27.3%;
 
 			svg {
 				display: block;
