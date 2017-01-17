@@ -63,24 +63,38 @@
 		&--light {
 			display: none;
 
-			@include breakpoint(large) {
+			@include breakpoint(medium) {
 				display: block;
 				background: $dark1;
 				position: absolute;
 				width: 31.5%; // 530
 				padding-bottom: 31.5%; // 530
 				z-index: 5;
+
+				top: 57%;
+    			left: 15%;
+			}
+
+			@include breakpoint(large) {
 				left: 9%;
-	    		top: 42%;
+	    		top: 57%;
+			}
+
+			@include breakpoint(xlarge) {
+				top: 50%;
+			}
+
+			@include breakpoint(xxlarge) {
+				top: 40%;
 			}
 		}
 
 		&--mid {
 			width: 100%;
 			background: $dark2;
+			padding: 60px 0;
 
 			@include breakpoint(medium) {
-
 				position: absolute;
 				width: 68%;
 				top: 10.5%;
@@ -123,7 +137,10 @@
 	&__svg {
 
 		&__lines--bottom {
-			display: none;
+			// display: none;
+			@include breakpoint(medium) {
+				display: none;
+			}
 
 			@include breakpoint(large) {
 				display: inline-block;
@@ -139,12 +156,18 @@
 				width: 100%;
 				overflow: initial;
 				transform-origin: 0 0;
-				transform: scale(0.75);
+				transform: scale(1.3);
+
+				@include breakpoint(large) {
+					transform: scale(0.75);
+				}
 			}
 		}
 
 		&__lines--left {
-			display: none;
+			transform-origin: center center;
+			transform: rotate(180deg);
+			margin-top: 35px;
 
 			@include breakpoint(medium) {
 				display: inline-block;
@@ -155,6 +178,7 @@
 				transform: rotate(90deg);
 				left: 27.3%;
 				top: 0;
+				margin: 0;
 			}
 
 			svg {
@@ -173,10 +197,14 @@
 		&__dots {
 			display: none;
 
-			@include breakpoint(large) {
+			@include breakpoint(medium) {
 				display: inline-block;
 				width: 100%;
 				position: absolute;
+				top: 2%;
+			}
+
+			@include breakpoint(large) {
 				z-index: 17;
 				top: 3%;
 				left: -8%;
