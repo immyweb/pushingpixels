@@ -1,90 +1,87 @@
 import { TimelineMax } from 'gsap';
-import enquire from 'enquire.js';
-import breakpoints from '../../breakpoints';
 
 export default class Gallery {
 
     init(element) {
 		this.panel = element;
 
-		this.blocksTop = this.panel.find('.gallery__blocks--top');
-		this.blocksBottom = this.panel.find('.gallery__blocks--bottom');
-		this.linesTop = this.panel.find('.gallery__lines--top');
-		this.linesBottom = this.panel.find('.gallery__lines--bottom');
+		this.contentBkgnd = this.panel.find('.gallery__content__bkgnd');
+		this.contentFrgnd = this.panel.find('.gallery__content__frgnd');
+		this.contentInner = this.panel.find('.gallery__content__inner');
 
-		this.checkBreakpoint();
+		this.blocksTopLeft = this.panel.find('.gallery__svg__blocks--top__left');
+		this.blocksTopRight = this.panel.find('.gallery__svg__blocks--top__right');
+		this.blocksBottomLeft = this.panel.find('.gallery__svg__blocks--bottom__left');
+		this.blocksBottomRight = this.panel.find('.gallery__svg__blocks--bottom__right');
 
+		this.linesTopLeft = this.panel.find('.gallery__svg__lines--top__left');
+		this.linesTopRight = this.panel.find('.gallery__svg__lines--top__right');
+		this.linesBottomLeft = this.panel.find('.gallery__svg__lines--bottom__left');
+		this.linesBottomRight = this.panel.find('.gallery__svg__lines--bottom__right');
+
+		this.mainTl();
     }
 
-	checkBreakpoint() {
-		enquire
-			.register(`screen and (max-width: ${breakpoints.maxMedium})`, {
-				match: () => {
-					// Mobile
-					console.log('medium < 640');
-					// this.startMobileTl();
-				}
-			})
-			.register(`screen and (min-width: ${breakpoints.minLarge}) and (max-width: ${breakpoints.maxLarge})`, {
-			    match: () => {
-					// Desktop
-					console.log('large 641 - 1024');
-					// this.startDesktopTl();
-			    }
-			});
+	reverseLinesTopAnimTl() {
+		const tlReverseLines = new TimelineMax();
+
+		for ( let i = this.linesTopLeft.length-1; i >= 0; i-- ) {
+			tlReverseLines.fromTo(this.linesTopLeft[i], 0.02, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
+		}
+
+		return tlReverseLines;
 	}
 
-	setStageMobile() {
-		const setStageTl = new TimelineMax();
+	reverseLinesBottomAnimTl() {
+		const tlReverseLines = new TimelineMax();
 
-		setStageTl
-			.set(this.blocksTop, { scale: 0.75, x: '2%', y: '32%' })
-			.set(this.blocksBottom, { scale: 0.75, x: '2%', y: '379%' })
-			.set(this.linesTop, { scale: 0.75, y: '13%' })
-			.set(this.linesBottom, { scale: 0.75, x: '0', y: '397%' })
-		;
+		for ( let i = this.linesBottomLeft.length-1; i >= 0; i-- ) {
+			tlReverseLines.fromTo(this.linesBottomLeft[i], 0.02, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
+		}
 
-		return setStageTl;
+		return tlReverseLines;
 	}
 
-	setStageTablet() {
+	reverseBlocksTopAnimTl() {
+		const tlReverseBlocks = new TimelineMax();
 
+		for ( let i = this.blocksTopLeft.length-1; i >= 0; i-- ) {
+			tlReverseBlocks.fromTo(this.blocksTopLeft[i], 0.05, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
+		}
+
+		return tlReverseBlocks;
 	}
 
-	setStageDesktop() {
-		const setStageTl = new TimelineMax();
+	reverseBlocksBottomAnimTl() {
+		const tlReverseBlocks = new TimelineMax();
 
-		setStageTl
-			.set(this.blocksTop, { scale: 0.75 }) // 2, 32
-			// .set(this.blocksBottom, { scale: 0.75 }) // 2, 379
-			.set(this.linesTop, { scale: 0.75 }) // 13
-			// .set(this.linesBottom, { scale: 0.75 }) // 0, 397
-		;
+		for ( let i = this.blocksBottomLeft.length-1; i >= 0; i-- ) {
+			tlReverseBlocks.fromTo(this.blocksBottomLeft[i], 0.05, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
+		}
 
-		return setStageTl;
+		return tlReverseBlocks;
 	}
 
-	startMobileTl() {
-		const mobileTl = new TimelineMax();
+	mainTl() {
+		const mainTl = new TimelineMax();
 
-		mobileTl
-			.add(this.setStageMobile())
-		;
-	}
+		mainTl
+			.add('panelsIn')
+			.fromTo(this.contentBkgnd, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1.2, autoAlpha: 1, ease: Power4.easeInOut })
+			.fromTo(this.contentFrgnd, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1.2, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.15')
+			.to(this.contentInner, 0.75, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
 
-	startTabletTl() {
-		const tabletTl = new TimelineMax();
+			.add('blocksIn')
+			.add(this.reverseBlocksTopAnimTl(), 'panelsIn+=0.75')
+			.staggerFromTo(this.blocksTopRight, 0.5, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.05, 'panelsIn+=0.75')
+			.add(this.reverseBlocksBottomAnimTl(), 'panelsIn+=0.75')
+			.staggerFromTo(this.blocksBottomRight, 0.5, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.05, 'panelsIn+=0.75')
 
-		// tabletTl
-		// 	.add(this.setStageTablet())
-		// ;
-	}
-
-	startDesktopTl() {
-		const desktopTl = new TimelineMax();
-
-		desktopTl
-			.add(this.setStageDesktop())
+			.add('linesIn')
+			.add(this.reverseLinesTopAnimTl(), 'panelsIn+=1.00')
+			.staggerFromTo(this.linesTopRight, 0.5, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
+			.add(this.reverseLinesBottomAnimTl(), 'panelsIn+=1.00')
+			.staggerFromTo(this.linesBottomRight, 0.5, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
 		;
 	}
 }

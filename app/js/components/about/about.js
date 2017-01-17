@@ -74,8 +74,8 @@ export default class About {
 			.staggerFromTo(this.linesBottom, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn')
 
 			.add('dotsIn')
-			.staggerFromTo(this.dotsSmall, 0.5, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'linesIn')
-			.staggerFromTo(this.dotsLarge, 0.4, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'linesIn')
+			.staggerFromTo(this.dotsSmall, 0.5, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'panelsIn+=0.5')
+			.staggerFromTo(this.dotsLarge, 0.4, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'panelsIn+=0.5')
 		;
 	}
 }

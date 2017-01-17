@@ -3,25 +3,55 @@
 	width: 100vw;
 	height: 100vh;
 
-	&__svg-container {
-		margin-top: 170px;
+	&__container {
+		padding-top: 70px;
+
+		@include breakpoint(medium) {
+			padding-top: 60px;
+		}
+
+		@include breakpoint(large) {
+			padding-top: 50px;
+		}
+
+		@include breakpoint(xlarge) {
+			padding-top: 20px;
+		}
 	}
 
 	&__svg {
 		&--top, &--bottom {
 			width: 100%;
-			position: absolute;
+			transform: scale(2.8) skewY(0deg);
+
+			@include breakpoint(medium) {
+				transform: scale(2);
+			}
+
+			@include breakpoint(large) {
+				transform: scale(1.5);
+			}
+
+			@include breakpoint(xlarge) {
+				transform: scale(1);
+			}
 		}
 
 		&--top {
-			top: -130px;
-			z-index: 5;
+			margin-bottom: 20px;
+
+			@include breakpoint(large) {
+				margin-bottom: 0;
+			}
 		}
 
-		&--bottom {
-			bottom: -130px;
-			z-index: 5;
-			transform: skewY(0deg);
+		&__blocks, &__lines {
+			&--top, &--bottom {
+				&__left, &__right {
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
 		}
 	}
 
@@ -32,6 +62,7 @@
 			min-height: 600px;
 			z-index: 10;
 			position: relative;
+			top: -8px;
 		}
 
 		&__bkgnd {
@@ -41,6 +72,20 @@
 			transform: skewY(5deg);
 			position: relative;
 			z-index: 11;
+			margin-bottom: 30px;
+			left: 0;
+			top: 0;
+
+			// visibility: hidden;
+			// opacity: 0;
+
+			@include breakpoint(large) {
+				margin-bottom: 20px;
+			}
+
+			@include breakpoint(xlarge) {
+				margin-bottom: 0;
+			}
 		}
 
 		&__frgnd {
@@ -50,14 +95,22 @@
 			transform: skewY(-10deg);
 			position: relative;
 			z-index: 12;
+			left: 0;
+			top: 0;
+
+			// visibility: hidden;
+			// opacity: 0;
 		}
 
 		&__inner {
 			text-align: center;
-			transform: skewY(5deg);
+			transform: skewY(5deg) scaleX(0.8);
 			position: relative;
 			top: 40px;
 			z-index: 13;
+
+			visibility: hidden;
+			opacity: 0;
 
 			h1 {
 				text-transform: uppercase;
