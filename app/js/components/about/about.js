@@ -1,37 +1,81 @@
 import { TimelineMax } from 'gsap';
+import enquire from 'enquire.js';
+import breakpoints from '../../breakpoints';
 
 export default class About {
 
     init(element) {
 		this.panel = element;
 
-		this.dotsSmall = this.panel.find('.about__dots--small');
-		this.dotsLarge = this.panel.find('.about__dots--large');
-		this.linesBottom = this.panel.find('.about__lines--bottom');
-		this.linesLeft = this.panel.find('.about__lines--left');
+		this.dotsSmall = this.panel.find('.about__svg__dots--small__dot');
+		this.dotsLarge = this.panel.find('.about__svg__dots--large__dot');
 
-		this.startMainTl();
+		this.linesBottom = this.panel.find('.about__svg__lines--bottom__line');
+		this.linesLeft = this.panel.find('.about__svg__lines--left__line');
+
+		this.ellipseBkgndTop = this.panel.find('.about__ellipsebkgnd--top');
+		this.ellipseBkgndBottom = this.panel.find('.about__ellipsebkgnd--bottom');
+
+		this.rectLight = this.panel.find('.about__rect--light');
+		this.rectMid = this.panel.find('.about__rect--mid');
+		this.content = this.panel.find('.about__content');
+		this.contentHolder = this.panel.find('.about__content__holder');
+
+		this.checkBreakpoint();
     }
 
-	setStage() {
-		const setStageTl = new TimelineMax();
-
-		// setStageTl
-		// 	.set(this.dotsSmall, { scale: 0.8, x: '7%' }) // 75
-		// 	.set(this.dotsLarge, { scale: 0.8, x: '9%' }) // 100
-		// 	.set(this.linesBottom, { scale: 0.75, x: '10%', y: '402%' }) // 125
-		// 	.set(this.linesLeft, { scale: 0.75, x: '27.8%', rotation: 90 }) // 350
-		// ;
-
-		return setStageTl;
+	checkBreakpoint() {
+		enquire
+			.register(`screen and (max-width: ${breakpoints.maxMedium})`, {
+				match: () => {
+					// console.log('medium < 640');
+					this.mobileTL();
+				}
+			})
+			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
+			    match: () => {
+					// console.log('large > 641');
+					this.desktopTl();
+			    }
+			});
 	}
 
-	startMainTl() {
-		const mainTl = new TimelineMax();
+	mobileTL() {
+		const mobileTl = new TimelineMax();
 
-		mainTl
-			.add(this.setStage())
-			// .add(this.radialsTl())
+		mobileTl
+			.add('panelsIn')
+			.fromTo(this.rectMid, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+			.fromTo(this.content, 0.75, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+			.to(this.contentHolder, 0.75, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+
+			.add('linesIn')
+			.staggerFromTo(this.linesLeft, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn')
+			.staggerFromTo(this.linesBottom, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn')
+		;
+	}
+
+	desktopTl() {
+		const desktopTl = new TimelineMax();
+
+		desktopTl
+			.add('ellipsesIn')
+			.fromTo(this.ellipseBkgndTop, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 0.5, ease: Power4.easeInOut })
+			.fromTo(this.ellipseBkgndBottom, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+
+			.add('panelsIn')
+			.fromTo(this.rectLight, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut })
+			.fromTo(this.rectMid, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+			.fromTo(this.content, 0.75, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+			.to(this.contentHolder, 0.75, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+
+			.add('linesIn')
+			.staggerFromTo(this.linesLeft, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn')
+			.staggerFromTo(this.linesBottom, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn')
+
+			.add('dotsIn')
+			.staggerFromTo(this.dotsSmall, 0.5, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'linesIn')
+			.staggerFromTo(this.dotsLarge, 0.4, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'linesIn')
 		;
 	}
 }

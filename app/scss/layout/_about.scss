@@ -20,7 +20,10 @@
 				border-radius: 50%;
 				left: -10%;
 			    top: -30%;
-				opacity: 0.5;
+				// opacity: 0.5;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(large) {
@@ -40,6 +43,9 @@
 				border-radius: 50%;
 				right: 0;
 			    bottom: -30%;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(large) {
@@ -73,6 +79,9 @@
 
 				top: 57%;
     			left: 15%;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(large) {
@@ -93,6 +102,9 @@
 			width: 100%;
 			background: $dark2;
 			padding: 60px 0;
+
+			visibility: hidden;
+			opacity: 0;
 
 			@include breakpoint(medium) {
 				position: absolute;
@@ -116,9 +128,17 @@
 		width: 85%;
     	margin: 0 auto;
 
+		visibility: hidden;
+		opacity: 0;
+
 		@include breakpoint(medium) {
 			width: auto;
 			margin: 0;
+		}
+
+		&__holder {
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		h1 {
@@ -162,6 +182,11 @@
 					transform: scale(0.75);
 				}
 			}
+
+			&__line {
+				visibility: hidden;
+				opacity: 0;
+			}
 		}
 
 		&__lines--left {
@@ -191,6 +216,11 @@
 				@include breakpoint(large) {
 					transform: scale(0.75);
 				}
+			}
+
+			&__line {
+				visibility: hidden;
+				opacity: 0;
 			}
 		}
 
@@ -231,6 +261,13 @@
 
 				@include breakpoint(xxlarge) {
 					transform: scale(0.7);
+				}
+			}
+
+			&--small, &--large {
+				&__dot {
+					visibility: hidden;
+					opacity: 0;
 				}
 			}
 		}

@@ -1,5 +1,6 @@
 import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
+import breakpoints from '../../breakpoints';
 
 export default class Gallery {
 
@@ -17,26 +18,19 @@ export default class Gallery {
 
 	checkBreakpoint() {
 		enquire
-			.register("screen and (min-width: 1024px)", {
-			    match: () => {
-					// Desktop
-					console.log('desktop');
-					// this.startDesktopTl();
-			    }
-			})
-			.register("screen and (min-width: 768px)", {
-				match: () => {
-					// Tablet
-					console.log('tablet');
-					// this.startTabletTl();
-				}
-			})
-			.register("screen and (max-width: 480px)", {
+			.register(`screen and (max-width: ${breakpoints.maxMedium})`, {
 				match: () => {
 					// Mobile
-					console.log('mobile');
+					console.log('medium < 640');
 					// this.startMobileTl();
 				}
+			})
+			.register(`screen and (min-width: ${breakpoints.minLarge}) and (max-width: ${breakpoints.maxLarge})`, {
+			    match: () => {
+					// Desktop
+					console.log('large 641 - 1024');
+					// this.startDesktopTl();
+			    }
 			});
 	}
 
