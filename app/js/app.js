@@ -3,6 +3,7 @@ import splash from './components/splash/index';
 import about from './components/about/index';
 import contact from './components/contact/index';
 import gallery from './components/gallery/index';
+import galleryModal from './components/gallery-modal/index';
 
 // run scripts on DOM ready
 $(document).ready(() => {
@@ -10,4 +11,5 @@ $(document).ready(() => {
 	about.init();
 	contact.init();
 	gallery.init();
+	galleryModal.init();
 });
