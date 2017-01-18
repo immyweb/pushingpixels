@@ -12,58 +12,100 @@
 
 	&__svg {
 		&--left, &--right {
-			position: absolute;
-			top: 50%;
-			width: 15%;
+			display: none;
 
-			@include breakpoint(xlarge) {
-				// transform-origin: center top;
-				transform: translateY(-50%) scale(0.6);
+			@include breakpoint(medium) {
+				display: block;
+				position: absolute;
+				top: 50%;
+				width: 15%;
+				transform: translateY(-50%) scale(1);
 			}
 
-			svg {
+			@include breakpoint(large) {
+				transform: translateY(-50%) scale(0.7);
+			}
 
+			@include breakpoint(xlarge) {
+				transform: translateY(-50%) scale(0.6);
 			}
 		}
 
 		&--left {
-			left: 98px;
+			left: 6%;
 		}
 
 		&--right {
-			right: 98px;
+			right: 6%;
+		}
+
+		&__blocks, &__lines {
+			&--left, &--right {
+				&__top, &__bottom {
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
 		}
 	}
 
 	&__content {
 
 		&__bkgnd {
-			width: 65%;
+			width: 100%;
 			margin: 0 auto;
 			background: $dark1;
-			transform: skewx(5deg);
 			position: relative;
 			z-index: 11;
 			height: 100%;
+
+			@include breakpoint(medium) {
+				width: 65%;
+				transform: skewx(5deg);
+
+				visibility: hidden;
+				opacity: 0;
+			}
 		}
 
 		&__frgnd {
 			width: 100%;
 			background: $dark2;
-			transform: skewX(-10deg);
 			position: relative;
 			z-index: 12;
 			height: 100%;
+
+			@include breakpoint(medium) {
+				transform: skewX(-10deg);
+
+				visibility: hidden;
+				opacity: 0;
+			}
 		}
 
 		&__inner {
-			padding: 0 150px 75px;
+			padding: 0 40px 75px;
 			text-align: center;
-			transform: skewX(5deg);
 			position: relative;
 			top: 40px;
 			z-index: 13;
 			height: 100%;
+
+			@include breakpoint(medium) {
+				transform: skewX(5deg);
+				padding: 0 80px 75px;
+
+				visibility: hidden;
+				opacity: 0;
+			}
+
+			@include breakpoint(large) {
+				padding: 0 110px 75px;
+			}
+
+			@include breakpoint(xlarge) {
+				padding: 0 150px 75px;
+			}
 
 			h1 {
 				text-transform: uppercase;
@@ -91,8 +133,12 @@
 			li {
 				display: block;
 				position: relative;
-				margin-bottom: 75px;
+				margin-bottom: 40px;
 				clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+
+				@include breakpoint(medium) {
+					margin-bottom: 75px;
+				}
 
 				&:last-child {
 					left: -6%;
