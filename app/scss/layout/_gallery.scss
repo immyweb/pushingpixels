@@ -127,5 +127,26 @@
 			}
 		}
 
+		&__list {
+			border: 1px solid white;
+			width: 75%;
+			margin: 0 auto;
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				li {
+					display: inline-block;
+					width: 33%;
+
+					a {
+						display: inline-block;
+					}
+				}
+			}
+		}
+
 	}
 }

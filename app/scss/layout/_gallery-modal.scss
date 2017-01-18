@@ -136,6 +136,9 @@
 				margin-bottom: 40px;
 				clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 
+				visibility: hidden;
+				opacity: 0;
+
 				@include breakpoint(medium) {
 					margin-bottom: 75px;
 				}

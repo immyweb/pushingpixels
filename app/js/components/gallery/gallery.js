@@ -79,9 +79,11 @@ export default class Gallery {
 
 			.add('linesIn')
 			.add(this.reverseLinesTopAnimTl(), 'panelsIn+=1.00')
-			.staggerFromTo(this.linesTopRight, 0.5, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
+			.staggerFromTo(this.linesTopRight, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
 			.add(this.reverseLinesBottomAnimTl(), 'panelsIn+=1.00')
-			.staggerFromTo(this.linesBottomRight, 0.5, { scaleY: 0, transformOrigin: 'center bottom' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
+			.staggerFromTo(this.linesBottomRight, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
 		;
+
+		// mainTl.progress(1);
 	}
 }
