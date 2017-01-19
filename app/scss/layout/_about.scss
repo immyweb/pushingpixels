@@ -143,13 +143,17 @@
 
 		h1 {
 			text-transform: uppercase;
-			font-size: rem-calc(60);
+			font-size: rem-calc(30);
 			margin: 0 0 25px;
 			line-height: 0.9;
 			font-family: $font-hero;
 			font-weight: normal;
 			border-bottom: 1px solid $red2;
 			padding-bottom: 15px;
+		}
+
+		p, ul {
+			font-size: rem-calc(8);
 		}
 	}
 

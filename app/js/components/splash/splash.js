@@ -1,4 +1,6 @@
 import { TimelineMax } from 'gsap';
+import enquire from 'enquire.js';
+import breakpoints from '../../breakpoints';
 
 export default class Splash {
 
@@ -26,8 +28,30 @@ export default class Splash {
 
 		this.heading = this.panel.find('.splash__heading');
 
-		// this.startMainTl();
+		this.checkBreakpoint();
     }
+
+	checkBreakpoint() {
+		enquire
+			.register(`screen and (max-width: ${breakpoints.maxSmall})`, {
+				match: () => {
+					console.log('small to medium < 640');
+					// this.mobileTL();
+				}
+			})
+			.register(`screen and (min-width: ${breakpoints.minMedium}) and (max-width: ${breakpoints.maxMedium})`, {
+			    match: () => {
+					console.log('medium to large > 641 - 1023');
+					// this.desktopTl();
+			    }
+			})
+			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
+			    match: () => {
+					console.log('large > 1024+');
+					this.startMainTl();
+			    }
+			});
+	}
 
 	radialsTl() {
 		const radialsTl = new TimelineMax();

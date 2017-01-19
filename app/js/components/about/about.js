@@ -26,13 +26,13 @@ export default class About {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (max-width: ${breakpoints.maxMedium})`, {
+			.register(`screen and (max-width: ${breakpoints.maxSmall})`, {
 				match: () => {
 					// console.log('medium < 640');
 					this.mobileTL();
 				}
 			})
-			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
+			.register(`screen and (min-width: ${breakpoints.minMedium})`, {
 			    match: () => {
 					// console.log('large > 641');
 					this.desktopTl();

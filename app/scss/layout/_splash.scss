@@ -165,8 +165,8 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		// visibility: hidden;
-		// opacity: 0;
+		visibility: hidden;
+		opacity: 0;
 
 		h1 {
 			text-transform: uppercase;
@@ -194,32 +194,32 @@
 		}
 	}
 
-	// &__corner-circle {
-	// 	visibility: hidden;
-	// 	opacity: 0;
-	// }
-	//
-	// &__sm-radial {
-	// 	&__outer, &__inner, &__blocks, &__lines {
-	// 		visibility: hidden;
-	// 		opacity: 0;
-	// 	}
-	// }
-	//
-	// &__lrg-radial {
-	// 	&__outer, &__inner, &__blocks, &__lines {
-	// 		visibility: hidden;
-	// 		opacity: 0;
-	// 	}
-	// }
-	//
-	// &__dots {
-	// 	&__small, &__large {
-	// 		&__dot {
-	// 			visibility: hidden;
-	// 			opacity: 0;
-	// 		}
-	//
-	// 	}
-	// }
+	&__corner-circle {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	&__sm-radial {
+		&__outer, &__inner, &__blocks, &__lines {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&__lrg-radial {
+		&__outer, &__inner, &__blocks, &__lines {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&__dots {
+		&__small, &__large {
+			&__dot {
+				visibility: hidden;
+				opacity: 0;
+			}
+
+		}
+	}
 }

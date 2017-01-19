@@ -27,7 +27,7 @@ export default class GalleryModal {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
+			.register(`screen and (min-width: ${breakpoints.maxSmall})`, {
 				match: () => {
 					// console.log('medium > 640');
 					this.mainTl();
