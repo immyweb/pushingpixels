@@ -6,21 +6,37 @@
 
 	// Bottom corner radial
 	&__corner-circle {
-		width: 598px;
-		padding-bottom: 598px;
-		border-radius: 50%;
-		background: $dark3;
-		position: absolute;
-		top: 73%;
-    	left: -15%;
+		display: none;
+
+		@include breakpoint(large) {
+			display: block;
+			width: 598px;
+			padding-bottom: 598px;
+			border-radius: 50%;
+			background: $dark3;
+			position: absolute;
+			top: 73%;
+	    	left: -15%;
+		}
 	}
 
 	// Small radial
 	&__sm-radial {
-		position: absolute;
-		width: 47%;
-		padding-bottom: 47%;
-		transform: translate(-6%, -4%);
+		display: none;
+
+		@include breakpoint(medium) {
+			display: block;
+			position: absolute;
+			width: 55%;
+			padding-bottom: 55%;
+			transform: translate(-6%, 65%);
+		}
+
+		@include breakpoint(large) {
+			width: 47%;
+			padding-bottom: 47%;
+			transform: translate(-6%, -4%);
+		}
 
 		&__outer {
 			width: 100%;
@@ -60,10 +76,32 @@
 
 	// Large radial
 	&__lrg-radial {
-		position: absolute;
-		width: 72%;
-		padding-bottom: 72%;
-		transform: translate(52%, 2%);
+		width: 130%;
+		position: relative;
+		left: 50%;
+		top: 50px;
+		transform: translateX(-50%);
+
+		@include breakpoint(medium) {
+			position: absolute;
+			width: 85%;
+			padding-bottom: 85%;
+			left: auto;
+			top: auto;
+			transform: translate(27%, 2%);
+		}
+
+		@include breakpoint(large) {
+			width: 85%;
+			padding-bottom: 85%;
+			transform: translate(33%, 3%);
+		}
+
+		@include breakpoint(xlarge) {
+			width: 72%;
+			padding-bottom: 72%;
+			transform: translate(52%, 2%);
+		}
 
 		&__outer {
 			width: 100%;
@@ -103,6 +141,12 @@
 
 	// Dots
 	&__dots {
+		display: none;
+
+		@include breakpoint(medium) {
+			display: block;
+		}
+
 		&__large {
 			position: absolute;
 			transform: translate(17%, 8%) scale(1.1);
@@ -121,16 +165,28 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		visibility: hidden;
-		opacity: 0;
+		// visibility: hidden;
+		// opacity: 0;
 
 		h1 {
 			text-transform: uppercase;
-			font-size: 96px;
+			font-size: rem-calc(96);
 			margin: 0;
 			text-align: center;
 			line-height: 0.9;
 			font-weight: normal;
+
+			@include breakpoint(medium) {
+				font-size: rem-calc(66);
+			}
+
+			@include breakpoint(xlarge) {
+				font-size: rem-calc(56);
+			}
+
+			@include breakpoint(xxlarge) {
+				font-size: rem-calc(46);
+			}
 
 			span {
 				display: block;
@@ -138,32 +194,32 @@
 		}
 	}
 
-	&__corner-circle {
-		visibility: hidden;
-		opacity: 0;
-	}
-
-	&__sm-radial {
-		&__outer, &__inner, &__blocks, &__lines {
-			visibility: hidden;
-			opacity: 0;
-		}
-	}
-
-	&__lrg-radial {
-		&__outer, &__inner, &__blocks, &__lines {
-			visibility: hidden;
-			opacity: 0;
-		}
-	}
-
-	&__dots {
-		&__small, &__large {
-			&__dot {
-				visibility: hidden;
-				opacity: 0;
-			}
-
-		}
-	}
+	// &__corner-circle {
+	// 	visibility: hidden;
+	// 	opacity: 0;
+	// }
+	//
+	// &__sm-radial {
+	// 	&__outer, &__inner, &__blocks, &__lines {
+	// 		visibility: hidden;
+	// 		opacity: 0;
+	// 	}
+	// }
+	//
+	// &__lrg-radial {
+	// 	&__outer, &__inner, &__blocks, &__lines {
+	// 		visibility: hidden;
+	// 		opacity: 0;
+	// 	}
+	// }
+	//
+	// &__dots {
+	// 	&__small, &__large {
+	// 		&__dot {
+	// 			visibility: hidden;
+	// 			opacity: 0;
+	// 		}
+	//
+	// 	}
+	// }
 }

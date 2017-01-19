@@ -26,7 +26,7 @@ export default class Splash {
 
 		this.heading = this.panel.find('.splash__heading');
 
-		this.startMainTl();
+		// this.startMainTl();
     }
 
 	radialsTl() {
@@ -45,7 +45,7 @@ export default class Splash {
 			.fromTo(this.lrgRadialBlocks, 0.5, { scale: 0, transformOrigin: '54% 54%' }, { scale: 0.82, autoAlpha: 0.65, ease: Elastic.easeOut.config(1, 0.4) }, '-=0.25')
 
 			.add('linesIn')
-			.fromTo(this.smRadialLines, 1.5, { scale: 0, transformOrigin: '56% 50%', rotation: 360 }, { scale: 0.7, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'blocksIn-=0.15')
+			.fromTo(this.smRadialLines, 1.5, { scale: 0, transformOrigin: '56% 50%', rotation: 360 }, { scale: 0.7, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'blocksIn-=0.25')
 			.fromTo(this.lrgRadialLines, 1.5, { scale: 0, transformOrigin: '47% 47%', rotation: 360 }, { scale: 0.87, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'blocksIn-=0.35')
 
 			.add('dotsIn')
