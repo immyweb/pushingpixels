@@ -26,7 +26,7 @@ export default class Splash {
 
 		this.heading = this.panel.find('.splash__heading');
 
-		this.startMainTl();
+		// this.startMainTl();
     }
 
 	setStage() {
@@ -89,7 +89,7 @@ export default class Splash {
 
 		mainTl
 			.add(this.setStage())
-			.add(this.radialsTl())
+			// .add(this.radialsTl())
 		;
 	}
 }

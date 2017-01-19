@@ -2,30 +2,127 @@
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+	overflow-y: hidden;
 
-	&__svg-container {
-		display: inline-block;
-		position: relative;
-		width: 100%;
-		padding-bottom: 60%;
-		vertical-align: middle;
-		overflow: hidden;
-	}
-
-	&__svg {
-		display: inline-block;
+	// Bottom corner radial
+	&__corner-circle {
+		width: 598px;
+		padding-bottom: 598px;
+		border-radius: 50%;
+		background: $dark3;
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: 73%;
+    	left: -15%;
 	}
+
+	// Small radial
+	&__sm-radial {
+		position: absolute;
+		width: 47%;
+		padding-bottom: 47%;
+		transform: translate(-6%, -4%);
+
+		&__outer {
+			width: 100%;
+			padding-bottom: 100%;
+			border-radius: 50%;
+			background: $dark1;
+			position: relative;
+		}
+
+		&__blocks, &__lines {
+			width: 100%;
+			position: absolute;
+		}
+
+		&__blocks {
+			transform-origin: 49% 49%;
+			transform: scale(0.59);
+		}
+
+		&__lines {
+			transform-origin: 56% 50%;
+			transform: scale(0.7);
+		}
+
+		&__inner {
+			position: absolute;
+			width: 50%;
+			padding-bottom: 50%;
+			border-radius: 50%;
+			background: $dark3;
+			z-index: 5;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	// Large radial
+	&__lrg-radial {
+		position: absolute;
+		width: 72%;
+		padding-bottom: 72%;
+		transform: translate(52%, 2%);
+
+		&__outer {
+			width: 100%;
+			padding-bottom: 100%;
+			border-radius: 50%;
+			background: $dark2;
+			position: relative;
+		}
+
+		&__blocks, &__lines {
+			width: 100%;
+			position: absolute;
+		}
+
+		&__blocks {
+			transform-origin: 54% 54%;
+			transform: scale(0.82);
+		}
+
+		&__lines {
+			transform-origin: 47% 47%;
+			transform: scale(0.87);
+		}
+
+		&__inner {
+			position: absolute;
+			width: 60%;
+			padding-bottom: 60%;
+			border-radius: 50%;
+			background: $dark3;
+			z-index: 5;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	// Dots
+	&__dots {
+		&__large {
+			position: absolute;
+			transform: translate(17%, 8%) scale(1.1);
+		}
+
+		&__small {
+			position: absolute;
+			transform: translate(17%, 4%) scale(1.1);
+		}
+	}
+
 
 	&__heading {
 		position: absolute;
-		top: 55%;
-		right: 17%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 
-		visibility: hidden;
-		opacity: 0;
+		// visibility: hidden;
+		// opacity: 0;
 
 		h1 {
 			text-transform: uppercase;
@@ -41,32 +138,32 @@
 		}
 	}
 
-	&__corner-circle {
-		visibility: hidden;
-		opacity: 0;
-	}
-
-	&__sm-radial {
-		&__outer, &__inner, &__blocks, &__lines {
-			visibility: hidden;
-			opacity: 0;
-		}
-	}
-
-	&__lrg-radial {
-		&__outer, &__inner, &__blocks, &__lines {
-			visibility: hidden;
-			opacity: 0;
-		}
-	}
-
-	&__dots {
-		&__small, &__large {
-			&__dot {
-				visibility: hidden;
-				opacity: 0;
-			}
-
-		}
-	}
+	// &__corner-circle {
+	// 	visibility: hidden;
+	// 	opacity: 0;
+	// }
+	//
+	// &__sm-radial {
+	// 	&__outer, &__inner, &__blocks, &__lines {
+	// 		visibility: hidden;
+	// 		opacity: 0;
+	// 	}
+	// }
+	//
+	// &__lrg-radial {
+	// 	&__outer, &__inner, &__blocks, &__lines {
+	// 		visibility: hidden;
+	// 		opacity: 0;
+	// 	}
+	// }
+	//
+	// &__dots {
+	// 	&__small, &__large {
+	// 		&__dot {
+	// 			visibility: hidden;
+	// 			opacity: 0;
+	// 		}
+	//
+	// 	}
+	// }
 }
