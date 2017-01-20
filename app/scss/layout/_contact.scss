@@ -4,8 +4,31 @@
 	height: 100vh;
 	overflow: hidden;
 
-	svg {
-		width: 100%;
+	// Beige ellipses
+	&__ellipsebeige--left, &__ellipsebeige--right {
+		display: none;
+
+		@include breakpoint(large) {
+			background: $light2;
+			width: 1105px; // 915
+			height: 1105px;
+			border-radius: 50%;
+			position: absolute;
+			bottom: -530px;
+			display: block;
+		}
+	}
+
+	&__ellipsebeige--left {
+		@include breakpoint(large) {
+			left: -580px;
+		}
+	}
+
+	&__ellipsebeige--right {
+		@include breakpoint(large) {
+			right: -580px;
+		}
 	}
 
 	&__svg {
@@ -14,37 +37,38 @@
 
 			@include breakpoint(medium) {
 				display: inline-block;
+				position: absolute;
 				width: 100%;
-				position: relative;
-				z-index: 5;
-				margin: 0 auto;
 				padding-bottom: 100%;
+				z-index: 5;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
 			}
 
 			svg {
 				@include breakpoint(medium) {
 					display: block;
 					position: absolute;
-				    bottom: 0;
-				    left: 0;
-				    width: 100%;
-					top: -4px;
-					overflow: initial;
-					transform: scale(0.96);
+				    // bottom: 0;
+				    // left: 0;
+					// top: -4px;
+					// overflow: initial;
+					// transform: scale(0.96);
 				}
 
 				@include breakpoint(large) {
-					top: auto;
-					bottom: -100px;
-					transform: scale(1);
+					// top: auto;
+					// bottom: -100px;
+					// transform: scale(1);
 				}
 
 				@include breakpoint(xlarge) {
-					bottom: -70px;
+					// bottom: -70px;
 				}
 
 				@include breakpoint(xxlarge) {
-					bottom: -20px;
+					// bottom: -20px;
 				}
 			}
 
@@ -119,34 +143,6 @@
 	}
 
 
-	// Beige ellipses
-	&__ellipsebeige--left, &__ellipsebeige--right {
-		display: none;
-
-		@include breakpoint(large) {
-			background: $light2;
-			width: 1105px; // 915
-			height: 1105px;
-			border-radius: 50%;
-			position: absolute;
-			bottom: -530px;
-			display: block;
-		}
-	}
-
-	&__ellipsebeige--left {
-		@include breakpoint(large) {
-			left: -580px;
-		}
-	}
-
-	&__ellipsebeige--right {
-		@include breakpoint(large) {
-			right: -580px;
-		}
-	}
-
-
 	// Content area
 	&__content {
 
@@ -159,15 +155,16 @@
 			@include breakpoint(medium) {
 				position: absolute;
 				width: 100%;
-				height: 100vh;
-				bottom: -80px;
+				padding-bottom: 100%;
+				// bottom: -80px;
 				overflow: initial;
 				border-radius: 0;
 				margin: 0;
+
 			}
 
 			@include breakpoint(large) {
-				bottom: -300px;
+				// bottom: -300px;
 			}
 		}
 
@@ -178,14 +175,15 @@
 			@include breakpoint(medium) {
 				width: 90%;
 				border-radius: 50%;
-				margin: 0 auto;
 				padding: 0 0 90%;
-				position: relative;
+				position: absolute;
 				z-index: 10;
+				left: 50%;
+				transform: translateX(-50%);
 			}
 
 			@include breakpoint(large) {
-				bottom: 90px;
+				bottom: 25px;
 			}
 
 			@include breakpoint(xlarge) {
@@ -266,74 +264,59 @@
 
 		@include breakpoint(large) {
 			background: $dark1;
-			width: 430px;
-			height: 430px;
+			width: 31%;
+			padding-bottom: 31%;
 			border-radius: 50%;
 			position: absolute;
-			z-index: 5;
-			top: 300px;
+			z-index: 15;
+			bottom: -11%;
 			display: block;
 		}
 
-		@include breakpoint(xlarge) {
-			width: 470px;
-			height: 470px;
-		}
-
-		@include breakpoint(xxlarge) {
-			width: 520px;
-			height: 520px;
-		}
 
 		&__inner {
 			@include breakpoint(large) {
 				background: $dark2;
-				width: 260px;
-				height: 260px;
+				width: 65%;
+				padding-bottom: 65%;
 				border-radius: 50%;
 				position: absolute;
-				left: 85px;
-		    	top: 90px;
+				left: 50%;
+		    	top: 50%;
+
+				transform: translate(-50%, -50%);
 				z-index: 6;
-			}
-
-			@include breakpoint(xlarge) {
-				width: 290px;
-				height: 290px;
-			}
-
-			@include breakpoint(xxlarge) {
-				width: 340px;
-				height: 340px;
 			}
 		}
 	}
 
 	&__ellipsecorner--left {
 		@include breakpoint(large) {
-			left: -380px;
+			left: -12%;
 		}
 
 		@include breakpoint(xlarge) {
-			left: -450px;
+			// left: -450px;
 		}
 
 		@include breakpoint(xxlarge) {
-			left: -540px;
+			// left: -540px;
+			left: 0;
 		}
 	}
 
 	&__ellipsecorner--right {
 		@include breakpoint(large) {
-			right: -380px;
+			right: -12%;
 		}
 
 		@include breakpoint(xlarge) {
-			right: -450px;
+			// right: -450px;
 		}
 
 		@include breakpoint(xxlarge) {
-			right: -540px;
+			// right: -540px;
+			right: 0;
 		}
 	}
 }

@@ -13,15 +13,8 @@ export default class Contact {
 		this.startMainTl();
     }
 
-	setStage() {
-		const setStageTl = new TimelineMax();
-
-
-		return setStageTl;
-	}
-
 	startMainTl() {
-		const mainTl = new TimelineMax();
+		
 
 
 	}

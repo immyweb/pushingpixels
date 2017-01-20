@@ -35,28 +35,43 @@ export default class Splash {
 		enquire
 			.register(`screen and (max-width: ${breakpoints.maxSmall})`, {
 				match: () => {
-					console.log('small to medium < 640');
-					// this.mobileTL();
+					// console.log('small to medium < 640');
+					this.mobileTL();
 				}
 			})
 			.register(`screen and (min-width: ${breakpoints.minMedium}) and (max-width: ${breakpoints.maxMedium})`, {
 			    match: () => {
-					console.log('medium to large > 641 - 1023');
-					// this.desktopTl();
+					// console.log('medium to large > 641 - 1023');
+					this.desktopTl();
 			    }
 			})
 			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
 			    match: () => {
-					console.log('large > 1024+');
-					this.startMainTl();
+					// console.log('large > 1024+');
+					this.desktopTl();
 			    }
 			});
 	}
 
-	radialsTl() {
-		const radialsTl = new TimelineMax();
+	mobileTL() {
+		const mobileTL = new TimelineMax();
 
-		radialsTl
+		mobileTL
+			.add('ellipsesIn')
+			.fromTo(this.lrgRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
+			.fromTo(this.lrgRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+			.add('blocksIn')
+			.fromTo(this.lrgRadialBlocks, 0.5, { scale: 0, transformOrigin: '54% 54%' }, { scale: 0.82, autoAlpha: 0.65, ease: Elastic.easeOut.config(1, 0.4) }, '-=0.25')
+			.add('linesIn')
+			.fromTo(this.lrgRadialLines, 1.5, { scale: 0, transformOrigin: '47% 47%', rotation: 360 }, { scale: 0.87, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'blocksIn-=0.35')
+			.fromTo(this.heading, 1, { top: '+=5%' }, { top: '-=5%', autoAlpha: 1 }, 'linesIn-=0.5')
+		;
+	}
+
+	desktopTl() {
+		const desktopTl = new TimelineMax();
+
+		desktopTl
 			.add('ellipsesIn')
 			.fromTo(this.smRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
 			.fromTo(this.lrgRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
@@ -78,16 +93,6 @@ export default class Splash {
 
 			.add('titleIn')
 			.fromTo(this.heading, 1, { top: '+=5%' }, { top: '-=5%', autoAlpha: 1 }, 'linesIn-=0.5')
-		;
-
-		return radialsTl;
-	}
-
-	startMainTl() {
-		const mainTl = new TimelineMax();
-
-		mainTl
-			.add(this.radialsTl())
 		;
 	}
 }
