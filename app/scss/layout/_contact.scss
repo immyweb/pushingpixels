@@ -10,24 +10,40 @@
 
 		@include breakpoint(large) {
 			background: $light2;
-			width: 1105px; // 915
-			height: 1105px;
+			width: 66%; // 915
+			padding-bottom: 66%;
 			border-radius: 50%;
 			position: absolute;
-			bottom: -530px;
+			bottom: -26%;
 			display: block;
+		}
+
+		@include breakpoint(xlarge) {
+			bottom: -33%;
+		}
+
+		@include breakpoint(xxlarge) {
+			bottom: -49%;
 		}
 	}
 
 	&__ellipsebeige--left {
 		@include breakpoint(large) {
-			left: -580px;
+			left: -34%;
+		}
+
+		@include breakpoint(xlarge) {
+			left: -31%;
 		}
 	}
 
 	&__ellipsebeige--right {
 		@include breakpoint(large) {
-			right: -580px;
+			right: -34%;
+		}
+
+		@include breakpoint(xlarge) {
+			right: -31%;
 		}
 	}
 
@@ -38,77 +54,76 @@
 			@include breakpoint(medium) {
 				display: inline-block;
 				position: absolute;
-				width: 100%;
-				padding-bottom: 100%;
+				width: 102%;
+				padding-bottom: 114%;
 				z-index: 5;
 				left: 50%;
 				top: 50%;
-				transform: translate(-50%, -50%);
+				transform: translate(-49%, -50%);
+			}
+
+			@include breakpoint(large) {
+				width: 100%;
+				padding-bottom: 100%;
+				transform: translate(-50%, -37%);
+			}
+
+			@include breakpoint(xlarge) {
+				transform: translate(-50%, -45%);
+			}
+
+			@include breakpoint(xxlarge) {
+				transform: translate(-49%, -50%);
 			}
 
 			svg {
 				@include breakpoint(medium) {
 					display: block;
 					position: absolute;
-				    // bottom: 0;
-				    // left: 0;
-					// top: -4px;
-					// overflow: initial;
-					// transform: scale(0.96);
-				}
-
-				@include breakpoint(large) {
-					// top: auto;
-					// bottom: -100px;
-					// transform: scale(1);
-				}
-
-				@include breakpoint(xlarge) {
-					// bottom: -70px;
-				}
-
-				@include breakpoint(xxlarge) {
-					// bottom: -20px;
 				}
 			}
 
 			&--blocks {
 				transform: scale(1.1) translate(-72px, 0px);
 
+				@include breakpoint(large) {
+					transform: scale(1.1) translate(-57px, 0px);
+				}
+
 				@include breakpoint(xlarge) {
-					transform: scale(1) translate(-26px, 14px);
+					transform: scale(1.055) translate(-34px, 12px);
 				}
 
 				@include breakpoint(xxlarge) {
-					transform: scale(0.97) translate(-4px, 12px);
+					    transform: scale(1) translate(-18px, 21px);
 				}
 			}
 
 			&--lines {
 				transform: scale(1.1) translate(-78px, -22px);
 
+				@include breakpoint(large) {
+					transform: scale(1.1) translate(-64px, -25px);
+				}
+
 				@include breakpoint(xlarge) {
-					transform: scale(1) translate(-26px, -9px);
+					transform: scale(1.06) translate(-30px, -9px);
 				}
 
 				@include breakpoint(xxlarge) {
-					transform: scale(0.97) translate(-4px, -10px);
+					transform: scale(1.03) translate(-31px, -6px);
 				}
 			}
 		}
 
 		&__dots {
-			position: absolute;
-			width: 100%;
-			bottom: 0;
-			left: 60px;
-
-			@include breakpoint(medium) {
-				display: none;
-			}
+			display: none;
 
 			@include breakpoint(large) {
-				display: inline-block;
+				position: absolute;
+				width: 100%;
+
+				// display: inline-block;
 				top: 0;
 				left: auto;
 				bottom: auto;
@@ -147,99 +162,97 @@
 	&__content {
 
 		&__container {
-			position: relative;
-			overflow: hidden;
-			border-radius: 30px;
-    		margin: 25px;
+			position: absolute;
+			width: 140%;
+			padding-bottom: 140%;
 
 			@include breakpoint(medium) {
-				position: absolute;
+				top: 8%;
 				width: 100%;
 				padding-bottom: 100%;
-				// bottom: -80px;
-				overflow: initial;
-				border-radius: 0;
-				margin: 0;
-
 			}
 
 			@include breakpoint(large) {
-				// bottom: -300px;
+				top: auto;
 			}
 		}
 
 		&__bkgnd {
 			background: $dark2;
-			padding: 50px 0 100px;
+			width: 100%;
+			border-radius: 50%;
+			padding-bottom: 100%;
+			position: absolute;
+			z-index: 10;
+			left: -15%;
 
 			@include breakpoint(medium) {
 				width: 90%;
-				border-radius: 50%;
-				padding: 0 0 90%;
-				position: absolute;
-				z-index: 10;
+				padding-bottom: 90%;
+				top: 3%;
 				left: 50%;
 				transform: translateX(-50%);
 			}
 
 			@include breakpoint(large) {
-				bottom: 25px;
+				width: 87%;
+				padding: 0 0 87%;
+				bottom: -10%;
+				top: auto;
 			}
 
 			@include breakpoint(xlarge) {
-				width: 85%;
-				padding-bottom: 85%;
-				bottom: 100px;
+				width: 83%;
+				padding-bottom: 83%;
+				bottom: 1%;
 			}
 
 			@include breakpoint(xxlarge) {
 				width: 80%;
 				padding-bottom: 80%;
-				bottom: 130px;
+				bottom: 9%;
 			}
 		}
 
 		&__frgnd {
 			background: $dark3;
-			padding: 25px;
-			width: 85%;
-			margin: 0 auto;
-			border-radius: 25px;
+			width: 80%; // 680
+			padding-bottom: 80%;
+			position: absolute;
+			z-index: 11;
+			border-radius: 50%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 
 			@include breakpoint(medium) {
-				width: 80%; // 680
-				padding: 0 0 80%;
-			    position: absolute;
-			    z-index: 11;
-			    border-radius: 50%;
-				top: 10%;
-	    		left: 10%;
-				margin: 0;
+
 			}
 		}
 
 		&__copy {
+			position: absolute;
+			width: 69%;
+			text-align: center;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 10%;
+
 			@include breakpoint(medium) {
-				position: absolute;
-				width: 69%;
 			    top: 75px;
-			    left: 105px;
-				text-align: center;
 			}
 
 			@include breakpoint(xlarge) {
 				width: 65%;
-				left: 155px;
 			}
 
 			@include breakpoint(xxlarge) {
 				width: 60%;
-				left: 210px;
 			}
 
 			h1 {
 				text-transform: uppercase;
-				font-size: rem-calc(30);
+				font-size: 50px;
 				margin: 0 0 50px;
 				line-height: 0.9;
 				font-family: $font-hero;
@@ -248,10 +261,14 @@
 				padding-bottom: 15px;
 				text-align: center;
 				display: inline-block;
+
+				@include breakpoint(large) {
+					font-size: 60px;
+				}
 			}
 
 			p, ul {
-				font-size: rem-calc(8);
+				font-size: 16px;
 				text-align: left;
 			}
 		}
@@ -264,21 +281,32 @@
 
 		@include breakpoint(large) {
 			background: $dark1;
-			width: 31%;
-			padding-bottom: 31%;
+			width: 35%;
+			padding-bottom: 35%;
 			border-radius: 50%;
 			position: absolute;
 			z-index: 15;
-			bottom: -11%;
+			bottom: -14%;
 			display: block;
+		}
+
+		@include breakpoint(xlarge) {
+			width: 36%;
+			padding-bottom: 36%;
+			bottom: -16%;
+		}
+
+		@include breakpoint(xxlarge) {
+			width: 34%;
+			padding-bottom: 34%;
 		}
 
 
 		&__inner {
 			@include breakpoint(large) {
 				background: $dark2;
-				width: 65%;
-				padding-bottom: 65%;
+				width: 55%;
+				padding-bottom: 55%;
 				border-radius: 50%;
 				position: absolute;
 				left: 50%;
@@ -296,12 +324,12 @@
 		}
 
 		@include breakpoint(xlarge) {
-			// left: -450px;
+			left: -16%;
 		}
 
 		@include breakpoint(xxlarge) {
-			// left: -540px;
-			left: 0;
+			left: -17%;
+			bottom: -20%;
 		}
 	}
 
@@ -311,12 +339,12 @@
 		}
 
 		@include breakpoint(xlarge) {
-			// right: -450px;
+			right: -16%;
 		}
 
 		@include breakpoint(xxlarge) {
-			// right: -540px;
-			right: 0;
+			right: -17%;
+			bottom: -20%;
 		}
 	}
 }
