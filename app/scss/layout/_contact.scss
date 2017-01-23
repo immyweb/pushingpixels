@@ -16,6 +16,9 @@
 			position: absolute;
 			bottom: -26%;
 			display: block;
+
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		@include breakpoint(xlarge) {
@@ -114,20 +117,22 @@
 					transform: scale(1.03) translate(-31px, -6px);
 				}
 			}
+
+			&--blocks, &--lines {
+				&__left, &__right {
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
 		}
 
 		&__dots {
 			display: none;
 
 			@include breakpoint(large) {
-				position: absolute;
+				// position: absolute;
 				width: 100%;
-
-				// display: inline-block;
-				top: 0;
-				left: auto;
-				bottom: auto;
-				z-index: 15;
+				display: inline-block;
 				padding-bottom: 100%;
 			}
 
@@ -135,10 +140,11 @@
 				display: block;
 				transform: scale(1.8);
 				height: 170px;
+				z-index: 15;
 
 				@include breakpoint(medium) {
-					position: absolute;
-				    top: 330px;
+					position: fixed;
+				    bottom: -3%;
 				    left: 0;
 				    width: 100%;
 					height: auto;
@@ -146,13 +152,17 @@
 				}
 
 				@include breakpoint(xlarge) {
-					top: 290px;
+					bottom: -6%;
 				}
 
 				@include breakpoint(xxlarge) {
-					top: 230px;
-					// left: 10%;
+					bottom: -8%;
 				}
+			}
+
+			&--large, &--small {
+				visibility: hidden;
+				opacity: 0;
 			}
 		}
 	}
@@ -185,6 +195,9 @@
 			position: absolute;
 			z-index: 10;
 			left: -15%;
+
+			visibility: hidden;
+			opacity: 0;
 
 			@include breakpoint(medium) {
 				width: 90%;
@@ -225,9 +238,8 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 
-			@include breakpoint(medium) {
-
-			}
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		&__copy {
@@ -237,6 +249,9 @@
 			left: 50%;
 			transform: translateX(-50%);
 			top: 10%;
+
+			visibility: hidden;
+			opacity: 0;
 
 			@include breakpoint(medium) {
 			    top: 75px;
@@ -288,6 +303,9 @@
 			z-index: 15;
 			bottom: -14%;
 			display: block;
+
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		@include breakpoint(xlarge) {
