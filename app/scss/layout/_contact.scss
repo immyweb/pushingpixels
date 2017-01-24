@@ -159,8 +159,11 @@
 			}
 
 			&--large, &--small {
-				visibility: hidden;
-				opacity: 0;
+				&__dot {
+					visibility: hidden;
+					opacity: 0;
+				}
+
 			}
 		}
 	}
