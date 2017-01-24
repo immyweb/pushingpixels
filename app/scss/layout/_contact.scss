@@ -98,7 +98,7 @@
 				}
 
 				@include breakpoint(xxlarge) {
-					    transform: scale(1) translate(-18px, 21px);
+					transform: scale(1) translate(-18px, 21px);
 				}
 			}
 
@@ -119,10 +119,8 @@
 			}
 
 			&--blocks, &--lines {
-				&__left, &__right {
-					visibility: hidden;
-					opacity: 0;
-				}
+				visibility: hidden;
+				opacity: 0;
 			}
 		}
 
