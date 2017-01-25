@@ -8,6 +8,7 @@ export default class Gallery {
 		this.contentBkgnd = this.panel.find('.gallery__content__bkgnd');
 		this.contentFrgnd = this.panel.find('.gallery__content__frgnd');
 		this.contentInner = this.panel.find('.gallery__content__inner');
+		this.contentGallery = this.panel.find('.gallery__content__list');
 
 		this.blocksTopLeft = this.panel.find('.gallery__svg__blocks--top__left');
 		this.blocksTopRight = this.panel.find('.gallery__svg__blocks--top__right');
@@ -82,6 +83,9 @@ export default class Gallery {
 			.staggerFromTo(this.linesTopRight, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
 			.add(this.reverseLinesBottomAnimTl(), 'panelsIn+=1.00')
 			.staggerFromTo(this.linesBottomRight, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
+
+			.to(this.contentGallery, 0.75, { autoAlpha: 1, ease: Power2.easeIn }, '-=0.75')
+			// .fromTo(this.contentGallery, 0.5, { scaleY: 0, transformOrigin: '50% 0%' }, { scaleY: 1, autoAlpha: 1, ease: Power2.easeInOut }, '-=0.75')
 		;
 
 		// mainTl.progress(1);

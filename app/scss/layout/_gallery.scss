@@ -128,21 +128,70 @@
 		}
 
 		&__list {
-			border: 1px solid white;
 			width: 75%;
 			margin: 0 auto;
+
+			visibility: hidden;
+			opacity: 0;
 
 			ul {
 				margin: 0;
 				padding: 0;
 				list-style: none;
+				@include grid-row(12);
+				transform: skewY(-5deg);
+				border: 2px solid $light1;
+				backface-visibility: hidden;
+				overflow: hidden;
 
 				li {
-					display: inline-block;
-					width: 33%;
+					@include grid-column(4, 0);
+					transform: skewY(5deg) scaleY(1.1);
+					border-right: 2px solid $light1;
+					overflow-x: hidden;
+
+					&:last-child {
+						border: none;
+					}
+
+					&:after {
+						content: '+';
+						position: absolute;
+						text-align: center;
+						display: block;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						font-family: $body;
+						color: $light1;
+						font-size: 24px;
+						opacity: 0;
+						transition: all 0.5s ease;
+					}
+
+					&:hover {
+						&:after {
+							opacity: 1;
+						}
+					}
 
 					a {
 						display: inline-block;
+						position: relative;
+						transition: all 0.5s ease;
+
+						&:hover {
+							background: $dark2;
+							opacity: 0.2;
+						}
+					}
+
+					img {
+						transition: all 0.5s ease;
+
+						&:hover {
+							transform: scale(1.2);
+						}
 					}
 				}
 			}
