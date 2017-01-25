@@ -139,16 +139,22 @@
 				padding: 0;
 				list-style: none;
 				@include grid-row(12);
-				transform: skewY(-5deg);
-				border: 2px solid $light1;
-				backface-visibility: hidden;
-				overflow: hidden;
+				
+				@include breakpoint(medium) {
+					transform: skewY(-5deg);
+					border: 2px solid $light1;
+					backface-visibility: hidden;
+					overflow: hidden;
+				}
 
 				li {
-					@include grid-column(4, 0);
-					transform: skewY(5deg) scaleY(1.1);
-					border-right: 2px solid $light1;
-					overflow-x: hidden;
+
+					@include breakpoint(medium) {
+						@include grid-column(4, 0);
+						transform: skewY(5deg) scaleY(1.15);
+						border-right: 2px solid $light1;
+						overflow-x: hidden;
+					}
 
 					&:last-child {
 						border: none;
