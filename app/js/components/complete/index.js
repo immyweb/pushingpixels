@@ -10,7 +10,19 @@ export default {
 
 		let controller,
 			$navItems = $('.nav__items li').not('.nav__item--active'),
-			$navTrigger = $('.nav-trigger');
+			$navTrigger = $('.nav-trigger'),
+			getTriggersDown = $('.slide-pos'),
+			triggersDown = [];
+
+
+		// Triggers on the way down
+		$.each(getTriggersDown, (key, value) => {
+
+			let id = '#' + value.id;
+			triggersDown.push(id);
+
+		});
+
 
 		controller = new ScrollMagic.Controller();
 
@@ -32,7 +44,7 @@ export default {
 		$navItems.each((index, item) => {
 			let slideHREF = $(item).find('a').attr('href'),
 				slideID = slideHREF.substr(slideHREF.length -7),
-				moveNav = TweenMax.to($('.nav__active'), 1, { y: '+=25', ease: Linear.easeNone });
+				moveNav = TweenMax.to($('.nav__active'), 1, { y: '+=34.5', ease: Linear.easeNone });
 
 			// Add individual tweens to the timeline
 			navTl.add(moveNav, slideID);
@@ -50,8 +62,35 @@ export default {
 			.addTo(controller);
 
 
+		// Scene 3 - trigger the right animation on the way DOWN
+		triggersDown.forEach((triggerDown) => {
 
+			let triggerTransitionToNext = new ScrollMagic.Scene({
+				triggerElement: triggerDown,
+				triggerHook: 0.6
+			});
 
+			triggerTransitionToNext
+				.on('enter', (e) => {
+					console.log('crossfade to next ' + triggerDown);
+
+					// let $slideOut = $('.slide.active'),
+					// 	slideIndex = triggerDown.substring(6, 8),
+					// 	$slideIn = $('#slide' + slideIndex),
+					// 	direction = e.scrollDirection;
+
+					// console.log(e.scrollDirection);
+
+					// crossFade($slideOut, $slideIn, direction, slideIndex);
+				})
+				.addIndicators({
+					name: 'triggerDown',
+					indent: 520,
+					colorStart: 'yellow',
+					colorTrigger: 'yellow'
+				})
+				.addTo(controller);
+		});
 
     }
 

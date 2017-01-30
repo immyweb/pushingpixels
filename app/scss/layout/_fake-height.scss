@@ -9,6 +9,21 @@
 		width: 10px;
 		height: 10px;
 		background-color: green;
+		visibility: hidden;
+	}
+
+	.slide-pos {
+		z-index: 150;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 10px;
+		height: 10px;
+		background-color: yellow;
 		// visibility: hidden;
 	}
+
+	#slide02-pos { top: 140%; }
+	#slide03-pos { top: 240%; }
+	#slide04-pos { top: 340%; }
 }

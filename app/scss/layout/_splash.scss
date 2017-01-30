@@ -1,8 +1,12 @@
 .splash {
-	position: relative;
-	width: 100vw;
-	height: 100vh;
 	overflow: hidden;
+	position: absolute;
+
+	&__container {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+	}
 
 	// Bottom corner radial
 	&__corner-circle {

@@ -9,6 +9,8 @@
 			z-index: 100;
 			top: 55%;
 			right: 6%;
+			width: 22px;
+    		height: 105px;
 		}
 	}
 
@@ -21,13 +23,13 @@
 		left: 5px;
 
 		li {
-			margin-bottom: 15px;
+			margin-bottom: 14px;
 		}
 
 		a {
 			display: block;
-			width: 10px;
-			height: 10px;
+			width: 12px;
+			height: 12px;
 			background: $light2;
 			border-radius: 50%;
 			transition: background 0.3s linear;
@@ -43,8 +45,8 @@
 	}
 
 	&__active {
-		width: 20px;
-		height: 20px;
+		width: 22px;
+		height: 22px;
 		border: 1px solid $dark1;
 		border-radius: 50%;
 		transition: border-color 0.3s linear;
