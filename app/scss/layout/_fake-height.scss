@@ -1,0 +1,14 @@
+.fake-height {
+	height: 400%;
+
+	.nav-trigger {
+		z-index: 150;
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		width: 10px;
+		height: 10px;
+		background-color: green;
+		// visibility: hidden;
+	}
+}

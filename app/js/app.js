@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import index from './components/complete/index';
 import splash from './components/splash/index';
 import about from './components/about/index';
 import contact from './components/contact/index';
@@ -7,6 +8,7 @@ import galleryModal from './components/gallery-modal/index';
 
 // run scripts on DOM ready
 $(document).ready(() => {
+	index.init();
     splash.init();
 	about.init();
 	contact.init();

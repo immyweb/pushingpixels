@@ -1,9 +1,11 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<main class="main">
+<main id="main">
 
 	<div class="pin-wrapper">
+
+		{% include "partials/navigation.njk" %}
 
 	    {% include "partials/splash.njk" %}
 
@@ -14,6 +16,8 @@
 		{% include "partials/contact.njk" %} #}
 
 	</div>
+
+	{% include "partials/fake-height.njk" %}
 
 </main>
 {% endblock %}
