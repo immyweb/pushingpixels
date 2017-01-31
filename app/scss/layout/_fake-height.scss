@@ -26,4 +26,18 @@
 	#slide02-pos { top: 140%; }
 	#slide03-pos { top: 240%; }
 	#slide04-pos { top: 340%; }
+
+	.slide-pos--reverse {
+		z-index: 150;
+		position: absolute;
+		top: 70%;
+		left: 75%;
+		width: 10px;
+		height: 10px;
+		background-color: red;
+		// visibility: hidden;
+	}
+
+	#slide02-pos--reverse { top: 170%; }
+	#slide03-pos--reverse { top: 270%; }
 }

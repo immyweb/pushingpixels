@@ -12,7 +12,9 @@ export default {
 			$navItems = $('.nav__items li').not('.nav__item--active'),
 			$navTrigger = $('.nav-trigger'),
 			getTriggersDown = $('.slide-pos'),
-			triggersDown = [];
+			triggersDown = [],
+			getTriggersUp = $('.slide-pos--reverse'),
+			triggersUp = [];
 
 
 		// Triggers on the way down
@@ -20,6 +22,14 @@ export default {
 
 			let id = '#' + value.id;
 			triggersDown.push(id);
+
+		});
+
+		// Triggers on the way up
+		$.each(getTriggersUp, (key, value) => {
+
+			let id = '#' + value.id;
+			triggersUp.push(id);
 
 		});
 
@@ -88,6 +98,35 @@ export default {
 					indent: 520,
 					colorStart: 'yellow',
 					colorTrigger: 'yellow'
+				})
+				.addTo(controller);
+		});
+
+		// Scene 4 - trigger the right animation on the way DOWN
+		triggersUp.forEach((triggerUp) => {
+
+			let triggerTransitionToPrev = new ScrollMagic.Scene({
+				triggerElement: triggerUp,
+				triggerHook: 0.49
+			});
+
+			triggerTransitionToPrev
+				.on('leave', (e) => {
+					console.log('crossfade to previous ' + triggerUp);
+					// let $slideOut = $('.slide.active'),
+					// 	slideIndex = triggerUp.substring(6, 8),
+					// 	$slideIn = $('#slide' + slideIndex),
+					// 	direction = e.scrollDirection;
+
+					// console.log(e.scrollDirection);
+
+					// crossFade($slideOut, $slideIn, direction, slideIndex);
+				})
+				.addIndicators({
+					name: 'triggerUp',
+					indent: 110,
+					colorStart: 'red',
+					colorTrigger: 'red'
 				})
 				.addTo(controller);
 		});
