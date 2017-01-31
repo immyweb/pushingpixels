@@ -1,6 +1,6 @@
 import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
-import breakpoints from '../../breakpoints';
+import breakpoints from '../breakpoints';
 
 export default class About {
 
@@ -21,7 +21,7 @@ export default class About {
 		this.content = this.panel.find('.about__content');
 		this.contentHolder = this.panel.find('.about__content__holder');
 
-		this.checkBreakpoint();
+		// this.checkBreakpoint();
     }
 
 	checkBreakpoint() {

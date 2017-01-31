@@ -1,8 +1,12 @@
 .about {
-	position: relative;
-	width: 100vw;
-	height: 100vh;
+	position: absolute;
 	overflow: hidden;
+
+	&__container {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+	}
 
 	svg {
 		width: 100%;

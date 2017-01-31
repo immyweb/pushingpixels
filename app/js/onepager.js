@@ -4,9 +4,20 @@ import ScrollMagic from 'scrollmagic';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
+import Splash from './components/splash';
+import About from './components/about';
+import Contact from './components/contact';
+import Gallery from './components/gallery';
+// import galleryModal from '../gallery-modal/index';
+
 export default {
 
     init: () => {
+
+		const splash = new Splash(),
+			about = new About(),
+			contact = new Contact(),
+			gallery = new Gallery();
 
 		let controller,
 			$navItems = $('.nav__items li').not('.nav__item--active'),
@@ -14,7 +25,8 @@ export default {
 			getTriggersDown = $('.slide-pos'),
 			triggersDown = [],
 			getTriggersUp = $('.slide-pos--reverse'),
-			triggersUp = [];
+			triggersUp = [],
+			$slideIn = $('.slide.active');
 
 
 		// Triggers on the way down
@@ -82,23 +94,23 @@ export default {
 
 			triggerTransitionToNext
 				.on('enter', (e) => {
-					console.log('crossfade to next ' + triggerDown);
+					// console.log('crossfade to next ' + triggerDown);
 
-					// let $slideOut = $('.slide.active'),
-					// 	slideIndex = triggerDown.substring(6, 8),
-					// 	$slideIn = $('#slide' + slideIndex),
-					// 	direction = e.scrollDirection;
+					let $slideOut = $('.slide.active'),
+						slideIndex = triggerDown.substring(6, 8),
+						$slideIn = $('#slide' + slideIndex),
+						direction = e.scrollDirection;
 
 					// console.log(e.scrollDirection);
 
-					// crossFade($slideOut, $slideIn, direction, slideIndex);
+					crossFade($slideOut, $slideIn, direction, slideIndex);
 				})
-				.addIndicators({
-					name: 'triggerDown',
-					indent: 520,
-					colorStart: 'yellow',
-					colorTrigger: 'yellow'
-				})
+				// .addIndicators({
+				// 	name: 'triggerDown',
+				// 	indent: 520,
+				// 	colorStart: 'yellow',
+				// 	colorTrigger: 'yellow'
+				// })
 				.addTo(controller);
 		});
 
@@ -112,7 +124,7 @@ export default {
 
 			triggerTransitionToPrev
 				.on('leave', (e) => {
-					console.log('crossfade to previous ' + triggerUp);
+					// console.log('crossfade to previous ' + triggerUp);
 					// let $slideOut = $('.slide.active'),
 					// 	slideIndex = triggerUp.substring(6, 8),
 					// 	$slideIn = $('#slide' + slideIndex),
@@ -122,14 +134,37 @@ export default {
 
 					// crossFade($slideOut, $slideIn, direction, slideIndex);
 				})
-				.addIndicators({
-					name: 'triggerUp',
-					indent: 110,
-					colorStart: 'red',
-					colorTrigger: 'red'
-				})
+				// .addIndicators({
+				// 	name: 'triggerUp',
+				// 	indent: 110,
+				// 	colorStart: 'red',
+				// 	colorTrigger: 'red'
+				// })
 				.addTo(controller);
 		});
+
+		function initPage() {
+			setTimeout(() => {
+				// Prevents body from flickering
+				// TweenMax.set($body, { autoAlpha: 1 });
+
+				// Animate first slide in
+				animationIn($slideIn);
+			}, 500);
+		}
+
+		initPage();
+
+
+		function crossFade($slideOut, $slideIn, direction, slideIndex) {
+
+		}
+
+		// Animate slide IN
+		function animationIn($slideIn) {
+
+			splash.init($slideIn);
+		}
 
     }
 

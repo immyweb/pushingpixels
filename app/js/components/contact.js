@@ -1,7 +1,7 @@
 import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
-import breakpoints from '../../breakpoints';
-import getScale from '../../utils/getScale';
+import breakpoints from '../breakpoints';
+import getScale from '../utils/getScale';
 
 export default class Contact {
 

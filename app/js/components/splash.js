@@ -1,6 +1,6 @@
 import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
-import breakpoints from '../../breakpoints';
+import breakpoints from '../breakpoints';
 
 export default class Splash {
 
@@ -76,8 +76,8 @@ export default class Splash {
 			.fromTo(this.smRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
 			.fromTo(this.lrgRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
 			.fromTo(this.cornerCircle, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
-			.fromTo(this.smRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
-			.fromTo(this.lrgRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+			.fromTo(this.smRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut, clearProps: 'scale' }, '-=0.25')
+			.fromTo(this.lrgRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut, clearProps: 'scale' }, '-=0.25')
 
 			.add('blocksIn')
 			.fromTo(this.smRadialBlocks, 0.5, { scale: 0, transformOrigin: '49% 49%' }, { scale: 0.59, autoAlpha: 0.6, ease: Elastic.easeOut.config(1, 0.4) })

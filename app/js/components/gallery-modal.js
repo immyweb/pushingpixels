@@ -1,6 +1,6 @@
 import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
-import breakpoints from '../../breakpoints';
+import breakpoints from '../breakpoints';
 
 export default class GalleryModal {
 
