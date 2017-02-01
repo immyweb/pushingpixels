@@ -54,6 +54,7 @@ export default class Contact {
 		const mobileTl = new TimelineMax();
 
 		mobileTl
+			.set(this.panel, { autoAlpha: 1 })
 			.fromTo(this.contentBkgnd, 0.75, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
 			.fromTo(this.contentFrgnd, 0.75, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.35')
 			.to(this.contentCopy, 1, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.5')
@@ -67,6 +68,7 @@ export default class Contact {
 		const tabletTl = new TimelineMax();
 
 		tabletTl
+			.set(this.panel, { autoAlpha: 1 })
 			.fromTo(this.contentBkgnd, 0.75, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
 			.fromTo(this.contentFrgnd, 0.75, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.35')
 			.to(this.contentCopy, 1, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.5')
@@ -84,6 +86,7 @@ export default class Contact {
 		const desktopTl = new TimelineMax();
 
 		desktopTl
+			.set(this.panel, { autoAlpha: 1 })
 			.add('beigeEllipseIn')
 			.fromTo(this.ellipseBeigeLeft, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 'beigeEllipseIn')
 			.fromTo(this.ellipseBeigeRight, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 'beigeEllipseIn')

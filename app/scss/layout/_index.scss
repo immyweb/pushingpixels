@@ -5,6 +5,12 @@
 	top: 0;
 }
 
+.slide {
+	&.active {
+		z-index: 10;
+	}
+}
+
 .pin-wrapper {
 	bottom: 0 !important;
 }

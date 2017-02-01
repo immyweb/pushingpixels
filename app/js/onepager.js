@@ -26,7 +26,9 @@ export default {
 			triggersDown = [],
 			getTriggersUp = $('.slide-pos--reverse'),
 			triggersUp = [],
-			$slideIn = $('.slide.active');
+			$slideIn = $('.slide.active'),
+			$slide = $('.slide'),
+			$main = $('#main');
 
 
 		// Triggers on the way down
@@ -158,12 +160,52 @@ export default {
 
 		function crossFade($slideOut, $slideIn, direction, slideIndex) {
 
+			let slideOutID = $slideOut.attr('id').substring(5, 7),
+				slideInID = $slideIn.attr('id').substring(5, 7);
+
+			// Update nav
+			updateNav(slideOutID, slideInID);
+
+			// remove class active from all slides
+			TweenMax.set($slide, { className: '-=active' });
+
+			// add class active to current slide
+			TweenMax.set($('#slide' + slideIndex), { className: '+=active' });
+
+			// cross fade timeline
+			const crossFadeTl = new TimelineMax();
+
+			crossFadeTl
+				.set($main, { className: 'slide' + slideInID + '-active' })
+				.to($slideOut, 0.25, { autoAlpha: 0 })
+				.set($slideIn, { autoAlpha: 1, onComplete: showNewSlide, onCompleteParams: [$slideIn, slideInID] })
+			;
+		}
+
+		function showNewSlide($slideIn, slideInID) {
+			console.log($slideIn);
+			console.log(slideInID);
+
+			if ( slideInID === '02' ) {
+				about.init($slideIn)
+			}
 		}
 
 		// Animate slide IN
 		function animationIn($slideIn) {
 
+			TweenMax.set($slide, { autoAlpha: 0 });
+
 			splash.init($slideIn);
+		}
+
+		function updateNav(slideOutID, slideInID) {
+
+			// remove active class from all dots
+			$('.nav__items li').removeClass('nav__item--active');
+
+			// Add active class to the new active slide
+			TweenMax.set($('.nav__items li.nav__item' + slideInID), { className: '+=nav__item--active' });
 		}
 
     }

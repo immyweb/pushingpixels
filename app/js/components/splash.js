@@ -57,6 +57,7 @@ export default class Splash {
 		const mobileTL = new TimelineMax();
 
 		mobileTL
+			.set(this.panel, { autoAlpha: 1 })
 			.add('ellipsesIn')
 			.fromTo(this.lrgRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
 			.fromTo(this.lrgRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
@@ -72,6 +73,7 @@ export default class Splash {
 		const desktopTl = new TimelineMax();
 
 		desktopTl
+			.set(this.panel, { autoAlpha: 1 })
 			.add('ellipsesIn')
 			.fromTo(this.smRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
 			.fromTo(this.lrgRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')

@@ -21,7 +21,7 @@ export default class About {
 		this.content = this.panel.find('.about__content');
 		this.contentHolder = this.panel.find('.about__content__holder');
 
-		// this.checkBreakpoint();
+		this.checkBreakpoint();
     }
 
 	checkBreakpoint() {
@@ -44,6 +44,7 @@ export default class About {
 		const mobileTl = new TimelineMax();
 
 		mobileTl
+			.set(this.panel, { autoAlpha: 1 })
 			.add('panelsIn')
 			.fromTo(this.rectMid, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
 			.fromTo(this.content, 0.75, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
@@ -59,6 +60,7 @@ export default class About {
 		const desktopTl = new TimelineMax();
 
 		desktopTl
+			.set(this.panel, { autoAlpha: 1 })
 			.add('ellipsesIn')
 			.fromTo(this.ellipseBkgndTop, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 0.5, ease: Power4.easeInOut })
 			.fromTo(this.ellipseBkgndBottom, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')

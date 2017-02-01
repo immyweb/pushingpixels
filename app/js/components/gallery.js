@@ -67,6 +67,7 @@ export default class Gallery {
 		const mainTl = new TimelineMax();
 
 		mainTl
+			.set(this.panel, { autoAlpha: 1 })
 			.add('panelsIn')
 			.fromTo(this.contentBkgnd, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1.2, autoAlpha: 1, ease: Power4.easeInOut })
 			.fromTo(this.contentFrgnd, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1.2, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.15')
