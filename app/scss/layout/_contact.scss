@@ -1,8 +1,12 @@
 .contact {
-	position: relative;
-	width: 100vw;
-	height: 100vh;
+	position: absolute;
 	overflow: hidden;
+
+	&__container {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+	}
 
 	// Beige ellipses
 	&__ellipsebeige--left, &__ellipsebeige--right {
@@ -141,12 +145,13 @@
 				z-index: 15;
 
 				@include breakpoint(medium) {
-					position: fixed;
+					position: absolute;
 				    bottom: -3%;
 				    left: 0;
 				    width: 100%;
 					height: auto;
 					transform: scale(1.1);
+					z-index: 50;
 				}
 
 				@include breakpoint(xlarge) {

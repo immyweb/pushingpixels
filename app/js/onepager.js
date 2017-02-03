@@ -16,8 +16,13 @@ export default {
 
 		const splash = new Splash(),
 			about = new About(),
-			contact = new Contact(),
-			gallery = new Gallery();
+			gallery = new Gallery(),
+			contact = new Contact();
+
+		splash.init();
+		about.init();
+        gallery.init();
+        contact.init();
 
 		let controller,
 			$navItems = $('.nav__items li').not('.nav__item--active'),
@@ -127,14 +132,15 @@ export default {
 			triggerTransitionToPrev
 				.on('leave', (e) => {
 					// console.log('crossfade to previous ' + triggerUp);
-					// let $slideOut = $('.slide.active'),
-					// 	slideIndex = triggerUp.substring(6, 8),
-					// 	$slideIn = $('#slide' + slideIndex),
-					// 	direction = e.scrollDirection;
+
+					let $slideOut = $('.slide.active'),
+						slideIndex = triggerUp.substring(6, 8),
+						$slideIn = $('#slide' + slideIndex),
+						direction = e.scrollDirection;
 
 					// console.log(e.scrollDirection);
 
-					// crossFade($slideOut, $slideIn, direction, slideIndex);
+					crossFade($slideOut, $slideIn, direction, slideIndex);
 				})
 				// .addIndicators({
 				// 	name: 'triggerUp',
@@ -177,17 +183,40 @@ export default {
 
 			crossFadeTl
 				.set($main, { className: 'slide' + slideInID + '-active' })
-				.to($slideOut, 0.25, { autoAlpha: 0 })
+				.to($slideOut, 0.25, { autoAlpha: 0, onComplete: hideOldSlide, onCompleteParams: [ slideOutID] })
 				.set($slideIn, { autoAlpha: 1, onComplete: showNewSlide, onCompleteParams: [$slideIn, slideInID] })
 			;
 		}
 
 		function showNewSlide($slideIn, slideInID) {
-			console.log($slideIn);
-			console.log(slideInID);
 
+			if ( slideInID === '01' ) {
+				splash.playTl()
+			}
 			if ( slideInID === '02' ) {
-				about.init($slideIn)
+				about.playTl()
+			}
+			if ( slideInID === '03' ) {
+				gallery.playTl()
+			}
+			if ( slideInID === '04' ) {
+				contact.playTl()
+			}
+		}
+
+		function hideOldSlide(slideOutID) {
+
+			if ( slideOutID === '01' ) {
+				splash.resetTl()
+			}
+			if ( slideOutID === '02' ) {
+				about.resetTl()
+			}
+			if ( slideOutID === '03' ) {
+				gallery.resetTl()
+			}
+			if ( slideOutID === '04' ) {
+				contact.resetTl()
 			}
 		}
 
@@ -196,7 +225,7 @@ export default {
 
 			TweenMax.set($slide, { autoAlpha: 0 });
 
-			splash.init($slideIn);
+			splash.playTl();
 		}
 
 		function updateNav(slideOutID, slideInID) {

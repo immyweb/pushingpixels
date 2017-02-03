@@ -1,11 +1,15 @@
+import $ from 'jquery';
 import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
+let mobileTL = new TimelineMax();
+let desktopTl = new TimelineMax();
+
 export default class Splash {
 
     init(element) {
-		this.panel = element;
+		this.panel = $('.splash');
 
 		this.dotsSmallGroup = this.panel.find('.splash__dots__small');
 		this.dotsLargeGroup = this.panel.find('.splash__dots__large');
@@ -54,7 +58,6 @@ export default class Splash {
 	}
 
 	mobileTL() {
-		const mobileTL = new TimelineMax();
 
 		mobileTL
 			.set(this.panel, { autoAlpha: 1 })
@@ -70,7 +73,6 @@ export default class Splash {
 	}
 
 	desktopTl() {
-		const desktopTl = new TimelineMax();
 
 		desktopTl
 			.set(this.panel, { autoAlpha: 1 })
@@ -96,5 +98,17 @@ export default class Splash {
 			.add('titleIn')
 			.fromTo(this.heading, 1, { top: '+=5%' }, { top: '-=5%', autoAlpha: 1 }, 'linesIn-=0.5')
 		;
+
+		desktopTl.pause();
+
+	}
+
+	playTl() {
+		desktopTl.play();
+	}
+
+	resetTl() {
+		desktopTl.pause(0, true);
+
 	}
 }

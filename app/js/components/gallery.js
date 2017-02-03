@@ -1,9 +1,12 @@
+import $ from 'jquery';
 import { TimelineMax } from 'gsap';
+
+let mainTl = new TimelineMax();
 
 export default class Gallery {
 
     init(element) {
-		this.panel = element;
+		this.panel = $('.gallery');
 
 		this.contentBkgnd = this.panel.find('.gallery__content__bkgnd');
 		this.contentFrgnd = this.panel.find('.gallery__content__frgnd');
@@ -64,7 +67,6 @@ export default class Gallery {
 	}
 
 	mainTl() {
-		const mainTl = new TimelineMax();
 
 		mainTl
 			.set(this.panel, { autoAlpha: 1 })
@@ -89,6 +91,15 @@ export default class Gallery {
 			// .fromTo(this.contentGallery, 0.5, { scaleY: 0, transformOrigin: '50% 0%' }, { scaleY: 1, autoAlpha: 1, ease: Power2.easeInOut }, '-=0.75')
 		;
 
-		// mainTl.progress(1);
+		mainTl.pause();
+	}
+
+	playTl() {
+		mainTl.play();
+	}
+
+	resetTl() {
+		mainTl.pause(0, true);
+
 	}
 }

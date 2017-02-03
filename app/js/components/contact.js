@@ -1,12 +1,15 @@
+import $ from 'jquery';
 import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 import getScale from '../utils/getScale';
 
+let desktopTl = new TimelineMax();
+
 export default class Contact {
 
     init(element) {
-		this.panel = element;
+		this.panel = $('.contact');
 
 		this.ellipseBeigeLeft = this.panel.find('.contact__ellipsebeige--left');
 		this.ellipseBeigeRight = this.panel.find('.contact__ellipsebeige--right');
@@ -83,8 +86,6 @@ export default class Contact {
 		let blockScale = getScale(this.radialBlocks),
 			lineScale = getScale(this.radialLines);
 
-		const desktopTl = new TimelineMax();
-
 		desktopTl
 			.set(this.panel, { autoAlpha: 1 })
 			.add('beigeEllipseIn')
@@ -108,5 +109,15 @@ export default class Contact {
 			.staggerTo(this.dotsSmall, 1, { autoAlpha: 1, ease: Power4.easeOut }, 0.05, 'blocksIn')
 			.staggerTo(this.dotsLarge, 1, { autoAlpha: 1, ease: Power4.easeOut }, 0.05, 'blocksIn')
 		;
+
+		desktopTl.pause();
+	}
+
+	playTl() {
+		desktopTl.play();
+	}
+
+	resetTl() {
+		desktopTl.pause(0, true);
 	}
 }

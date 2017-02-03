@@ -1,11 +1,15 @@
+import $ from 'jquery';
 import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
+let mobileTl = new TimelineMax();
+let desktopTl = new TimelineMax();
+
 export default class About {
 
     init(element) {
-		this.panel = element;
+		this.panel = $('.about');
 
 		this.dotsSmall = this.panel.find('.about__svg__dots--small__dot');
 		this.dotsLarge = this.panel.find('.about__svg__dots--large__dot');
@@ -41,7 +45,6 @@ export default class About {
 	}
 
 	mobileTL() {
-		const mobileTl = new TimelineMax();
 
 		mobileTl
 			.set(this.panel, { autoAlpha: 1 })
@@ -57,7 +60,6 @@ export default class About {
 	}
 
 	desktopTl() {
-		const desktopTl = new TimelineMax();
 
 		desktopTl
 			.set(this.panel, { autoAlpha: 1 })
@@ -79,5 +81,15 @@ export default class About {
 			.staggerFromTo(this.dotsSmall, 0.5, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'panelsIn+=0.5')
 			.staggerFromTo(this.dotsLarge, 0.4, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'panelsIn+=0.5')
 		;
+
+		desktopTl.pause();
+	}
+
+	playTl() {
+		desktopTl.play();
+	}
+
+	resetTl() {
+		desktopTl.pause(0, true);
 	}
 }
