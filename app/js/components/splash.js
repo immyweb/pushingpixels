@@ -109,6 +109,5 @@ export default class Splash {
 
 	resetTl() {
 		desktopTl.pause(0, true);
-
 	}
 }

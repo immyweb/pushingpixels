@@ -10,33 +10,57 @@ import Contact from './components/contact';
 import Gallery from './components/gallery';
 // import galleryModal from '../gallery-modal/index';
 
+let splash = new Splash(),
+    about = new About(),
+    gallery = new Gallery(),
+    contact = new Contact();
+
+let controller,
+    $navItems = $('.nav__items li').not('.nav__item--active'),
+    $navTrigger = $('.nav-trigger'),
+    getTriggersDown = $('.slide-pos'),
+    triggersDown = [],
+    getTriggersUp = $('.slide-pos--reverse'),
+    triggersUp = [],
+    $slideIn = $('.slide.active'),
+    $slide = $('.slide'),
+    $main = $('#main');
+
+let navTl = new TimelineMax();
+
 export default {
 
-    init: () => {
+    init() {
 
-		const splash = new Splash(),
-			about = new About(),
-			gallery = new Gallery(),
-			contact = new Contact();
+		this.initSlides();
 
-		splash.init();
+        this.getTriggers();
+
+        this.createController();
+
+        this.sceneOne();
+
+        this.navTl();
+
+        this.navScene();
+
+        this.triggersDown();
+
+        this.triggersUp();
+
+		this.initPage();
+
+    },
+
+    initSlides() {
+        splash.init();
 		about.init();
         gallery.init();
         contact.init();
+    },
 
-		let controller,
-			$navItems = $('.nav__items li').not('.nav__item--active'),
-			$navTrigger = $('.nav-trigger'),
-			getTriggersDown = $('.slide-pos'),
-			triggersDown = [],
-			getTriggersUp = $('.slide-pos--reverse'),
-			triggersUp = [],
-			$slideIn = $('.slide.active'),
-			$slide = $('.slide'),
-			$main = $('#main');
-
-
-		// Triggers on the way down
+    getTriggers() {
+        // Triggers on the way down
 		$.each(getTriggersDown, (key, value) => {
 
 			let id = '#' + value.id;
@@ -51,11 +75,15 @@ export default {
 			triggersUp.push(id);
 
 		});
+    },
 
-
+    createController() {
+        // Create controller
 		controller = new ScrollMagic.Controller();
+    },
 
-		// Scene 1 - pin our main section
+    sceneOne() {
+        // Scene 1 - pin our main section
 		const pinScene01 = new ScrollMagic.Scene({
 			triggerElement: '#main',
 			triggerHook: 0,
@@ -65,11 +93,10 @@ export default {
 		pinScene01
 			.setPin('#main .pin-wrapper', { pushFollowers: false })
 			.addTo(controller);
+    },
 
-
-		// Navigation timeline
-		let navTl = new TimelineMax();
-
+    navTl() {
+        // Navigation timeline
 		$navItems.each((index, item) => {
 			let slideHREF = $(item).find('a').attr('href'),
 				slideID = slideHREF.substr(slideHREF.length -7),
@@ -78,9 +105,10 @@ export default {
 			// Add individual tweens to the timeline
 			navTl.add(moveNav, slideID);
 		});
+    },
 
-
-		// Scene 2 - move navigation
+    navScene() {
+        // Scene 2 - move navigation
 		const navScene = new ScrollMagic.Scene({
 			triggerElement: $navTrigger,
 			duration: '400%'
@@ -89,9 +117,10 @@ export default {
 		navScene
 			.setTween(navTl)
 			.addTo(controller);
+    },
 
-
-		// Scene 3 - trigger the right animation on the way DOWN
+    triggersDown() {
+        // Scene 3 - trigger the right animation on the way DOWN
 		triggersDown.forEach((triggerDown) => {
 
 			let triggerTransitionToNext = new ScrollMagic.Scene({
@@ -110,7 +139,7 @@ export default {
 
 					// console.log(e.scrollDirection);
 
-					crossFade($slideOut, $slideIn, direction, slideIndex);
+					this.crossFade($slideOut, $slideIn, direction, slideIndex);
 				})
 				// .addIndicators({
 				// 	name: 'triggerDown',
@@ -120,8 +149,10 @@ export default {
 				// })
 				.addTo(controller);
 		});
+    },
 
-		// Scene 4 - trigger the right animation on the way DOWN
+    triggersUp() {
+        // Scene 4 - trigger the right animation on the way UP
 		triggersUp.forEach((triggerUp) => {
 
 			let triggerTransitionToPrev = new ScrollMagic.Scene({
@@ -140,7 +171,7 @@ export default {
 
 					// console.log(e.scrollDirection);
 
-					crossFade($slideOut, $slideIn, direction, slideIndex);
+					this.crossFade($slideOut, $slideIn, direction, slideIndex);
 				})
 				// .addIndicators({
 				// 	name: 'triggerUp',
@@ -150,93 +181,87 @@ export default {
 				// })
 				.addTo(controller);
 		});
+    },
 
-		function initPage() {
-			setTimeout(() => {
-				// Prevents body from flickering
-				// TweenMax.set($body, { autoAlpha: 1 });
+    initPage() {
+        setTimeout(() => {
+            // Prevents body from flickering
+            // TweenMax.set($body, { autoAlpha: 1 });
 
-				// Animate first slide in
-				animationIn($slideIn);
-			}, 500);
+            // Animate first slide in
+            this.animationIn($slideIn);
+        }, 500);
+    },
+
+    // Animate slide IN
+    animationIn($slideIn) {
+
+        TweenMax.set($slide, { autoAlpha: 0 });
+
+        splash.playTl();
+    },
+
+    crossFade($slideOut, $slideIn, direction, slideIndex) {
+        let slideOutID = $slideOut.attr('id').substring(5, 7),
+            slideInID = $slideIn.attr('id').substring(5, 7);
+
+        // Update nav
+        this.updateNav(slideOutID, slideInID);
+
+        // remove class active from all slides
+        TweenMax.set($slide, { className: '-=active', display: 'none' });
+
+        // add class active to current slide
+        TweenMax.set($('#slide' + slideIndex), { className: '+=active', display: 'block' });
+
+        // cross fade timeline
+        const crossFadeTl = new TimelineMax();
+
+        crossFadeTl
+            .set($main, { className: 'slide' + slideInID + '-active' })
+            .to($slideOut, 0.25, { autoAlpha: 0, onComplete: this.hideOldSlide, onCompleteParams: [ slideOutID] })
+            .set($slideIn, { autoAlpha: 1, onComplete: this.showNewSlide, onCompleteParams: [$slideIn, slideInID] })
+        ;
+    },
+
+    updateNav(slideOutID, slideInID) {
+        // remove active class from all dots
+        $('.nav__items li').removeClass('nav__item--active');
+
+        // Add active class to the new active slide
+        TweenMax.set($('.nav__items li.nav__item' + slideInID), { className: '+=nav__item--active' });
+    },
+
+	showNewSlide($slideIn, slideInID) {
+
+		if ( slideInID === '01' ) {
+			splash.playTl()
 		}
-
-		initPage();
-
-
-		function crossFade($slideOut, $slideIn, direction, slideIndex) {
-
-			let slideOutID = $slideOut.attr('id').substring(5, 7),
-				slideInID = $slideIn.attr('id').substring(5, 7);
-
-			// Update nav
-			updateNav(slideOutID, slideInID);
-
-			// remove class active from all slides
-			TweenMax.set($slide, { className: '-=active' });
-
-			// add class active to current slide
-			TweenMax.set($('#slide' + slideIndex), { className: '+=active' });
-
-			// cross fade timeline
-			const crossFadeTl = new TimelineMax();
-
-			crossFadeTl
-				.set($main, { className: 'slide' + slideInID + '-active' })
-				.to($slideOut, 0.25, { autoAlpha: 0, onComplete: hideOldSlide, onCompleteParams: [ slideOutID] })
-				.set($slideIn, { autoAlpha: 1, onComplete: showNewSlide, onCompleteParams: [$slideIn, slideInID] })
-			;
+		if ( slideInID === '02' ) {
+			about.playTl()
 		}
-
-		function showNewSlide($slideIn, slideInID) {
-
-			if ( slideInID === '01' ) {
-				splash.playTl()
-			}
-			if ( slideInID === '02' ) {
-				about.playTl()
-			}
-			if ( slideInID === '03' ) {
-				gallery.playTl()
-			}
-			if ( slideInID === '04' ) {
-				contact.playTl()
-			}
+		if ( slideInID === '03' ) {
+			gallery.playTl()
 		}
-
-		function hideOldSlide(slideOutID) {
-
-			if ( slideOutID === '01' ) {
-				splash.resetTl()
-			}
-			if ( slideOutID === '02' ) {
-				about.resetTl()
-			}
-			if ( slideOutID === '03' ) {
-				gallery.resetTl()
-			}
-			if ( slideOutID === '04' ) {
-				contact.resetTl()
-			}
+		if ( slideInID === '04' ) {
+			contact.playTl()
 		}
+	},
 
-		// Animate slide IN
-		function animationIn($slideIn) {
+	hideOldSlide(slideOutID) {
 
-			TweenMax.set($slide, { autoAlpha: 0 });
-
-			splash.playTl();
+		if ( slideOutID === '01' ) {
+			splash.resetTl()
 		}
-
-		function updateNav(slideOutID, slideInID) {
-
-			// remove active class from all dots
-			$('.nav__items li').removeClass('nav__item--active');
-
-			// Add active class to the new active slide
-			TweenMax.set($('.nav__items li.nav__item' + slideInID), { className: '+=nav__item--active' });
+		if ( slideOutID === '02' ) {
+			about.resetTl()
 		}
-
-    }
+		if ( slideOutID === '03' ) {
+			gallery.resetTl()
+		}
+		if ( slideOutID === '04' ) {
+			contact.resetTl()
+		}
+	}
 
 };
