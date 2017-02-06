@@ -5,7 +5,7 @@ let desktopTl = new TimelineMax();
 
 export default class Gallery {
 
-    init(element) {
+    init() {
 		this.panel = $('.gallery');
 
 		this.contentBkgnd = this.panel.find('.gallery__content__bkgnd');

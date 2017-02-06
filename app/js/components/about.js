@@ -8,7 +8,7 @@ let desktopTl = new TimelineMax();
 
 export default class About {
 
-    init(element) {
+    init() {
 		this.panel = $('.about');
 
 		this.dotsSmall = this.panel.find('.about__svg__dots--small__dot');

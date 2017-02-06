@@ -8,7 +8,7 @@ let desktopTl = new TimelineMax();
 
 export default class Splash {
 
-    init(element) {
+    init() {
 		this.panel = $('.splash');
 
 		this.dotsSmallGroup = this.panel.find('.splash__dots__small');

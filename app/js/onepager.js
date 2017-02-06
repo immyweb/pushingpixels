@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { TweenMax } from 'gsap';
+import 'gsap/src/uncompressed/plugins/ScrollToPlugin.js';
 import ScrollMagic from 'scrollmagic';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
@@ -18,11 +19,11 @@ let splash = new Splash(),
 let controller,
     $navItems = $('.nav__items li').not('.nav__item--active'),
     $navTrigger = $('.nav-trigger'),
+	$navItemLink = $('.nav__items a'),
     getTriggersDown = $('.slide-pos'),
     triggersDown = [],
     getTriggersUp = $('.slide-pos--reverse'),
     triggersUp = [],
-    $slideIn = $('.slide.active'),
     $slide = $('.slide'),
     $main = $('#main');
 
@@ -49,6 +50,8 @@ export default {
         this.triggersUp();
 
 		this.initPage();
+
+		this.navHandler();
 
     },
 
@@ -189,12 +192,12 @@ export default {
             // TweenMax.set($body, { autoAlpha: 1 });
 
             // Animate first slide in
-            this.animationIn($slideIn);
+            this.animationIn();
         }, 500);
     },
 
     // Animate slide IN
-    animationIn($slideIn) {
+    animationIn() {
 
         TweenMax.set($slide, { autoAlpha: 0 });
 
@@ -235,33 +238,48 @@ export default {
 	showNewSlide($slideIn, slideInID) {
 
 		if ( slideInID === '01' ) {
-			splash.playTl()
+			splash.playTl();
 		}
 		if ( slideInID === '02' ) {
-			about.playTl()
+			about.playTl();
 		}
 		if ( slideInID === '03' ) {
-			gallery.playTl()
+			gallery.playTl();
 		}
 		if ( slideInID === '04' ) {
-			contact.playTl()
+			contact.playTl();
 		}
 	},
 
 	hideOldSlide(slideOutID) {
 
 		if ( slideOutID === '01' ) {
-			splash.resetTl()
+			splash.resetTl();
 		}
 		if ( slideOutID === '02' ) {
-			about.resetTl()
+			about.resetTl();
 		}
 		if ( slideOutID === '03' ) {
-			gallery.resetTl()
+			gallery.resetTl();
 		}
 		if ( slideOutID === '04' ) {
-			contact.resetTl()
+			contact.resetTl();
 		}
+	},
+
+	navHandler() {
+		$navItemLink.on('click', (e) => {
+
+			// Scroll to the right position
+			let slideInIndex = $(e.target).attr('href').substring(6,8),
+				offset = $('div#slide' + slideInIndex + '-pos').offset().top,
+				wH = window.innerHeight,
+				finalOffset = offset - (wH * 0.4);
+
+			TweenMax.to(window, 0.7, { scrollTo: finalOffset, ease: Power4.easeOut });
+
+			e.preventDefault();
+		});
 	}
 
 };

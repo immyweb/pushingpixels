@@ -8,7 +8,7 @@ let desktopTl = new TimelineMax();
 
 export default class Contact {
 
-    init(element) {
+    init() {
 		this.panel = $('.contact');
 
 		this.ellipseBeigeLeft = this.panel.find('.contact__ellipsebeige--left');
