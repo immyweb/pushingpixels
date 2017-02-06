@@ -92,13 +92,13 @@ export default class Contact {
 			.fromTo(this.ellipseBeigeLeft, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 'beigeEllipseIn')
 			.fromTo(this.ellipseBeigeRight, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 'beigeEllipseIn')
 
-			.fromTo(this.contentBkgnd, 0.5, { scale: 0, transformOrigin: 'center bottom' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.15')
+			.fromTo(this.contentBkgnd, 0.5, { scale: 0, transformOrigin: 'center bottom' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut, clearProps: 'scale' }, '-=0.15')
 
 			.add('cornerEllipseIn')
 			.fromTo(this.ellipseCornerLeft, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 'cornerEllipseIn')
 			.fromTo(this.ellipseCornerRight, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 'cornerEllipseIn')
 
-			.fromTo(this.contentFrgnd, 0.5, { scale: 0, transformOrigin: 'center bottom' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
+			.fromTo(this.contentFrgnd, 0.5, { scale: 0, transformOrigin: 'center bottom' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut, clearProps: 'scale' })
 			.to(this.contentCopy, 0.5, { autoAlpha: 1, ease: Power4.easeInOut })
 
 			.add('blocksIn')
