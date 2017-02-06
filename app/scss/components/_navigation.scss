@@ -7,8 +7,8 @@
 			display: block;
 			position: absolute;
 			z-index: 100;
-			top: 55%;
-			right: 6%;
+			bottom: 3%;
+    		left: 3%;
 			width: 22px;
     		height: 105px;
 		}
@@ -50,5 +50,27 @@
 		border: 1px solid $dark1;
 		border-radius: 50%;
 		transition: border-color 0.3s linear;
+	}
+}
+
+.slide03-active {
+	.nav {
+		&__items {
+			a {
+				background: $dark1;
+			}
+		}
+
+		&__item {
+			&--active {
+				a {
+					background: $light2;
+				}
+			}
+		}
+
+		&__active {
+			border-color: $light2;
+		}
 	}
 }
