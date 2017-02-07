@@ -13,10 +13,39 @@
 		"image1Alt": "Virgin",
 		"image2Alt": "Barclays",
 		"image3Alt": "Michelin",
-        "image1Url": "#gallery01",
-        "image2Url": "#gallery02",
-		"image3Url": "#gallery03"
+        "image1Url": "#project01",
+        "image2Url": "#project02",
+		"image3Url": "#project03"
     },
+	"modal": {
+		"project01": {
+			"heading": "Virgin Active",
+			"copy1": "Lorem ipsum dolor sit amet, nec posse graecis ea. Iusto prodesset pri ne. Ex mundi veritus instructior vim, quo tollit putent deleniti no, per eu congue invenire dignissim. Et vix choro euripidis, periculis quaerendum ut mea. Elit essent no quo, debet impetus eu sea.",
+			"copy2": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",
+			"image1": "/images/gallery-modal/va-1.png",
+			"image2": "/images/gallery-modal/va-1.png",
+			"image1Alt": "",
+			"image2Alt": ""
+		},
+		"project02": {
+			"heading": "Barclays",
+			"copy1": "Lorem ipsum dolor sit amet, nec posse graecis ea. Iusto prodesset pri ne. Ex mundi veritus instructior vim, quo tollit putent deleniti no, per eu congue invenire dignissim. Et vix choro euripidis, periculis quaerendum ut mea. Elit essent no quo, debet impetus eu sea.",
+			"copy2": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",
+			"image1": "/images/gallery-modal/va-1.png",
+			"image2": "/images/gallery-modal/va-1.png",
+			"image1Alt": "",
+			"image2Alt": ""
+		},
+		"project03": {
+			"heading": "Michelin",
+			"copy1": "Lorem ipsum dolor sit amet, nec posse graecis ea. Iusto prodesset pri ne. Ex mundi veritus instructior vim, quo tollit putent deleniti no, per eu congue invenire dignissim. Et vix choro euripidis, periculis quaerendum ut mea. Elit essent no quo, debet impetus eu sea.",
+			"copy2": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",
+			"image1": "/images/gallery-modal/va-1.png",
+			"image2": "/images/gallery-modal/va-1.png",
+			"image1Alt": "",
+			"image2Alt": ""
+		}
+	},
     "contact": {
         "heading": "Contact",
         "copy1": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",

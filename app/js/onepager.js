@@ -318,7 +318,7 @@ export default {
 			controller.enabled(true);
 			controller.update(true);
 
-			modal.hideModal();
+			modal.closeModal();
 			modal.resetTl();
 
 			TweenMax.set($body, { className: '-=modal-open' });

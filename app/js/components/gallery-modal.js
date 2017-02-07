@@ -113,6 +113,15 @@ export default class GalleryModal {
 	}
 
 	hideModal() {
-		TweenLite.set(this.panel, { autoAlpha: 0, display: 'none' });
+		TweenMax.set(this.panel, { autoAlpha: 0, display: 'none' });
+	}
+
+	closeModal() {
+		const hideModalTl = new TimelineMax();
+
+		hideModalTl
+			.to(this.panel, 0.75, { autoAlpha: 0, transformOrigin: 'center center', ease: Power4.easeInOut })
+			.set(this.panel, { display: 'none' })
+		;
 	}
 }
