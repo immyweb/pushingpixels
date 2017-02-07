@@ -2,10 +2,12 @@ import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
+let mainTl = new TimelineMax();
+
 export default class GalleryModal {
 
-    init(element) {
-		this.panel = element;
+    init() {
+		this.panel = $('.gallery-modal');
 
 		this.contentBkgnd = this.panel.find('.gallery-modal__content__bkgnd');
 		this.contentFrgnd = this.panel.find('.gallery-modal__content__frgnd');
@@ -76,7 +78,6 @@ export default class GalleryModal {
 	}
 
 	mainTl() {
-		const mainTl = new TimelineMax();
 
 		mainTl
 			.add('panelsIn')
@@ -97,5 +98,15 @@ export default class GalleryModal {
 			.staggerFromTo(this.linesRightTop, 0.5, { scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
 			.add(this.reverseLinesRightAnimTl(), 'panelsIn+=1.00')
 		;
+
+		mainTl.pause();
+	}
+
+	playTl() {
+		mainTl.play();
+	}
+
+	resetTl() {
+		mainTl.pause(0, true);
 	}
 }

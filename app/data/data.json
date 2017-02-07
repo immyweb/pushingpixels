@@ -1,34 +1,25 @@
 {
-    "heroPanel": {
-        "videoId": "F6Rx84LRq8E",
-        "mobileImage": "/images/hero-panel/bg-image.jpg",
-        "headline": "Are you Driver Enough?",
-        "cta": "Take a drive",
-        "location": "KAKADU NATIONAL PARK, NORTHERN TERRITORY, AUSTRALIA"
+    "about": {
+        "heading": "About",
+        "copy1": "Lorem ipsum dolor sit amet, nec posse graecis ea. Iusto prodesset pri ne. Ex mundi veritus instructior vim, quo tollit putent deleniti no, per eu congue invenire dignissim. Et vix choro euripidis, periculis quaerendum ut mea. Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum.",
+		"copy2": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum.",
+		"copy3": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum."
     },
-    "productPanel": {
-        "tyreImage": "/images/product-panel/example_product-shot_isolated.png",
-        "bkgndImage": "/images/product-panel/bg-image.png",
-        "subheading": "Sub-title",
-        "headline": "Tyre model name",
-        "copy": "Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "cta1": "Find me a dealer",
-        "cta1Url": "#",
-        "cta2": "More information",
-        "cta2Url": "#"
+    "gallery": {
+		"heading": "Gallery",
+        "image1": "/images/gallery/michelin.png",
+        "image2": "/images/gallery/michelin.png",
+        "image3": "/images/gallery/michelin.png",
+		"image1Alt": "Virgin",
+		"image2Alt": "Barclays",
+		"image3Alt": "Michelin",
+        "image1Url": "#",
+        "image2Url": "#",
+		"image3Url": "#"
     },
-    "videoPanel": {
-        "videoId": "g1Tb_wX8YLM",
-        "playText": "Play Video",
-        "headline": "Toby Price takes on the Challenge",
-        "subheading": "Off the road racing championship",
-        "locationIcon": "/images/video-panel/42_track.svg",
-        "videoDescription": "KAKADU NATIONAL PARK, NORTHERN TERRITORY, AUSTRALIA"
-    },
-    "messagePanel": {
-        "videoId": "acPVJksu9aE",
-        "mobileImage": "/images/message-panel/message-card-bkgnd-mobile.png",
-        "headline": "Cornering precision you thought you would never feel",
-        "subheading": "Someone, at some point"
+    "contact": {
+        "heading": "Contact",
+        "copy1": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",
+        "linkedin": "Find me on LinkedIn"
     }
 }

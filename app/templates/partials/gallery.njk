@@ -144,13 +144,25 @@
 			<div class="gallery__content__bkgnd">
 				<div class="gallery__content__frgnd">
 					<div class="gallery__content__inner">
-						<h1>Gallery</h1>
+						<h1>{{ gallery.heading }}</h1>
 
 						<div class="gallery__content__list">
 							<ul>
-								<li><a href="#"><img src="/images/gallery/michelin.png" alt=""></a></li>
-								<li><a href="#"><img src="/images/gallery/michelin.png" alt=""></a></li>
-								<li><a href="#"><img src="/images/gallery/michelin.png" alt=""></a></li>
+								<li>
+									<a href="{{ gallery.image1Url }}">
+										<img src="{{ gallery.image1 }}" alt="{{ gallery.image1Alt }}">
+									</a>
+								</li>
+								<li>
+									<a href="{{ gallery.image2Url }}">
+										<img src="{{ gallery.image2 }}" alt="{{ gallery.image2Alt }}">
+									</a>
+								</li>
+								<li>
+									<a href="{{ gallery.image3Url }}">
+										<img src="{{ gallery.image3 }}" alt="{{ gallery.image3Alt }}">
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>
