@@ -13,9 +13,9 @@
 		"image1Alt": "Virgin",
 		"image2Alt": "Barclays",
 		"image3Alt": "Michelin",
-        "image1Url": "#",
-        "image2Url": "#",
-		"image3Url": "#"
+        "image1Url": "#gallery01",
+        "image2Url": "#gallery02",
+		"image3Url": "#gallery03"
     },
     "contact": {
         "heading": "Contact",

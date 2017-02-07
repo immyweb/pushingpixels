@@ -101,4 +101,5 @@ export default class Gallery {
 	resetTl() {
 		desktopTl.pause(0, true);
 	}
+
 }

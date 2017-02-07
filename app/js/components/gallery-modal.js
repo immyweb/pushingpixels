@@ -1,4 +1,5 @@
-import { TimelineMax } from 'gsap';
+import $ from 'jquery';
+import { TimelineMax, TweenLite } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
@@ -25,6 +26,7 @@ export default class GalleryModal {
 		this.linesRightBottom = this.panel.find('.gallery-modal__svg__lines--right__bottom');
 
 		this.checkBreakpoint();
+		this.hideModal();
     }
 
 	checkBreakpoint() {
@@ -108,5 +110,9 @@ export default class GalleryModal {
 
 	resetTl() {
 		mainTl.pause(0, true);
+	}
+
+	hideModal() {
+		TweenLite.set(this.panel, { autoAlpha: 0, display: 'none' });
 	}
 }

@@ -9,12 +9,13 @@ import Splash from './components/splash';
 import About from './components/about';
 import Contact from './components/contact';
 import Gallery from './components/gallery';
-// import galleryModal from '../gallery-modal/index';
+import Modal from './components/gallery-modal';
 
 let splash = new Splash(),
     about = new About(),
     gallery = new Gallery(),
-    contact = new Contact();
+    contact = new Contact(),
+	modal = new Modal();
 
 let controller,
     $navItems = $('.nav__items li').not('.nav__item--active'),
@@ -25,7 +26,11 @@ let controller,
     getTriggersUp = $('.slide-pos--reverse'),
     triggersUp = [],
     $slide = $('.slide'),
-    $main = $('#main');
+    $main = $('#main'),
+	galleryLinks = $('.gallery__content__item'),
+	galleryModal = $('.gallery-modal'),
+	galleryModalClose = galleryModal.find('.gallery-modal__close'),
+	$body = $('body');
 
 let navTl = new TimelineMax();
 
@@ -53,6 +58,9 @@ export default {
 
 		this.navHandler();
 
+		this.galleryHandler();
+
+		this.closeModal();
     },
 
     initSlides() {
@@ -60,6 +68,7 @@ export default {
 		about.init();
         gallery.init();
         contact.init();
+		modal.init();
     },
 
     getTriggers() {
@@ -277,6 +286,44 @@ export default {
 				finalOffset = offset - (wH * 0.4);
 
 			TweenMax.to(window, 0.7, { scrollTo: finalOffset, ease: Power4.easeOut });
+
+			e.preventDefault();
+		});
+	},
+
+	galleryHandler() {
+		galleryLinks.on('click', function(e) {
+
+			let galleryIndex = $(this).attr('href').substring(8,10);
+
+			// disable body scrolling
+			controller.enabled(false);
+			controller.update(true);
+
+			// add body class
+			TweenMax.set($body, { className: '+=modal-open' });
+
+
+			TweenMax.set($slide, { autoAlpha: 0 });
+			TweenMax.set(galleryModal, { display: 'block', autoAlpha: 1 });
+			modal.playTl();
+
+			e.preventDefault();
+		});
+	},
+
+	closeModal() {
+		galleryModalClose.on('click', function(e) {
+
+			controller.enabled(true);
+			controller.update(true);
+
+			modal.hideModal();
+			modal.resetTl();
+
+			TweenMax.set($body, { className: '-=modal-open' });
+
+			TweenMax.set($('.gallery'), { autoAlpha: 1 });
 
 			e.preventDefault();
 		});

@@ -71,7 +71,7 @@
 			width: 100%;
 			min-height: 600px;
 			background: $dark1;
-			transform: skewY(5deg);
+			transform: translateZ(0) skewY(5deg);
 			position: relative;
 			z-index: 11;
 			margin-bottom: 30px;
@@ -94,7 +94,7 @@
 			width: 100%;
 			min-height: 600px;
 			background: $dark2;
-			transform: skewY(-10deg);
+			transform: translateZ(0) skewY(-10deg);
 			position: relative;
 			z-index: 12;
 			left: 0;
@@ -106,7 +106,7 @@
 
 		&__inner {
 			text-align: center;
-			transform: skewY(5deg) scaleX(0.8);
+			transform: translateZ(0) skewY(5deg) scaleX(0.8);
 			position: relative;
 			top: 40px;
 			z-index: 13;
@@ -146,7 +146,7 @@
 				@include grid-row(12);
 
 				@include breakpoint(medium) {
-					transform: skewY(-5deg);
+					transform: translateZ(0) skewY(-5deg);
 					border: 2px solid $light1;
 					backface-visibility: hidden;
 					overflow: hidden;
@@ -158,7 +158,7 @@
 					@include breakpoint(medium) {
 						margin-bottom: 0;
 						@include grid-column(4, 0);
-						transform: skewY(5deg) scaleY(1.15);
+						transform: translateZ(0) skewY(5deg) scaleY(1.15);
 						border-right: 2px solid $light1;
 						overflow-x: hidden;
 					}
