@@ -113,7 +113,7 @@ export default class GalleryModal {
 	}
 
 	hideModal() {
-		TweenMax.set(this.panel, { autoAlpha: 0, display: 'none' });
+		TweenLite.set(this.panel, { autoAlpha: 0, display: 'none' });
 	}
 
 	closeModal() {

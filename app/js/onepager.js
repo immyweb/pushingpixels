@@ -292,9 +292,11 @@ export default {
 	},
 
 	galleryHandler() {
+		let self = this;
+
 		galleryLinks.on('click', function(e) {
 
-			let galleryIndex = $(this).attr('href').substring(8,10);
+			let galleryIndex = $(this).attr('href').substring(1,10);
 
 			// disable body scrolling
 			controller.enabled(false);
@@ -303,13 +305,35 @@ export default {
 			// add body class
 			TweenMax.set($body, { className: '+=modal-open' });
 
+			self.modalContentUpdate(galleryIndex);
+
+
+			e.preventDefault();
+		});
+	},
+
+	modalContentUpdate(galleryIndex) {
+		let modalHeading = galleryModal.find('[data-modal-heading]'),
+			modalCopy1 = galleryModal.find('[data-modal-copy1]'),
+			modalCopy2 = galleryModal.find('[data-modal-copy2]'),
+			modalImage1 = galleryModal.find('[data-modal-image1] img'),
+			modalImage2 = galleryModal.find('[data-modal-image2] img');
+
+		$.getJSON( '/data/data.json', ( data ) => {
+
+			modalHeading.text(data.modal[galleryIndex].heading);
+			modalCopy1.text(data.modal[galleryIndex].copy1);
+			modalCopy2.text(data.modal[galleryIndex].copy2);
+			modalImage1.attr('src', data.modal[galleryIndex].image1);
+			modalImage2.attr('src', data.modal[galleryIndex].image2);
+			modalImage1.attr('alt', data.modal[galleryIndex].image1Alt);
+			modalImage2.attr('alt', data.modal[galleryIndex].image2Alt);
 
 			TweenMax.set($slide, { autoAlpha: 0 });
 			TweenMax.set(galleryModal, { display: 'block', autoAlpha: 1 });
 			modal.playTl();
-
-			e.preventDefault();
 		});
+
 	},
 
 	closeModal() {

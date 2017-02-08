@@ -8,6 +8,9 @@
 	overflow-x: hidden;
 	overflow-y: visible;
 
+	visibility: none;
+	opacity: 0;
+
 	&__container {
 		position: relative;
 		width: 100vw;
