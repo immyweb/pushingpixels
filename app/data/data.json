@@ -1,15 +1,16 @@
 {
     "about": {
         "heading": "About",
-        "copy1": "Lorem ipsum dolor sit amet, nec posse graecis ea. Iusto prodesset pri ne. Ex mundi veritus instructior vim, quo tollit putent deleniti no, per eu congue invenire dignissim. Et vix choro euripidis, periculis quaerendum ut mea. Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum.",
-		"copy2": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum.",
-		"copy3": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum."
+        "copy1": "I am a creative technologist, specialising predominately in front-end technologies.",
+		"copy2": "With over 10 years of commercial experience, delivering projects for a wide range of clients. I have lead teams both in-house and agency side, and believe in pushing my technology and creative boundaries in every project.",
+		"copy3": "I have expert knowledge in javascript and CSS, as well as creating single-page apps (React/Redux), responsive design and using sophisticated animation techniques and SVGs.",
+		"copy4": "Enjoy working closely with UX/Design and stakeholders to offer a range of technical solutions to design and business problems. I believe in delivering the best experience for the user/client as well as producing code that is fast, robust and scalable."
     },
     "gallery": {
 		"heading": "Gallery",
-        "image1": "/images/gallery/michelin.png",
-        "image2": "/images/gallery/michelin.png",
-        "image3": "/images/gallery/michelin.png",
+        "image1": "/images/gallery/virginactive.jpg",
+        "image2": "/images/gallery/barclays.jpg",
+        "image3": "/images/gallery/michelin.jpg",
 		"image1Alt": "Virgin",
 		"image2Alt": "Barclays",
 		"image3Alt": "Michelin",
@@ -20,30 +21,30 @@
 	"modal": {
 		"project01": {
 			"heading": "Virgin Active",
-			"copy1": "Lorem ipsum dolor sit amet, nec posse graecis ea. Iusto prodesset pri ne. Ex mundi veritus instructior vim, quo tollit putent deleniti no, per eu congue invenire dignissim. Et vix choro euripidis, periculis quaerendum ut mea. Elit essent no quo, debet impetus eu sea.",
-			"copy2": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",
-			"image1": "/images/gallery-modal/va-1.png",
-			"image2": "/images/gallery-modal/va-1.png",
-			"image1Alt": "",
-			"image2Alt": ""
+			"copy1": "This project was a redesign and rebuild of the virginactive.co.uk website. I was responsible for delivering the front-end code which was then integrated into the Sitecore CMS system. I designed the technical architecture and component system for the site, as well as the front-end technology stack.",
+			"copy2": "As well as building a number of UI components, I worked closely with the design/back-end teams to estimate and spec out components, and manage a team of developers.",
+			"image1": "/images/gallery-modal/va/va-1.jpg",
+			"image2": "/images/gallery-modal/va/va-2.jpg",
+			"image1Alt": "Virgin Active",
+			"image2Alt": "Virgin Active"
 		},
 		"project02": {
 			"heading": "Barclays",
-			"copy1": "Lorem ipsum dolor sit amet, nec posse graecis ea. Iusto prodesset pri ne. Ex mundi veritus instructior vim, quo tollit putent deleniti no, per eu congue invenire dignissim. Et vix choro euripidis, periculis quaerendum ut mea. Elit essent no quo, debet impetus eu sea.",
-			"copy2": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",
-			"image1": "/images/gallery-modal/va-1.png",
-			"image2": "/images/gallery-modal/va-1.png",
-			"image1Alt": "",
-			"image2Alt": ""
+			"copy1": "This project was a redesign and rebuild of the barclays.com site. It was built in a mobile-first responsive manner on top of the CQ5 platform. I was a part of team that worked onsite with Barclays, working closely  the client and design team offering technical advice and direction.",
+			"copy2": "I was responsible for designing the front-end architecture, building components and managing a team of developers, as well as working with the CQ5 team to facilitate the integration process. Many of components used in this project, have since been used in other Barclays projects.",
+			"image1": "/images/gallery-modal/barclays/barclays-1.jpg",
+			"image2": "/images/gallery-modal/barclays/barclays-2.jpg",
+			"image1Alt": "Barclays",
+			"image2Alt": "Barclays"
 		},
 		"project03": {
 			"heading": "Michelin",
-			"copy1": "Lorem ipsum dolor sit amet, nec posse graecis ea. Iusto prodesset pri ne. Ex mundi veritus instructior vim, quo tollit putent deleniti no, per eu congue invenire dignissim. Et vix choro euripidis, periculis quaerendum ut mea. Elit essent no quo, debet impetus eu sea.",
-			"copy2": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",
-			"image1": "/images/gallery-modal/va-1.png",
-			"image2": "/images/gallery-modal/va-1.png",
-			"image1Alt": "",
-			"image2Alt": ""
+			"copy1": "For this project, I was responsible for building front-end components, which was to be integrated by an offshore team into Adobe AEM. The project was a redesign and rebuild of the BFGoodrich website.",
+			"copy2": "The design featured a number of challenging UI elements, such as angular containers and parallax scrolling.",
+			"image1": "/images/gallery-modal/michelin/michelin-1.jpg",
+			"image2": "/images/gallery-modal/michelin/michelin-2.jpg",
+			"image1Alt": "BFGoodrich",
+			"image2Alt": "BFGoodrich"
 		}
 	},
     "contact": {
