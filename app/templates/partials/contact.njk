@@ -279,19 +279,22 @@
 
 						<p>{{ contact.copy1 }}</p>
 
-						<p class="linkedin">
-							<a href="{{ contact.linkedinUrl }}">
-								<img src="{{ contact.linkedinIcon }}" alt="{{ contact.linkedIconAlt }}">
-								{{ contact.linkedin }}
-							</a>
-						</p>
+						<div class="contact__content__links">
+							<p class="linkedin">
+								<a href="{{ contact.linkedinUrl }}">
+									<img src="{{ contact.linkedinIcon }}" alt="{{ contact.linkedIconAlt }}">
+									{{ contact.linkedin }}
+								</a>
+							</p>
 
-						<p class="cv">
-							<a href="{{ contact.cvUrl }}">
-								<img src="{{ contact.cvIcon }}" alt="{{ contact.cvIconAlt }}">
-								{{ contact.cv }}
-							</a>
-						</p>
+							<p class="cv">
+								<a href="{{ contact.cvUrl }}">
+									<img src="{{ contact.cvIcon }}" alt="{{ contact.cvIconAlt }}">
+									{{ contact.cv }}
+								</a>
+							</p>
+						</div>
+
 					</div>
 				</div>
 			</div>
