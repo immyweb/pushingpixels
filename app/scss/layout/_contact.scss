@@ -292,6 +292,17 @@
 				font-size: 16px;
 				text-align: left;
 			}
+
+			a {
+				color: $light1;
+				text-decoration: none;
+				display: block;
+
+				img {
+					display: inline-block;
+					margin-right: 10px;
+				}
+			}
 		}
 	}
 

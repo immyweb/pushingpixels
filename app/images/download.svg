@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_file_download_black_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_file_download_black_24px">
+            <g id="Group">
+                <ellipse id="Oval" fill="#2C343B" cx="20.3541416" cy="20.534886" rx="20.3541416" ry="20.1755965"></ellipse>
+                <path d="M29.9411765,17.1176471 L24.5294118,17.1176471 L24.5294118,9 L16.4117647,9 L16.4117647,17.1176471 L11,17.1176471 L20.4705882,26.5882353 L29.9411765,17.1176471 Z M11,29.2941176 L11,32 L29.9411765,32 L29.9411765,29.2941176 L11,29.2941176 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

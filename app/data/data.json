@@ -49,7 +49,14 @@
 	},
     "contact": {
         "heading": "Contact",
-        "copy1": "Dignissim consequat constituam cu nec, quo cu melius doctus veritus. Alienum periculis mea id, vim at velit ceteros atomorum. Ut iudico iisque est, legere ocurreret assentior pri an. Molestiae deterruisset quo ea. An falli postulant eos.",
-        "linkedin": "Find me on LinkedIn"
+        "copy1": "Please get in touch by finding me on:",
+        "linkedin": "LinkedIn",
+		"linkedinUrl": "https://uk.linkedin.com/in/imranoozeerally",
+		"linkedinIcon": "/images/linkedin.svg",
+		"linkedIconAlt": "LinkedIn",
+        "cv": "Download my CV",
+		"cvUrl": "",
+		"cvIcon": "/images/download.svg",
+		"cvIconAlt": "CV"
     }
 }
