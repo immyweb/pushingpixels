@@ -1,15 +1,21 @@
 .gallery {
-	position: absolute;
+	width: 100%;
 	overflow: hidden;
+
+	@include breakpoint(medium) {
+		position: absolute;
+	}
 
 	&__container {
 		position: relative;
 		width: 100vw;
-		height: 100vh;
 		padding-top: 70px;
+		margin-bottom: 100px;
 
 		@include breakpoint(medium) {
+			height: 100vh;
 			padding-top: 60px;
+			margin-bottom: 0;
 		}
 
 		@include breakpoint(large) {
@@ -50,8 +56,10 @@
 		&__blocks, &__lines {
 			&--top, &--bottom {
 				&__left, &__right {
-					visibility: hidden;
-					opacity: 0;
+					@include breakpoint(medium) {
+						visibility: hidden;
+						opacity: 0;
+					}
 				}
 			}
 		}
@@ -60,11 +68,13 @@
 	&__content {
 
 		&__container {
-			width: 100%;
-			min-height: 600px;
-			z-index: 10;
-			position: relative;
-			top: -14px;
+			@include breakpoint(medium) {
+				width: 100%;
+				min-height: 600px;
+				z-index: 10;
+				position: relative;
+				top: -14px;
+			}
 		}
 
 		&__bkgnd {
@@ -78,8 +88,10 @@
 			left: 0;
 			top: 0;
 
-			visibility: hidden;
-			opacity: 0;
+			@include breakpoint(medium) {
+				visibility: hidden;
+				opacity: 0;
+			}
 
 			@include breakpoint(large) {
 				margin-bottom: 20px;
@@ -100,19 +112,25 @@
 			left: 0;
 			top: 0;
 
-			visibility: hidden;
-			opacity: 0;
+			@include breakpoint(medium) {
+				visibility: hidden;
+				opacity: 0;
+			}
 		}
 
 		&__inner {
 			text-align: center;
-			transform: translateZ(0) skewY(5deg) scaleX(0.8);
+			transform: translateZ(0) skewY(5deg);
 			position: relative;
-			top: 40px;
+			padding-top: 40px;
 			z-index: 13;
 
-			visibility: hidden;
-			opacity: 0;
+			@include breakpoint(medium) {
+				visibility: hidden;
+				opacity: 0;
+				top: 40px;
+				padding-top: 0;
+			}
 
 			h1 {
 				text-transform: uppercase;
@@ -136,8 +154,10 @@
 			width: 75%;
 			margin: 0 auto;
 
-			visibility: hidden;
-			opacity: 0;
+			@include breakpoint(medium) {
+				visibility: hidden;
+				opacity: 0;
+			}
 
 			ul {
 				margin: 0;
@@ -153,7 +173,7 @@
 				}
 
 				li {
-					margin-bottom: 50px;
+					margin-bottom: 25px;
 
 					@include breakpoint(medium) {
 						margin-bottom: 0;

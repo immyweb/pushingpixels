@@ -1,6 +1,10 @@
 .splash {
+	width: 100%;
 	overflow: hidden;
-	position: absolute;
+
+	@include breakpoint(medium) {
+		position: absolute;
+	}
 
 	&__container {
 		position: relative;
@@ -83,8 +87,8 @@
 		width: 130%;
 		position: relative;
 		left: 50%;
-		top: 50px;
-		transform: translateX(-50%);
+		top: 30%;
+		transform: translate(-50%, -30%);
 
 		@include breakpoint(medium) {
 			position: absolute;
@@ -169,8 +173,10 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		visibility: hidden;
-		opacity: 0;
+		@include breakpoint(medium) {
+			visibility: hidden;
+			opacity: 0;
+		}
 
 		h1 {
 			text-transform: uppercase;
@@ -199,29 +205,37 @@
 	}
 
 	&__corner-circle {
-		visibility: hidden;
-		opacity: 0;
-	}
-
-	&__sm-radial {
-		&__outer, &__inner, &__blocks, &__lines {
+		@include breakpoint(medium) {
 			visibility: hidden;
 			opacity: 0;
 		}
 	}
 
+	&__sm-radial {
+		&__outer, &__inner, &__blocks, &__lines {
+			@include breakpoint(medium) {
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+	}
+
 	&__lrg-radial {
 		&__outer, &__inner, &__blocks, &__lines {
-			visibility: hidden;
-			opacity: 0;
+			@include breakpoint(medium) {
+				visibility: hidden;
+				opacity: 0;
+			}
 		}
 	}
 
 	&__dots {
 		&__small, &__large {
 			&__dot {
-				visibility: hidden;
-				opacity: 0;
+				@include breakpoint(medium) {
+					visibility: hidden;
+					opacity: 0;
+				}
 			}
 
 		}

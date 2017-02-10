@@ -33,7 +33,7 @@ export default class About {
 			.register(`screen and (max-width: ${breakpoints.maxSmall})`, {
 				match: () => {
 					// console.log('medium < 640');
-					this.mobileTL();
+					// this.mobileTL();
 				}
 			})
 			.register(`screen and (min-width: ${breakpoints.minMedium})`, {

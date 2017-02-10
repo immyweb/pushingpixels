@@ -31,9 +31,12 @@ html {
 body {
     font-family: serif;
     color: $light1;
-	width: 100vw;
-	height: 100vh;
-	position: relative;
+
+	@include breakpoint(medium) {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+	}
 }
 
 h1 {

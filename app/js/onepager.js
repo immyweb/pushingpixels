@@ -4,6 +4,8 @@ import 'gsap/src/uncompressed/plugins/ScrollToPlugin.js';
 import ScrollMagic from 'scrollmagic';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+import enquire from 'enquire.js';
+import breakpoints from './breakpoints';
 
 import Splash from './components/splash';
 import About from './components/about';
@@ -34,7 +36,16 @@ let controller,
 
 let navTl = new TimelineMax();
 
-export default {
+export default class OnePager {
+
+	checkBreakpoint() {
+		enquire
+			.register(`screen and (min-width: ${breakpoints.minMedium})`, {
+			    match: () => {
+					this.init();
+			    }
+			});
+	}
 
     init() {
 
@@ -61,7 +72,7 @@ export default {
 		this.galleryHandler();
 
 		this.closeModal();
-    },
+    }
 
     initSlides() {
         splash.init();
@@ -69,7 +80,7 @@ export default {
         gallery.init();
         contact.init();
 		modal.init();
-    },
+    }
 
     getTriggers() {
         // Triggers on the way down
@@ -87,12 +98,12 @@ export default {
 			triggersUp.push(id);
 
 		});
-    },
+    }
 
     createController() {
         // Create controller
 		controller = new ScrollMagic.Controller();
-    },
+    }
 
     sceneOne() {
         // Scene 1 - pin our main section
@@ -105,7 +116,7 @@ export default {
 		pinScene01
 			.setPin('#main .pin-wrapper', { pushFollowers: false })
 			.addTo(controller);
-    },
+    }
 
     navTl() {
         // Navigation timeline
@@ -117,7 +128,7 @@ export default {
 			// Add individual tweens to the timeline
 			navTl.add(moveNav, slideID);
 		});
-    },
+    }
 
     navScene() {
         // Scene 2 - move navigation
@@ -129,7 +140,7 @@ export default {
 		navScene
 			.setTween(navTl)
 			.addTo(controller);
-    },
+    }
 
     triggersDown() {
         // Scene 3 - trigger the right animation on the way DOWN
@@ -161,7 +172,7 @@ export default {
 				// })
 				.addTo(controller);
 		});
-    },
+    }
 
     triggersUp() {
         // Scene 4 - trigger the right animation on the way UP
@@ -193,7 +204,7 @@ export default {
 				// })
 				.addTo(controller);
 		});
-    },
+    }
 
     initPage() {
         setTimeout(() => {
@@ -203,7 +214,7 @@ export default {
             // Animate first slide in
             this.animationIn();
         }, 500);
-    },
+    }
 
     // Animate slide IN
     animationIn() {
@@ -211,7 +222,7 @@ export default {
         TweenMax.set($slide, { autoAlpha: 0 });
 
         splash.playTl();
-    },
+    }
 
     crossFade($slideOut, $slideIn, direction, slideIndex) {
         let slideOutID = $slideOut.attr('id').substring(5, 7),
@@ -234,7 +245,7 @@ export default {
             .to($slideOut, 0.25, { autoAlpha: 0, onComplete: this.hideOldSlide, onCompleteParams: [ slideOutID] })
             .set($slideIn, { autoAlpha: 1, onComplete: this.showNewSlide, onCompleteParams: [$slideIn, slideInID] })
         ;
-    },
+    }
 
     updateNav(slideOutID, slideInID) {
         // remove active class from all dots
@@ -242,7 +253,7 @@ export default {
 
         // Add active class to the new active slide
         TweenMax.set($('.nav__items li.nav__item' + slideInID), { className: '+=nav__item--active' });
-    },
+    }
 
 	showNewSlide($slideIn, slideInID) {
 
@@ -258,7 +269,7 @@ export default {
 		if ( slideInID === '04' ) {
 			contact.playTl();
 		}
-	},
+	}
 
 	hideOldSlide(slideOutID) {
 
@@ -274,7 +285,7 @@ export default {
 		if ( slideOutID === '04' ) {
 			contact.resetTl();
 		}
-	},
+	}
 
 	navHandler() {
 		$navItemLink.on('click', (e) => {
@@ -289,7 +300,7 @@ export default {
 
 			e.preventDefault();
 		});
-	},
+	}
 
 	galleryHandler() {
 		let self = this;
@@ -310,7 +321,7 @@ export default {
 
 			e.preventDefault();
 		});
-	},
+	}
 
 	modalContentUpdate(galleryIndex) {
 		let modalHeading = galleryModal.find('[data-modal-heading]'),
@@ -334,7 +345,7 @@ export default {
 			modal.playTl();
 		});
 
-	},
+	}
 
 	closeModal() {
 		galleryModalClose.on('click', function(e) {
@@ -353,4 +364,4 @@ export default {
 		});
 	}
 
-};
+}

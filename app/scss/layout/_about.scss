@@ -1,11 +1,20 @@
 .about {
-	position: absolute;
+	width: 100%;
 	overflow: hidden;
+
+	@include breakpoint(medium) {
+		position: absolute;
+	}
 
 	&__container {
 		position: relative;
 		width: 100vw;
-		height: 100vh;
+		margin-bottom: 50px;
+
+		@include breakpoint(medium) {
+			height: 100vh;
+			margin-bottom: 0;
+		}
 	}
 
 	svg {
@@ -107,9 +116,6 @@
 			background: $dark2;
 			padding: 60px 0;
 
-			visibility: hidden;
-			opacity: 0;
-
 			@include breakpoint(medium) {
 				position: absolute;
 				width: 68%;
@@ -117,6 +123,8 @@
 				left: 27.3%;
 				z-index: 6;
 				padding: 6% 7% 7% 9%;
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(large) {
@@ -132,17 +140,18 @@
 		width: 85%;
     	margin: 0 auto;
 
-		visibility: hidden;
-		opacity: 0;
-
 		@include breakpoint(medium) {
+			visibility: hidden;
+			opacity: 0;
 			width: auto;
 			margin: 0;
 		}
 
 		&__holder {
-			visibility: hidden;
-			opacity: 0;
+			@include breakpoint(medium) {
+				visibility: hidden;
+				opacity: 0;
+			}
 		}
 
 		h1 {
@@ -196,8 +205,10 @@
 			}
 
 			&__line {
-				visibility: hidden;
-				opacity: 0;
+				@include breakpoint(medium) {
+					visibility: hidden;
+					opacity: 0;
+				}
 			}
 		}
 
@@ -231,8 +242,10 @@
 			}
 
 			&__line {
-				visibility: hidden;
-				opacity: 0;
+				@include breakpoint(medium) {
+					visibility: hidden;
+					opacity: 0;
+				}
 			}
 		}
 

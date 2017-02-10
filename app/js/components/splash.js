@@ -40,7 +40,7 @@ export default class Splash {
 			.register(`screen and (max-width: ${breakpoints.maxSmall})`, {
 				match: () => {
 					// console.log('small to medium < 640');
-					this.mobileTL();
+					// this.mobileTL();
 				}
 			})
 			.register(`screen and (min-width: ${breakpoints.minMedium}) and (max-width: ${breakpoints.maxMedium})`, {

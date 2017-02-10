@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import { TimelineMax } from 'gsap';
+import enquire from 'enquire.js';
+import breakpoints from '../breakpoints';
 
 let desktopTl = new TimelineMax();
 
@@ -23,8 +25,18 @@ export default class Gallery {
 		this.linesBottomLeft = this.panel.find('.gallery__svg__lines--bottom__left');
 		this.linesBottomRight = this.panel.find('.gallery__svg__lines--bottom__right');
 
-		this.mainTl();
+		this.checkBreakpoint();
     }
+
+	checkBreakpoint() {
+		enquire
+			.register(`screen and (min-width: ${breakpoints.minMedium})`, {
+			    match: () => {
+					// console.log('large > 641');
+					this.mainTl();
+			    }
+			});
+	}
 
 	reverseLinesTopAnimTl() {
 		const tlReverseLines = new TimelineMax();
