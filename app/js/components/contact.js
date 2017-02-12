@@ -33,52 +33,12 @@ export default class Contact {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (max-width: ${breakpoints.maxSmall})`, {
-				match: () => {
-					// console.log('small to medium < 640');
-					this.mobileTl();
-				}
-			})
-			.register(`screen and (min-width: ${breakpoints.minMedium}) and (max-width: ${breakpoints.maxMedium})`, {
-			    match: () => {
-					// console.log('medium to large > 641 - 1023');
-					this.tabletTl();
-			    }
-			})
-			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
+			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
 			    match: () => {
 					// console.log('large > 1024+');
 					this.desktopTl();
 			    }
 			});
-	}
-
-	mobileTl() {
-		const mobileTl = new TimelineMax();
-
-		mobileTl
-			.set(this.panel, { autoAlpha: 1 })
-			.fromTo(this.contentBkgnd, 0.75, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
-			.fromTo(this.contentFrgnd, 0.75, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.35')
-			.to(this.contentCopy, 1, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.5')
-		;
-	}
-
-	tabletTl() {
-		let blockScale = getScale(this.radialBlocks),
-			lineScale = getScale(this.radialLines);
-
-		const tabletTl = new TimelineMax();
-
-		tabletTl
-			.set(this.panel, { autoAlpha: 1 })
-			.fromTo(this.contentBkgnd, 0.75, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
-			.fromTo(this.contentFrgnd, 0.75, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.35')
-			.to(this.contentCopy, 1, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.5')
-
-			.fromTo(this.radialBlocks, 1.5, { scale: 0, transformOrigin: '50% 50%', rotation: 540 }, { scale: blockScale, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, '-=0.75')
-			.fromTo(this.radialLines, 1.5, { scale: 0, transformOrigin: '50% 50%', rotation: -540 }, { scale: lineScale, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, '-=1.5')
-		;
 	}
 
 	desktopTl() {

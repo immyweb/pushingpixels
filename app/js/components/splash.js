@@ -37,19 +37,7 @@ export default class Splash {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (max-width: ${breakpoints.maxSmall})`, {
-				match: () => {
-					// console.log('small to medium < 640');
-					// this.mobileTL();
-				}
-			})
-			.register(`screen and (min-width: ${breakpoints.minMedium}) and (max-width: ${breakpoints.maxMedium})`, {
-			    match: () => {
-					// console.log('medium to large > 641 - 1023');
-					this.desktopTl();
-			    }
-			})
-			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
+			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
 			    match: () => {
 					// console.log('large > 1024+');
 					this.desktopTl();

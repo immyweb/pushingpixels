@@ -3,7 +3,6 @@ import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
-let mobileTl = new TimelineMax();
 let desktopTl = new TimelineMax();
 
 export default class About {
@@ -30,33 +29,12 @@ export default class About {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (max-width: ${breakpoints.maxSmall})`, {
-				match: () => {
-					// console.log('medium < 640');
-					// this.mobileTL();
-				}
-			})
-			.register(`screen and (min-width: ${breakpoints.minMedium})`, {
+			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
 			    match: () => {
 					// console.log('large > 641');
 					this.desktopTl();
 			    }
 			});
-	}
-
-	mobileTL() {
-
-		mobileTl
-			.set(this.panel, { autoAlpha: 1 })
-			.add('panelsIn')
-			.fromTo(this.rectMid, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
-			.fromTo(this.content, 0.75, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
-			.to(this.contentHolder, 0.75, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
-
-			.add('linesIn')
-			.staggerFromTo(this.linesLeft, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn')
-			.staggerFromTo(this.linesBottom, 0.5, { scaleY: 0, transformOrigin: 'center top' }, { scaleY: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn')
-		;
 	}
 
 	desktopTl() {

@@ -1,5 +1,5 @@
 .contact {
-	@include breakpoint(medium) {
+	@include breakpoint(large) {
 		position: absolute;
 		overflow: hidden;
 	}
@@ -9,7 +9,7 @@
 		width: 100vw;
 		padding-bottom: 50px;
 
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			height: 100vh;
 			padding-bottom: 0;
 		}
@@ -185,19 +185,14 @@
 	&__content {
 
 		&__container {
-
 			width: 100%;
 			padding-bottom: 100%;
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				position: absolute;
-				top: 8%;
+				top: auto;
 				width: 100%;
 				padding-bottom: 100%;
-			}
-
-			@include breakpoint(large) {
-				top: auto;
 			}
 		}
 
@@ -208,24 +203,17 @@
 			padding-bottom: 100%;
 			position: absolute;
 			z-index: 10;
-			// left: -15%;
-
-			@include breakpoint(medium) {
-				width: 90%;
-				padding-bottom: 90%;
-				top: 3%;
-				left: 50%;
-				transform: translateX(-50%);
-
-				visibility: hidden;
-				opacity: 0;
-			}
 
 			@include breakpoint(large) {
 				width: 87%;
 				padding: 0 0 87%;
 				bottom: -10%;
 				top: auto;
+				left: 50%;
+				transform: translateX(-50%);
+
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(xlarge) {
@@ -252,7 +240,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -266,7 +254,7 @@
 			transform: translateX(-50%);
 			top: 10%;
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 			    top: 75px;
 				visibility: hidden;
 				opacity: 0;
@@ -292,11 +280,8 @@
 				text-align: center;
 				display: inline-block;
 
-				@include breakpoint(medium) {
-					margin: 0 0 50px;
-				}
-
 				@include breakpoint(large) {
+					margin: 0 0 50px;
 					font-size: 60px;
 				}
 			}
@@ -330,7 +315,7 @@
 			@include clearfix;
 
 			p {
-				@include breakpoint(medium) {
+				@include breakpoint(large) {
 					width: 50%;
 					float: left;
 				}

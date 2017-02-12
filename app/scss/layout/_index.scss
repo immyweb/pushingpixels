@@ -1,5 +1,5 @@
 #main {
-	@include breakpoint(medium) {
+	@include breakpoint(large) {
 		position: absolute;
 		height: 100%;
 		width: 100%;
@@ -14,7 +14,7 @@
 }
 
 .pin-wrapper {
-	@include breakpoint(medium) {
+	@include breakpoint(large) {
 		bottom: 0 !important;
 		width: 100% !important;
 	}

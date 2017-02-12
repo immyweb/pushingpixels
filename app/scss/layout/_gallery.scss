@@ -2,7 +2,7 @@
 	width: 100%;
 	overflow: hidden;
 
-	@include breakpoint(medium) {
+	@include breakpoint(large) {
 		position: absolute;
 	}
 
@@ -12,14 +12,10 @@
 		padding-top: 70px;
 		margin-bottom: 100px;
 
-		@include breakpoint(medium) {
-			height: 100vh;
-			padding-top: 60px;
-			margin-bottom: 0;
-		}
-
 		@include breakpoint(large) {
+			height: 100vh;
 			padding-top: 50px;
+			margin-bottom: 0;
 		}
 
 		@include breakpoint(xlarge) {
@@ -56,7 +52,7 @@
 		&__blocks, &__lines {
 			&--top, &--bottom {
 				&__left, &__right {
-					@include breakpoint(medium) {
+					@include breakpoint(large) {
 						visibility: hidden;
 						opacity: 0;
 					}
@@ -68,7 +64,7 @@
 	&__content {
 
 		&__container {
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				width: 100%;
 				min-height: 600px;
 				z-index: 10;
@@ -88,13 +84,11 @@
 			left: 0;
 			top: 0;
 
-			@include breakpoint(medium) {
-				visibility: hidden;
-				opacity: 0;
-			}
-
 			@include breakpoint(large) {
 				margin-bottom: 20px;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(xlarge) {
@@ -112,7 +106,7 @@
 			left: 0;
 			top: 0;
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -125,7 +119,7 @@
 			padding-top: 40px;
 			z-index: 13;
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 				top: 40px;
@@ -144,7 +138,7 @@
 				text-align: center;
 				display: inline-block;
 
-				@include breakpoint(medium) {
+				@include breakpoint(large) {
 					font-size: 60px;
 				}
 			}
@@ -154,7 +148,7 @@
 			width: 75%;
 			margin: 0 auto;
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -165,7 +159,7 @@
 				list-style: none;
 				@include grid-row(12);
 
-				@include breakpoint(medium) {
+				@include breakpoint(large) {
 					transform: translateZ(0) skewY(-5deg);
 					border: 2px solid $light1;
 					backface-visibility: hidden;
@@ -175,7 +169,7 @@
 				li {
 					margin-bottom: 25px;
 
-					@include breakpoint(medium) {
+					@include breakpoint(large) {
 						margin-bottom: 0;
 						@include grid-column(4, 0);
 						transform: translateZ(0) skewY(5deg) scaleY(1.15);
@@ -187,7 +181,7 @@
 						border: none;
 					}
 
-					@include breakpoint(medium) {
+					@include breakpoint(large) {
 						&:after {
 							content: '+';
 							position: absolute;
@@ -214,7 +208,7 @@
 						display: inline-block;
 						position: relative;
 
-						@include breakpoint(medium) {
+						@include breakpoint(large) {
 							transition: all 0.5s ease;
 
 							&:hover {
@@ -225,7 +219,7 @@
 					}
 
 					img {
-						@include breakpoint(medium) {
+						@include breakpoint(large) {
 							transition: all 0.5s ease;
 
 							&:hover {

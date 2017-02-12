@@ -40,7 +40,7 @@ export default class OnePager {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.minMedium})`, {
+			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
 			    match: () => {
 					this.init();
 			    }

@@ -30,7 +30,7 @@ export default class Gallery {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.minMedium})`, {
+			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
 			    match: () => {
 					// console.log('large > 641');
 					this.mainTl();

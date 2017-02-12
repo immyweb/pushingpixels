@@ -2,7 +2,7 @@
 	width: 100%;
 	overflow: hidden;
 
-	@include breakpoint(medium) {
+	@include breakpoint(large) {
 		position: absolute;
 	}
 
@@ -11,7 +11,7 @@
 		width: 100vw;
 		margin-bottom: 50px;
 
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			height: 100vh;
 			margin-bottom: 0;
 		}
@@ -24,47 +24,36 @@
 	// Background ellipses
 	&__ellipsebkgnd {
 		&--top {
-			@include breakpoint(medium) {
+
+			@include breakpoint(large) {
 				display: block;
 				background: $light1;
 				position: absolute;
-				width: 65%;
-				padding-bottom: 65%;
 				border-radius: 50%;
 				left: -10%;
-			    top: -30%;
-				// opacity: 0.5;
-
-				visibility: hidden;
-				opacity: 0;
-			}
-
-			@include breakpoint(large) {
 				width: 50%;
 				padding-bottom: 50%;
 				top: -40%;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 		}
 
 		&--bottom {
-			@include breakpoint(medium) {
+
+			@include breakpoint(large) {
 				display: block;
 				background: $light2;
 				position: absolute;
-				width: 65%;
-				padding-bottom: 65%;
-				border-radius: 50%;
-				right: 0;
-			    bottom: -30%;
-
-				visibility: hidden;
-				opacity: 0;
-			}
-
-			@include breakpoint(large) {
 				width: 50%;
 				padding-bottom: 50%;
 				bottom: -40%;
+				border-radius: 50%;
+				right: 0;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 		}
 	}
@@ -74,7 +63,7 @@
 		position: relative;
     	width: 100%;
 
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 	    	height: 100vh;
 			padding: 0;
 		}
@@ -82,7 +71,7 @@
 		&--light {
 			display: none;
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				display: block;
 				background: $dark1;
 				position: absolute;
@@ -90,16 +79,11 @@
 				padding-bottom: 31.5%; // 530
 				z-index: 5;
 
-				top: 57%;
-    			left: 15%;
+				left: 9%;
+	    		top: 57%;
 
 				visibility: hidden;
 				opacity: 0;
-			}
-
-			@include breakpoint(large) {
-				left: 9%;
-	    		top: 57%;
 			}
 
 			@include breakpoint(xlarge) {
@@ -116,19 +100,17 @@
 			background: $dark2;
 			padding: 60px 0;
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				position: absolute;
 				width: 68%;
 				top: 10.5%;
 				left: 27.3%;
 				z-index: 6;
 				padding: 6% 7% 7% 9%;
+				height: 72.7%;
+
 				visibility: hidden;
 				opacity: 0;
-			}
-
-			@include breakpoint(large) {
-				height: 72.7%;
 			}
 		}
 	}
@@ -140,7 +122,7 @@
 		width: 85%;
     	margin: 0 auto;
 
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			visibility: hidden;
 			opacity: 0;
 			width: auto;
@@ -148,7 +130,7 @@
 		}
 
 		&__holder {
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -178,10 +160,6 @@
 	&__svg {
 
 		&__lines--bottom {
-			// display: none;
-			@include breakpoint(medium) {
-				display: none;
-			}
 
 			@include breakpoint(large) {
 				display: inline-block;
@@ -205,7 +183,7 @@
 			}
 
 			&__line {
-				@include breakpoint(medium) {
+				@include breakpoint(large) {
 					visibility: hidden;
 					opacity: 0;
 				}
@@ -217,7 +195,7 @@
 			transform: rotate(180deg);
 			margin-top: 35px;
 
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				display: inline-block;
 				width: 100%;
 				position: absolute;
@@ -242,7 +220,7 @@
 			}
 
 			&__line {
-				@include breakpoint(medium) {
+				@include breakpoint(large) {
 					visibility: hidden;
 					opacity: 0;
 				}
