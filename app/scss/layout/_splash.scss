@@ -2,7 +2,7 @@
 	width: 100%;
 	overflow: hidden;
 
-	@include breakpoint(large) {
+	@include breakpoint(xlarge) {
 		position: absolute;
 	}
 
@@ -10,7 +10,7 @@
 		position: relative;
 		width: 100vw;
 
-		@include breakpoint(large) {
+		@include breakpoint(xlarge) {
 			height: 100vh;
 		}
 	}
@@ -26,6 +26,11 @@
 			border-radius: 50%;
 			background: $dark3;
 			position: absolute;
+			top: 63%;
+	    	left: -25%;
+		}
+
+		@include breakpoint(xlarge) {
 			top: 73%;
 	    	left: -15%;
 		}
@@ -36,6 +41,7 @@
 		display: none;
 
 		@include breakpoint(large) {
+			display: block;
 			width: 47%;
 			padding-bottom: 47%;
 			transform: translate(-6%, -4%);
@@ -96,13 +102,13 @@
 			width: 85%;
 			padding-bottom: 85%;
 			padding-top: 0;
-			transform: translate(33%, 3%);
+			transform: translate(-25%, 3%);
 		}
 
 		@include breakpoint(xlarge) {
 			width: 72%;
 			padding-bottom: 72%;
-			transform: translate(52%, 2%);
+			transform: translate(-19%, 2%);
 		}
 
 		&__outer {
@@ -151,11 +157,13 @@
 
 		&__large {
 			position: absolute;
+			top: 0;
 			transform: translate(17%, 8%) scale(1.1);
 		}
 
 		&__small {
 			position: absolute;
+			top: 0;
 			transform: translate(17%, 4%) scale(1.1);
 		}
 	}
@@ -167,7 +175,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		@include breakpoint(large) {
+		@include breakpoint(xlarge) {
 			visibility: hidden;
 			opacity: 0;
 		}
@@ -199,7 +207,7 @@
 	}
 
 	&__corner-circle {
-		@include breakpoint(large) {
+		@include breakpoint(xlarge) {
 			visibility: hidden;
 			opacity: 0;
 		}
@@ -207,7 +215,7 @@
 
 	&__sm-radial {
 		&__outer, &__inner, &__blocks, &__lines {
-			@include breakpoint(large) {
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -216,7 +224,7 @@
 
 	&__lrg-radial {
 		&__outer, &__inner, &__blocks, &__lines {
-			@include breakpoint(large) {
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -226,7 +234,7 @@
 	&__dots {
 		&__small, &__large {
 			&__dot {
-				@include breakpoint(large) {
+				@include breakpoint(xlarge) {
 					visibility: hidden;
 					opacity: 0;
 				}

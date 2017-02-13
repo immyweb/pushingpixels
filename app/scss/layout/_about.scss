@@ -2,7 +2,7 @@
 	width: 100%;
 	overflow: hidden;
 
-	@include breakpoint(large) {
+	@include breakpoint(xlarge) {
 		position: absolute;
 	}
 
@@ -11,7 +11,7 @@
 		width: 100vw;
 		margin-bottom: 50px;
 
-		@include breakpoint(large) {
+		@include breakpoint(xlarge) {
 			height: 100vh;
 			margin-bottom: 0;
 		}
@@ -34,7 +34,9 @@
 				width: 50%;
 				padding-bottom: 50%;
 				top: -40%;
+			}
 
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -51,7 +53,9 @@
 				bottom: -40%;
 				border-radius: 50%;
 				right: 0;
+			}
 
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -81,13 +85,13 @@
 
 				left: 9%;
 	    		top: 57%;
-
-				visibility: hidden;
-				opacity: 0;
 			}
 
 			@include breakpoint(xlarge) {
 				top: 50%;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(xxlarge) {
@@ -108,7 +112,9 @@
 				z-index: 6;
 				padding: 6% 7% 7% 9%;
 				height: 72.7%;
+			}
 
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -123,14 +129,21 @@
     	margin: 0 auto;
 
 		@include breakpoint(large) {
+			width: 105%;
+			padding: 35px;
+		}
+
+		@include breakpoint(xlarge) {
 			visibility: hidden;
 			opacity: 0;
 			width: auto;
 			margin: 0;
+			width: 100%;
+			padding: 50px;
 		}
 
 		&__holder {
-			@include breakpoint(large) {
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -146,13 +159,21 @@
 			border-bottom: 1px solid $red2;
 			padding-bottom: 15px;
 
-			@include breakpoint(medium) {
+			@include breakpoint(xlarge) {
 				font-size: 60px;
 			}
 		}
 
 		p, ul {
 			font-size: 16px;
+
+			@include breakpoint(large) {
+				font-size: 14px;
+			}
+
+			@include breakpoint(xlarge) {
+				font-size: 16px;
+			}
 		}
 	}
 
@@ -183,7 +204,7 @@
 			}
 
 			&__line {
-				@include breakpoint(large) {
+				@include breakpoint(xlarge) {
 					visibility: hidden;
 					opacity: 0;
 				}
@@ -220,7 +241,7 @@
 			}
 
 			&__line {
-				@include breakpoint(large) {
+				@include breakpoint(xlarge) {
 					visibility: hidden;
 					opacity: 0;
 				}
@@ -271,6 +292,16 @@
 				&__dot {
 					visibility: hidden;
 					opacity: 0;
+
+					@include breakpoint(large) {
+						visibility: visible;
+						opacity: 1;
+					}
+
+					@include breakpoint(xlarge) {
+						visibility: hidden;
+						opacity: 0;
+					}
 				}
 			}
 		}

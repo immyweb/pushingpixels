@@ -29,11 +29,14 @@ export default class About {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
+			.register(`screen and (min-width: ${breakpoints.minXLarge})`, {
 			    match: () => {
 					// console.log('large > 641');
 					this.desktopTl();
-			    }
+			    },
+				unmatch: () => {
+					location.reload();
+				}
 			});
 	}
 

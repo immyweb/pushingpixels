@@ -33,11 +33,14 @@ export default class Contact {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
+			.register(`screen and (min-width: ${breakpoints.minXLarge})`, {
 			    match: () => {
 					// console.log('large > 1024+');
 					this.desktopTl();
-			    }
+			    },
+				unmatch: () => {
+					location.reload();
+				}
 			});
 	}
 

@@ -3,22 +3,27 @@
 	overflow: hidden;
 
 	@include breakpoint(large) {
+		overflow-y: visible;
+	}
+
+	@include breakpoint(xlarge) {
 		position: absolute;
+		overflow: hidden;
 	}
 
 	&__container {
 		position: relative;
 		width: 100vw;
 		padding-top: 70px;
-		margin-bottom: 100px;
+		margin-bottom: 50px;
 
 		@include breakpoint(large) {
-			height: 100vh;
 			padding-top: 50px;
 			margin-bottom: 0;
 		}
 
 		@include breakpoint(xlarge) {
+			height: 100vh;
 			padding-top: 20px;
 		}
 	}
@@ -52,7 +57,7 @@
 		&__blocks, &__lines {
 			&--top, &--bottom {
 				&__left, &__right {
-					@include breakpoint(large) {
+					@include breakpoint(xlarge) {
 						visibility: hidden;
 						opacity: 0;
 					}
@@ -86,13 +91,13 @@
 
 			@include breakpoint(large) {
 				margin-bottom: 20px;
-
-				visibility: hidden;
-				opacity: 0;
 			}
 
 			@include breakpoint(xlarge) {
 				margin-bottom: 0;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 		}
 
@@ -106,7 +111,7 @@
 			left: 0;
 			top: 0;
 
-			@include breakpoint(large) {
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -119,11 +124,12 @@
 			padding-top: 40px;
 			z-index: 13;
 
-			@include breakpoint(large) {
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 				top: 40px;
 				padding-top: 0;
+				transform: translateZ(0) skewY(5deg) scaleX(0.8);
 			}
 
 			h1 {
@@ -148,7 +154,7 @@
 			width: 75%;
 			margin: 0 auto;
 
-			@include breakpoint(large) {
+			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}

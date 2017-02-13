@@ -40,7 +40,7 @@ export default class OnePager {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.maxMedium})`, {
+			.register(`screen and (min-width: ${breakpoints.minXLarge})`, {
 			    match: () => {
 					this.init();
 			    }
@@ -208,9 +208,6 @@ export default class OnePager {
 
     initPage() {
         setTimeout(() => {
-            // Prevents body from flickering
-            // TweenMax.set($body, { autoAlpha: 1 });
-
             // Animate first slide in
             this.animationIn();
         }, 500);
@@ -218,7 +215,6 @@ export default class OnePager {
 
     // Animate slide IN
     animationIn() {
-
         TweenMax.set($slide, { autoAlpha: 0 });
 
         splash.playTl();
@@ -317,7 +313,6 @@ export default class OnePager {
 			TweenMax.set($body, { className: '+=modal-open' });
 
 			self.modalContentUpdate(galleryIndex);
-
 
 			e.preventDefault();
 		});
