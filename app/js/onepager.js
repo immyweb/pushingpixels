@@ -303,7 +303,7 @@ export default class OnePager {
 
 		galleryLinks.on('click', function(e) {
 
-			let galleryIndex = $(this).attr('href').substring(1,10);
+			let galleryIndex = $(this).data('model-url').substring(1,10);
 
 			// disable body scrolling
 			controller.enabled(false);

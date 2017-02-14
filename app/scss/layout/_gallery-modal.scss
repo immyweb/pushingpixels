@@ -8,7 +8,7 @@
 	overflow-x: hidden;
 	overflow-y: visible;
 
-	visibility: none;
+	visibility: hidden;
 	opacity: 0;
 
 	&__container {
@@ -170,5 +170,38 @@
 		top: 3%;
 		right: 0;
 		transform: scale(0.75);
+	}
+}
+
+.page-gallery {
+	.gallery-modal {
+		position: relative;
+		visibility: visible;
+		opacity: 1;
+
+		&__content {
+			&__bkgnd, &__frgnd, &__inner {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			&__images {
+				li {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+
+		&__svg {
+			&__blocks, &__lines {
+				&--left, &--right {
+					&__top, &__bottom {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
 	}
 }

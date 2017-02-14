@@ -14,9 +14,12 @@
 		"image1Alt": "Virgin",
 		"image2Alt": "Barclays",
 		"image3Alt": "Michelin",
-        "image1Url": "#project01",
-        "image2Url": "#project02",
-		"image3Url": "#project03"
+        "image1Url": "/gallery/virgin.html",
+        "image2Url": "/gallery/barclays.html",
+		"image3Url": "/gallery/michelin.html",
+		"image1ModelUrl": "#project01",
+        "image2ModelUrl": "#project02",
+		"image3ModelUrl": "#project03"
     },
 	"modal": {
 		"project01": {

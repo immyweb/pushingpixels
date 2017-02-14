@@ -83,6 +83,8 @@
 			min-height: 600px;
 			background: $dark1;
 			transform: translateZ(0) skewY(5deg);
+			backface-visibility: hidden;
+			outline: 1px solid transparent;
 			position: relative;
 			z-index: 11;
 			margin-bottom: 30px;
@@ -106,6 +108,8 @@
 			min-height: 600px;
 			background: $dark2;
 			transform: translateZ(0) skewY(-10deg);
+			backface-visibility: hidden;
+			outline: 1px solid transparent;
 			position: relative;
 			z-index: 12;
 			left: 0;
@@ -120,6 +124,8 @@
 		&__inner {
 			text-align: center;
 			transform: translateZ(0) skewY(5deg);
+			backface-visibility: hidden;
+			outline: 1px solid transparent;
 			position: relative;
 			padding-top: 40px;
 			z-index: 13;
@@ -130,6 +136,8 @@
 				top: 40px;
 				padding-top: 0;
 				transform: translateZ(0) skewY(5deg) scaleX(0.8);
+				backface-visibility: hidden;
+				outline: 1px solid transparent;
 			}
 
 			h1 {
@@ -153,8 +161,16 @@
 		&__list {
 			width: 75%;
 			margin: 0 auto;
+			padding-bottom: 20px;
+
+			@include breakpoint(large) {
+				width: 85%;
+			}
 
 			@include breakpoint(xlarge) {
+				width: 75%;
+				padding-bottom: 0;
+
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -167,6 +183,8 @@
 
 				@include breakpoint(large) {
 					transform: translateZ(0) skewY(-5deg);
+					backface-visibility: hidden;
+					outline: 1px solid transparent;
 					border: 2px solid $light1;
 					backface-visibility: hidden;
 					overflow: hidden;
@@ -179,6 +197,8 @@
 						margin-bottom: 0;
 						@include grid-column(4, 0);
 						transform: translateZ(0) skewY(5deg) scaleY(1.15);
+						backface-visibility: hidden;
+						outline: 1px solid transparent;
 						border-right: 2px solid $light1;
 						overflow-x: hidden;
 					}
@@ -213,8 +233,10 @@
 					a {
 						display: inline-block;
 						position: relative;
+						border: 1px solid $light1;
 
 						@include breakpoint(large) {
+							border: none;
 							transition: all 0.5s ease;
 
 							&:hover {
