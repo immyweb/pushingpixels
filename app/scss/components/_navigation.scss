@@ -74,3 +74,11 @@
 		}
 	}
 }
+
+.no-js {
+	.nav {
+		&__container {
+			display: none;
+		}
+	}
+}

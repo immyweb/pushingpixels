@@ -307,3 +307,51 @@
 		}
 	}
 }
+
+.no-js {
+	.about {
+		position: relative;
+
+		&__ellipsebkgnd {
+			&--top, &--bottom {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&__rect {
+			&--mid {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&__content {
+			visibility: visible;
+			opacity: 1;
+
+			&__holder {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&__svg {
+			&__lines--bottom, &__lines--left {
+				&__line {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+
+			&__dots {
+				&--small, &--large {
+					&__dot {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

@@ -261,3 +261,36 @@
 
 	}
 }
+
+.no-js {
+	.gallery {
+		position: relative;
+
+		&__content {
+			&__bkgnd, &__frgnd, &__inner {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			&__inner {
+				transform: translateZ(0) skewY(5deg) scaleX(1);
+			}
+
+			&__list {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&__svg {
+			&__blocks, &__lines {
+				&--top, &--bottom {
+					&__left, &__right {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

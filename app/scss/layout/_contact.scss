@@ -420,3 +420,44 @@
 		}
 	}
 }
+
+.no-js {
+	.contact {
+		position: relative;
+
+		&__ellipsebeige--left, &__ellipsebeige--right {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		&__ellipsecorner--left, &__ellipsecorner--right {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		&__content {
+			&__bkgnd, &__frgnd, &__copy {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&__svg {
+			&__radials {
+				&--blocks, &--lines {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+
+			&__dots {
+				&--large, &--small {
+					&__dot {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

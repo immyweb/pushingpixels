@@ -26,3 +26,17 @@
 .modal-open {
 	overflow: hidden;
 }
+
+.no-js {
+	#main {
+		position: static;
+		height: auto;
+		width: auto;
+		top: auto;
+	}
+
+	.pin-wrapper {
+		bottom: auto;
+		width: auto;
+	}
+}

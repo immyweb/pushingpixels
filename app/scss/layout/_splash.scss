@@ -243,3 +243,46 @@
 		}
 	}
 }
+
+.no-js {
+	.splash {
+		position: static;
+
+		&__container {
+			height: auto;
+		}
+
+		&__heading {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		&__corner-circle {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		&__sm-radial {
+			&__outer, &__inner, &__blocks, &__lines {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&__lrg-radial {
+			&__outer, &__inner, &__blocks, &__lines {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&__dots {
+			&__small, &__large {
+				&__dot {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
