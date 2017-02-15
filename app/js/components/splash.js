@@ -48,21 +48,6 @@ export default class Splash {
 			});
 	}
 
-	mobileTL() {
-
-		mobileTL
-			.set(this.panel, { autoAlpha: 1 })
-			.add('ellipsesIn')
-			.fromTo(this.lrgRadialOuter, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut })
-			.fromTo(this.lrgRadialInner, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
-			.add('blocksIn')
-			.fromTo(this.lrgRadialBlocks, 0.5, { scale: 0, transformOrigin: '54% 54%' }, { scale: 0.82, autoAlpha: 0.65, ease: Elastic.easeOut.config(1, 0.4) }, '-=0.25')
-			.add('linesIn')
-			.fromTo(this.lrgRadialLines, 1.5, { scale: 0, transformOrigin: '47% 47%', rotation: 360 }, { scale: 0.87, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'blocksIn-=0.35')
-			.fromTo(this.heading, 1, { top: '+=5%' }, { top: '-=5%', autoAlpha: 1 }, 'linesIn-=0.5')
-		;
-	}
-
 	desktopTl() {
 
 		desktopTl
@@ -87,7 +72,7 @@ export default class Splash {
 			.staggerTo(this.dotsLarge, 1, { autoAlpha: 1, ease: Power4.easeOut }, 0.05, 'blocksIn')
 
 			.add('titleIn')
-			.fromTo(this.heading, 1, { top: '+=5%' }, { top: '-=5%', autoAlpha: 1 }, 'linesIn-=0.5')
+			.fromTo(this.heading, 1, { y: '+=50' }, { y: '-=50', autoAlpha: 1 }, 'linesIn-=0.5')
 		;
 
 		desktopTl.pause();

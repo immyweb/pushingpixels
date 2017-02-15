@@ -210,7 +210,7 @@ export default class OnePager {
         setTimeout(() => {
             // Animate first slide in
             this.animationIn();
-        }, 500);
+        }, 600);
     }
 
     // Animate slide IN
