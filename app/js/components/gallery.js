@@ -3,7 +3,7 @@ import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
-let desktopTl = new TimelineMax();
+let mainTl = new TimelineMax();
 
 export default class Gallery {
 
@@ -83,7 +83,7 @@ export default class Gallery {
 
 	mainTl() {
 
-		desktopTl
+		mainTl
 			.set(this.panel, { autoAlpha: 1 })
 			.add('panelsIn')
 			.fromTo(this.contentBkgnd, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1.2, autoAlpha: 1, ease: Power4.easeInOut })
@@ -106,15 +106,15 @@ export default class Gallery {
 			// .fromTo(this.contentGallery, 0.5, { scaleY: 0, transformOrigin: '50% 0%' }, { scaleY: 1, autoAlpha: 1, ease: Power2.easeInOut }, '-=0.75')
 		;
 
-		desktopTl.pause();
+		mainTl.pause();
 	}
 
 	playTl() {
-		desktopTl.play();
+		mainTl.play();
 	}
 
 	resetTl() {
-		desktopTl.pause(0, true);
+		mainTl.pause(0, true);
 	}
 
 }

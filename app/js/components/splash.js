@@ -3,7 +3,6 @@ import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
-let mobileTL = new TimelineMax();
 let desktopTl = new TimelineMax();
 
 export default class Splash {

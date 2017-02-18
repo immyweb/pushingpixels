@@ -3,7 +3,7 @@ import { TimelineMax } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
-let desktopTl = new TimelineMax();
+let mainTl = new TimelineMax();
 
 export default class About {
 
@@ -32,7 +32,7 @@ export default class About {
 			.register(`screen and (min-width: ${breakpoints.minXLarge})`, {
 			    match: () => {
 					// console.log('large > 641');
-					this.desktopTl();
+					this.mainTl();
 			    },
 				unmatch: () => {
 					location.reload();
@@ -40,9 +40,9 @@ export default class About {
 			});
 	}
 
-	desktopTl() {
+	mainTl() {
 
-		desktopTl
+		mainTl
 			.set(this.panel, { autoAlpha: 1 })
 			.add('ellipsesIn')
 			.fromTo(this.ellipseBkgndTop, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 0.5, ease: Power4.easeInOut })
@@ -63,14 +63,14 @@ export default class About {
 			.staggerFromTo(this.dotsLarge, 0.4, { scale: 0, transformOrigin: 'center top' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 0.02, 'panelsIn+=0.5')
 		;
 
-		desktopTl.pause();
+		mainTl.pause();
 	}
 
 	playTl() {
-		desktopTl.play();
+		mainTl.play();
 	}
 
 	resetTl() {
-		desktopTl.pause(0, true);
+		mainTl.pause(0, true);
 	}
 }

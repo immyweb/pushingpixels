@@ -58,8 +58,9 @@
 		"linkedinIcon": "/images/linkedin.svg",
 		"linkedIconAlt": "LinkedIn",
         "cv": "Download my CV",
-		"cvUrl": "",
+		"cvUrl": "/docs/Imran-Oozeerally-CV-web.pdf",
 		"cvIcon": "/images/download.svg",
-		"cvIconAlt": "CV"
+		"cvIconAlt": "CV",
+        "copy2": "Or contact me using the form below:"
     }
 }

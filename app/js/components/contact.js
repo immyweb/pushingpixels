@@ -1,10 +1,10 @@
 import $ from 'jquery';
-import { TimelineMax } from 'gsap';
+import { TimelineMax, TweenLite } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 import getScale from '../utils/getScale';
 
-let desktopTl = new TimelineMax();
+let mainTl = new TimelineMax();
 
 export default class Contact {
 
@@ -22,11 +22,7 @@ export default class Contact {
 		this.contentCopy = this.panel.find('.contact__content__copy');
 
 		this.radialBlocks = this.panel.find('.contact__svg__radials--blocks');
-
 		this.radialLines = this.panel.find('.contact__svg__radials--lines');
-
-		this.dotsLarge = this.panel.find('.contact__svg__dots--large__dot');
-		this.dotsSmall = this.panel.find('.contact__svg__dots--small__dot');
 
 		this.checkBreakpoint();
     }
@@ -49,7 +45,7 @@ export default class Contact {
 		let blockScale = getScale(this.radialBlocks),
 			lineScale = getScale(this.radialLines);
 
-		desktopTl
+		mainTl
 			.set(this.panel, { autoAlpha: 1 })
 			.add('beigeEllipseIn')
 			.fromTo(this.ellipseBeigeLeft, 0.5, { scale: 0, transformOrigin: 'center center' }, { scale: 1, autoAlpha: 1, ease: Power4.easeInOut }, 'beigeEllipseIn')
@@ -67,20 +63,44 @@ export default class Contact {
 			.add('blocksIn')
 			.fromTo(this.radialBlocks, 1.5, { scale: 0, transformOrigin: '50% 50%', rotation: 360 }, { scale: blockScale, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'cornerEllipseIn+=0.75')
 			.fromTo(this.radialLines, 1.5, { scale: 0, transformOrigin: '50% 50%', rotation: -360 }, { scale: lineScale, autoAlpha: 1, rotation: 0, ease: Power4.easeOut }, 'cornerEllipseIn+=1.5')
-
-			.add('dotsIn')
-			.staggerTo(this.dotsSmall, 1, { autoAlpha: 1, ease: Power4.easeOut }, 0.05, 'blocksIn')
-			.staggerTo(this.dotsLarge, 1, { autoAlpha: 1, ease: Power4.easeOut }, 0.05, 'blocksIn')
 		;
 
-		desktopTl.pause();
+		mainTl.pause();
 	}
 
 	playTl() {
-		desktopTl.play();
+		mainTl.play();
 	}
 
 	resetTl() {
-		desktopTl.pause(0, true);
+		mainTl.pause(0, true);
 	}
+
+    formHandler() {
+		let form = $('#contactForm'),
+			url = 'https://www.enformed.io/x99zq8be',
+			proxy = 'https://cors-anywhere.herokuapp.com/';
+
+        form.submit(function(e) {
+
+			e.preventDefault();
+
+			$.ajax({
+				url: proxy + url,
+		        method: 'post',
+		        dataType: 'json',
+		        accepts: 'application/json',
+		        data: $(this).serialize(),
+		        success: function() {
+		        	// console.log('Your form was successfully received!');
+					TweenLite.to($('.contact__content__form__success'), 0.5, { autoAlpha: 1 });
+		        },
+		        error: function() {
+		        	// console.log('Failure. Try again.');
+					// TweenLite.to($('.contact__content__form__error'), 0.5, { autoAlpha: 1 });
+					TweenLite.to($('.contact__content__form__success'), 0.5, { autoAlpha: 1 });
+		        }
+			});
+		});
+    }
 }

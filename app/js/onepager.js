@@ -45,6 +45,8 @@ export default class OnePager {
 					this.init();
 			    }
 			});
+
+		contact.formHandler();
 	}
 
     init() {
