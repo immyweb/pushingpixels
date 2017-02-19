@@ -300,22 +300,22 @@
 						<form class="contact__content__form" id="contactForm">
 							<fieldset>
 								<div class="contact__content__form__item">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" placeholder="Name" required>
+									<label for="name">{{ contact.form.name }}</label>
+									<input type="text" name="name" id="name" placeholder="{{ contact.form.name }}" required>
 								</div>
 								<div class="contact__content__form__item">
-									<label for="email">Email address</label>
-									<input type="email" name="email" id="email" placeholder="Email address" required>
+									<label for="email">{{ contact.form.email }}</label>
+									<input type="email" name="email" id="email" placeholder="{{ contact.form.email }}" required>
 								</div>
 								<div class="contact__content__form__item">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" placeholder="Message" required></textarea>
+									<label for="message">{{ contact.form.message }}</label>
+									<textarea name="message" id="message" placeholder="{{ contact.form.message }}" required></textarea>
 								</div>
 								<div class="contact__content__form__submit">
-									<input type="submit" name="submit" value="Send">
+									<input type="submit" name="submit" value="{{ contact.form.send }}">
 
-									<span class="contact__content__form__error">Error, message not sent.<br />Please try again.</span>
-									<span class="contact__content__form__success">Thank you for your email.</span>
+									<span class="contact__content__form__error">{{ contact.form.error | safe }}</span>
+									<span class="contact__content__form__success">{{ contact.form.success }}</span>
 								</div>
 							</fieldset>
 						</form>

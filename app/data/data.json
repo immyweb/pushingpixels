@@ -61,6 +61,14 @@
 		"cvUrl": "/docs/Imran-Oozeerally-CV-web.pdf",
 		"cvIcon": "/images/download.svg",
 		"cvIconAlt": "CV",
-        "copy2": "Or contact me using the form below:"
+        "copy2": "Or contact me using the form below:",
+		"form": {
+			"name": "Name",
+			"email": "Email address",
+			"message": "Message",
+			"send": "Send",
+			"error": "Error, message not sent.<br />Please try again.",
+			"success": "Thank you for your email."
+		}
     }
 }
