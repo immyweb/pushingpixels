@@ -286,6 +286,10 @@
 					display: inline-block;
 					margin-right: 10px;
 				}
+
+				&:hover {
+					color: $light2;
+				}
 			}
 		}
 
