@@ -6,7 +6,7 @@ export default function getScale(element) {
 	let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
 
 	if ( !isSafari ) {
-
+		// console.log($(element).css('-webkit-transform'));
 		let matrix = $(element).css('transform') || $(element).css('-ms-transform');
 
 		let	values = matrix.split('(')[1];
@@ -21,6 +21,7 @@ export default function getScale(element) {
 	}
 
 	// console.log(new WebKitCSSMatrix(window.getComputedStyle($(element)[0]).webkitTransform));
+
 	// console.log(matrix);
 
 

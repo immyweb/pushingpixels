@@ -2,9 +2,11 @@ import $ from 'jquery';
 import { TimelineMax, TweenLite } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
-import getScale from '../utils/getScale';
+// import getScale from '../utils/getScale';
 
 let mainTl = new TimelineMax();
+
+let blockScale, lineScale;
 
 export default class Contact {
 
@@ -29,7 +31,7 @@ export default class Contact {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.minXLarge})`, {
+			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
 			    match: () => {
 					// console.log('large > 1024+');
 					this.desktopTl();
@@ -42,8 +44,9 @@ export default class Contact {
 
 	desktopTl() {
 
-		let blockScale = getScale(this.radialBlocks),
-			lineScale = getScale(this.radialLines);
+		// let blockScale = getScale(this.radialBlocks),
+		// 	lineScale = getScale(this.radialLines);
+		this.getScaleValues();
 
 		mainTl
 			.set(this.panel, { autoAlpha: 1 })
@@ -66,6 +69,25 @@ export default class Contact {
 		;
 
 		mainTl.pause();
+	}
+
+	getScaleValues() {
+		enquire
+			.register(`screen and (min-width: ${breakpoints.minLarge})`, () => {
+				// console.log('1024px');
+				blockScale = 1.1;
+				lineScale = 1.1;
+			})
+			.register(`screen and (min-width: ${breakpoints.minXLarge})`, () => {
+				// console.log('1200px');
+				blockScale = 1.055;
+				lineScale = 1.06;
+			})
+			.register(`screen and (min-width: ${breakpoints.minXXLarge})`, () => {
+				// console.log('1440px');
+				blockScale = 0.825;
+				lineScale = 0.825;
+			});
 	}
 
 	playTl() {

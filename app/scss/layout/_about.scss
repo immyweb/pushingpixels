@@ -2,7 +2,7 @@
 	width: 100%;
 	overflow: hidden;
 
-	@include breakpoint(xlarge) {
+	@include breakpoint(large) {
 		position: absolute;
 	}
 
@@ -11,7 +11,7 @@
 		width: 100vw;
 		margin-bottom: 50px;
 
-		@include breakpoint(xlarge) {
+		@include breakpoint(large) {
 			height: 100vh;
 			margin-bottom: 0;
 		}
@@ -34,9 +34,7 @@
 				width: 50%;
 				padding-bottom: 50%;
 				top: -40%;
-			}
 
-			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -53,9 +51,7 @@
 				bottom: -40%;
 				border-radius: 50%;
 				right: 0;
-			}
 
-			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -85,13 +81,13 @@
 
 				left: 9%;
 	    		top: 57%;
+
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(xlarge) {
 				top: 50%;
-
-				visibility: hidden;
-				opacity: 0;
 			}
 
 			@include breakpoint(xxlarge) {
@@ -112,9 +108,7 @@
 				z-index: 6;
 				padding: 6% 7% 7% 9%;
 				height: 72.7%;
-			}
 
-			@include breakpoint(xlarge) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -131,11 +125,13 @@
 		@include breakpoint(large) {
 			width: 105%;
 			padding: 35px;
+
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		@include breakpoint(xlarge) {
-			visibility: hidden;
-			opacity: 0;
+
 			width: auto;
 			margin: 0;
 			width: 100%;
@@ -143,7 +139,7 @@
 		}
 
 		&__holder {
-			@include breakpoint(xlarge) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -204,7 +200,7 @@
 			}
 
 			&__line {
-				@include breakpoint(xlarge) {
+				@include breakpoint(large) {
 					visibility: hidden;
 					opacity: 0;
 				}
@@ -241,7 +237,7 @@
 			}
 
 			&__line {
-				@include breakpoint(xlarge) {
+				@include breakpoint(large) {
 					visibility: hidden;
 					opacity: 0;
 				}
@@ -293,15 +289,15 @@
 					visibility: hidden;
 					opacity: 0;
 
-					@include breakpoint(large) {
-						visibility: visible;
-						opacity: 1;
-					}
+					// @include breakpoint(large) {
+					// 	visibility: visible;
+					// 	opacity: 1;
+					// }
 
-					@include breakpoint(xlarge) {
-						visibility: hidden;
-						opacity: 0;
-					}
+					// @include breakpoint(xlarge) {
+					// 	visibility: hidden;
+					// 	opacity: 0;
+					// }
 				}
 			}
 		}

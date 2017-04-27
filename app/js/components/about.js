@@ -29,7 +29,7 @@ export default class About {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.minXLarge})`, {
+			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
 			    match: () => {
 					// console.log('large > 641');
 					this.mainTl();

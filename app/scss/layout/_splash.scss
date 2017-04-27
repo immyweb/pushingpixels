@@ -2,7 +2,7 @@
 	width: 100%;
 	overflow: hidden;
 
-	@include breakpoint(xlarge) {
+	@include breakpoint(large) {
 		position: absolute;
 	}
 
@@ -10,7 +10,7 @@
 		position: relative;
 		width: 100vw;
 
-		@include breakpoint(xlarge) {
+		@include breakpoint(large) {
 			height: 100vh;
 		}
 	}
@@ -175,7 +175,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		@include breakpoint(xlarge) {
+		@include breakpoint(large) {
 			visibility: hidden;
 			opacity: 0;
 		}
@@ -207,7 +207,7 @@
 	}
 
 	&__corner-circle {
-		@include breakpoint(xlarge) {
+		@include breakpoint(large) {
 			visibility: hidden;
 			opacity: 0;
 		}
@@ -215,7 +215,7 @@
 
 	&__sm-radial {
 		&__outer, &__inner, &__blocks, &__lines {
-			@include breakpoint(xlarge) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -224,7 +224,7 @@
 
 	&__lrg-radial {
 		&__outer, &__inner, &__blocks, &__lines {
-			@include breakpoint(xlarge) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -234,7 +234,7 @@
 	&__dots {
 		&__small, &__large {
 			&__dot {
-				@include breakpoint(xlarge) {
+				@include breakpoint(large) {
 					visibility: hidden;
 					opacity: 0;
 				}

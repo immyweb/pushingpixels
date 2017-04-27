@@ -3,7 +3,8 @@ import { TweenMax } from 'gsap';
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin.js';
 import ScrollMagic from 'scrollmagic';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
-import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+// import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+import 'scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js';
 import enquire from 'enquire.js';
 import breakpoints from './breakpoints';
 
@@ -28,6 +29,7 @@ let controller,
     getTriggersUp = $('.slide-pos--reverse'),
     triggersUp = [],
     $slide = $('.slide'),
+	$otherSlides = $('.slide').not('#slide01'),
     $main = $('#main'),
 	galleryLinks = $('.gallery__content__item'),
 	galleryModal = $('.gallery-modal'),
@@ -40,7 +42,7 @@ export default class OnePager {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.minXLarge})`, {
+			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
 			    match: () => {
 					this.init();
 			    }
@@ -87,18 +89,14 @@ export default class OnePager {
     getTriggers() {
         // Triggers on the way down
 		$.each(getTriggersDown, (key, value) => {
-
 			let id = '#' + value.id;
 			triggersDown.push(id);
-
 		});
 
 		// Triggers on the way up
 		$.each(getTriggersUp, (key, value) => {
-
 			let id = '#' + value.id;
 			triggersUp.push(id);
-
 		});
     }
 
@@ -124,8 +122,8 @@ export default class OnePager {
         // Navigation timeline
 		$navItems.each((index, item) => {
 			let slideHREF = $(item).find('a').attr('href'),
-				slideID = slideHREF.substr(slideHREF.length -7),
-				moveNav = TweenMax.to($('.nav__active'), 1, { y: '+=34.5', ease: Linear.easeNone });
+				slideID = slideHREF.substr(slideHREF.length - 7),
+				moveNav = TweenMax.to($('.nav__active'), 1, { y: '+=26', ease: Linear.easeNone });
 
 			// Add individual tweens to the timeline
 			navTl.add(moveNav, slideID);
@@ -136,7 +134,8 @@ export default class OnePager {
         // Scene 2 - move navigation
 		const navScene = new ScrollMagic.Scene({
 			triggerElement: $navTrigger,
-			duration: '400%'
+			duration: '300%',
+			triggerHook: 1
 		});
 
 		navScene
@@ -209,15 +208,15 @@ export default class OnePager {
     }
 
     initPage() {
-        setTimeout(() => {
+        // setTimeout(() => {
             // Animate first slide in
             this.animationIn();
-        }, 600);
+        // }, 600);
     }
 
     // Animate slide IN
     animationIn() {
-        TweenMax.set($slide, { autoAlpha: 0 });
+        TweenMax.set($otherSlides, { autoAlpha: 0 });
 
         splash.playTl();
     }

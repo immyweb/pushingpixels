@@ -36,7 +36,7 @@ export default class Splash {
 
 	checkBreakpoint() {
 		enquire
-			.register(`screen and (min-width: ${breakpoints.minXLarge})`, {
+			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
 			    match: () => {
 					// console.log('large > 1024+');
 					this.desktopTl();
@@ -71,7 +71,7 @@ export default class Splash {
 			.staggerTo(this.dotsLarge, 1, { autoAlpha: 1, ease: Power4.easeOut }, 0.05, 'blocksIn')
 
 			.add('titleIn')
-			.fromTo(this.heading, 1, { y: '+=50' }, { y: '-=50', autoAlpha: 1 }, 'linesIn-=0.5')
+			.fromTo(this.heading, 1, { y: '+=50', x: '-50%' }, { y: '-=50', x: '-50%', autoAlpha: 1 }, 'linesIn-=0.5')
 		;
 
 		desktopTl.pause();

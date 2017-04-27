@@ -3,7 +3,7 @@
 	&__container {
 		display: none;
 
-		@include breakpoint(xlarge) {
+		@include breakpoint(large) {
 			display: block;
 			position: absolute;
 			z-index: 100;

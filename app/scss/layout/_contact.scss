@@ -1,7 +1,7 @@
 .contact {
 	overflow: hidden;
 
-	@include breakpoint(xlarge) {
+	@include breakpoint(large) {
 		position: absolute;
 	}
 
@@ -11,12 +11,9 @@
 		padding: 60px 0;
 
 		@include breakpoint(large) {
-			padding-top: 0;
-		}
-
-		@include breakpoint(xlarge) {
 			height: 100vh;
 			padding-bottom: 0;
+			padding-top: 0;
 		}
 	}
 
@@ -32,13 +29,13 @@
 			position: absolute;
 			bottom: -26%;
 			display: block;
+
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		@include breakpoint(xlarge) {
 			bottom: -33%;
-
-			visibility: hidden;
-			opacity: 0;
 		}
 
 		@include breakpoint(xxlarge) {
@@ -101,6 +98,7 @@
 				transform: scale(1.2) translate(-120px, -30px);
 
 				@include breakpoint(large) {
+					-webkit-transform: scale(1.1) translate(-57px, 0px);
 					transform: scale(1.1) translate(-57px, 0px);
 				}
 
@@ -134,11 +132,11 @@
 				// opacity: 0;
 
 				// @include breakpoint(large) {
-					visibility: visible;
-					opacity: 1;
+					// visibility: visible;
+					// opacity: 1;
 				// }
 
-				@include breakpoint(xlarge) {
+				@include breakpoint(large) {
 					visibility: hidden;
 					opacity: 0;
 				}
@@ -154,7 +152,7 @@
 			width: 100%;
 			padding-bottom: 100%;
 
-			@include breakpoint(xlarge) {
+			@include breakpoint(large) {
 				position: absolute;
 				top: auto;
 				width: 100%;
@@ -177,15 +175,15 @@
 				top: auto;
 				left: 50%;
 				transform: translateX(-50%);
+
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(xlarge) {
 				width: 83%;
 				padding-bottom: 83%;
 				bottom: 6%;
-
-				visibility: hidden;
-				opacity: 0;
 			}
 
 			@include breakpoint(xxlarge) {
@@ -206,7 +204,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 
-			@include breakpoint(xlarge) {
+			@include breakpoint(large) {
 				visibility: hidden;
 				opacity: 0;
 			}
@@ -222,12 +220,12 @@
 
 			@include breakpoint(large) {
 			    top: 50px;
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			@include breakpoint(xlarge) {
 				width: 65%;
-				visibility: hidden;
-				opacity: 0;
 			}
 
 			@include breakpoint(xxlarge) {
@@ -440,15 +438,14 @@
 			z-index: 15;
 			bottom: -14%;
 			display: block;
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		@include breakpoint(xlarge) {
 			width: 36%;
 			padding-bottom: 36%;
 			bottom: -16%;
-
-			visibility: hidden;
-			opacity: 0;
 		}
 
 		@include breakpoint(xxlarge) {
