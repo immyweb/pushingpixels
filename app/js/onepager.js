@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { TweenMax } from 'gsap';
+import { TweenMax, TimelineMax } from 'gsap';
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin.js';
 import ScrollMagic from 'scrollmagic';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
@@ -14,45 +14,44 @@ import Contact from './components/contact';
 import Gallery from './components/gallery';
 import Modal from './components/gallery-modal';
 
-let splash = new Splash(),
-    about = new About(),
-    gallery = new Gallery(),
-    contact = new Contact(),
-	modal = new Modal();
+const splash = new Splash();
+const about = new About();
+const gallery = new Gallery();
+const contact = new Contact();
+const modal = new Modal();
 
-let controller,
-    $navItems = $('.nav__items li').not('.nav__item--active'),
-    $navTrigger = $('.nav-trigger'),
-	$navItemLink = $('.nav__items a'),
-    getTriggersDown = $('.slide-pos'),
-    triggersDown = [],
-    getTriggersUp = $('.slide-pos--reverse'),
-    triggersUp = [],
-    $slide = $('.slide'),
-	$otherSlides = $('.slide').not('#slide01'),
-    $main = $('#main'),
-	galleryLinks = $('.gallery__content__item'),
-	galleryModal = $('.gallery-modal'),
-	galleryModalClose = galleryModal.find('.gallery-modal__close'),
-	$body = $('body');
+let controller;
+const $navItems = $('.nav__items li').not('.nav__item--active');
+const $navTrigger = $('.nav-trigger');
+const $navItemLink = $('.nav__items a');
+const getTriggersDown = $('.slide-pos');
+const triggersDown = [];
+const getTriggersUp = $('.slide-pos--reverse');
+const triggersUp = [];
+const $slide = $('.slide');
+const $otherSlides = $('.slide').not('#slide01');
+const $main = $('#main');
+const galleryLinks = $('.gallery__content__item');
+const galleryModal = $('.gallery-modal');
+const galleryModalClose = galleryModal.find('.gallery-modal__close');
+const $body = $('body');
 
-let navTl = new TimelineMax();
+const navTl = new TimelineMax();
 
 export default class OnePager {
 
 	checkBreakpoint() {
 		enquire
 			.register(`screen and (min-width: ${breakpoints.minLarge})`, {
-			    match: () => {
-					this.init();
-			    }
+                match: () => {
+                    this.init();
+                }
 			});
 
 		contact.formHandler();
 	}
 
     init() {
-
 		this.initSlides();
 
         this.getTriggers();
@@ -89,13 +88,13 @@ export default class OnePager {
     getTriggers() {
         // Triggers on the way down
 		$.each(getTriggersDown, (key, value) => {
-			let id = '#' + value.id;
+			const id = `#${value.id}`;
 			triggersDown.push(id);
 		});
 
 		// Triggers on the way up
 		$.each(getTriggersUp, (key, value) => {
-			let id = '#' + value.id;
+			const id = `#${value.id}`;
 			triggersUp.push(id);
 		});
     }
@@ -121,9 +120,9 @@ export default class OnePager {
     navTl() {
         // Navigation timeline
 		$navItems.each((index, item) => {
-			let slideHREF = $(item).find('a').attr('href'),
-				slideID = slideHREF.substr(slideHREF.length - 7),
-				moveNav = TweenMax.to($('.nav__active'), 1, { y: '+=26', ease: Linear.easeNone });
+			const slideHREF = $(item).find('a').attr('href');
+			const slideID = slideHREF.substr(slideHREF.length - 7);
+			const moveNav = TweenMax.to($('.nav__active'), 1, { y: '+=26', ease: Linear.easeNone });
 
 			// Add individual tweens to the timeline
 			navTl.add(moveNav, slideID);
@@ -146,8 +145,7 @@ export default class OnePager {
     triggersDown() {
         // Scene 3 - trigger the right animation on the way DOWN
 		triggersDown.forEach((triggerDown) => {
-
-			let triggerTransitionToNext = new ScrollMagic.Scene({
+			const triggerTransitionToNext = new ScrollMagic.Scene({
 				triggerElement: triggerDown,
 				triggerHook: 0.6
 			});
@@ -156,10 +154,10 @@ export default class OnePager {
 				.on('enter', (e) => {
 					// console.log('crossfade to next ' + triggerDown);
 
-					let $slideOut = $('.slide.active'),
-						slideIndex = triggerDown.substring(6, 8),
-						$slideIn = $('#slide' + slideIndex),
-						direction = e.scrollDirection;
+					const $slideOut = $('.slide.active');
+					const slideIndex = triggerDown.substring(6, 8);
+					const $slideIn = $(`#slide${slideIndex}`);
+					const direction = e.scrollDirection;
 
 					// console.log(e.scrollDirection);
 
@@ -178,8 +176,7 @@ export default class OnePager {
     triggersUp() {
         // Scene 4 - trigger the right animation on the way UP
 		triggersUp.forEach((triggerUp) => {
-
-			let triggerTransitionToPrev = new ScrollMagic.Scene({
+			const triggerTransitionToPrev = new ScrollMagic.Scene({
 				triggerElement: triggerUp,
 				triggerHook: 0.49
 			});
@@ -188,10 +185,10 @@ export default class OnePager {
 				.on('leave', (e) => {
 					// console.log('crossfade to previous ' + triggerUp);
 
-					let $slideOut = $('.slide.active'),
-						slideIndex = triggerUp.substring(6, 8),
-						$slideIn = $('#slide' + slideIndex),
-						direction = e.scrollDirection;
+					const $slideOut = $('.slide.active');
+					const slideIndex = triggerUp.substring(6, 8);
+					const $slideIn = $(`#slide${slideIndex}`);
+					const direction = e.scrollDirection;
 
 					// console.log(e.scrollDirection);
 
@@ -208,10 +205,7 @@ export default class OnePager {
     }
 
     initPage() {
-        // setTimeout(() => {
-            // Animate first slide in
-            this.animationIn();
-        // }, 600);
+        this.animationIn();
     }
 
     // Animate slide IN
@@ -222,8 +216,8 @@ export default class OnePager {
     }
 
     crossFade($slideOut, $slideIn, direction, slideIndex) {
-        let slideOutID = $slideOut.attr('id').substring(5, 7),
-            slideInID = $slideIn.attr('id').substring(5, 7);
+        const slideOutID = $slideOut.attr('id').substring(5, 7);
+        const slideInID = $slideIn.attr('id').substring(5, 7);
 
         // Update nav
         this.updateNav(slideOutID, slideInID);
@@ -232,15 +226,17 @@ export default class OnePager {
         TweenMax.set($slide, { className: '-=active', display: 'none' });
 
         // add class active to current slide
-        TweenMax.set($('#slide' + slideIndex), { className: '+=active', display: 'block' });
+        TweenMax.set($(`#slide${slideIndex}`), { className: '+=active', display: 'block' });
 
         // cross fade timeline
         const crossFadeTl = new TimelineMax();
 
         crossFadeTl
-            .set($main, { className: 'slide' + slideInID + '-active' })
-            .to($slideOut, 0.25, { autoAlpha: 0, onComplete: this.hideOldSlide, onCompleteParams: [ slideOutID] })
-            .set($slideIn, { autoAlpha: 1, onComplete: this.showNewSlide, onCompleteParams: [$slideIn, slideInID] })
+            .set($main, { className: `slide${slideInID}-active` })
+            .to($slideOut, 0.25,
+				{ autoAlpha: 0, onComplete: this.hideOldSlide, onCompleteParams: [slideOutID] })
+            .set($slideIn,
+				{ autoAlpha: 1, onComplete: this.showNewSlide, onCompleteParams: [$slideIn, slideInID] })
         ;
     }
 
@@ -249,49 +245,46 @@ export default class OnePager {
         $('.nav__items li').removeClass('nav__item--active');
 
         // Add active class to the new active slide
-        TweenMax.set($('.nav__items li.nav__item' + slideInID), { className: '+=nav__item--active' });
+        TweenMax.set($(`.nav__items li.nav__item${slideInID}`), { className: '+=nav__item--active' });
     }
 
 	showNewSlide($slideIn, slideInID) {
-
-		if ( slideInID === '01' ) {
+		if (slideInID === '01') {
 			splash.playTl();
 		}
-		if ( slideInID === '02' ) {
+		if (slideInID === '02') {
 			about.playTl();
 		}
-		if ( slideInID === '03' ) {
+		if (slideInID === '03') {
 			gallery.playTl();
 		}
-		if ( slideInID === '04' ) {
+		if (slideInID === '04') {
 			contact.playTl();
 		}
 	}
 
 	hideOldSlide(slideOutID) {
-
-		if ( slideOutID === '01' ) {
+		if (slideOutID === '01') {
 			splash.resetTl();
 		}
-		if ( slideOutID === '02' ) {
+		if (slideOutID === '02') {
 			about.resetTl();
 		}
-		if ( slideOutID === '03' ) {
+		if (slideOutID === '03') {
 			gallery.resetTl();
 		}
-		if ( slideOutID === '04' ) {
+		if (slideOutID === '04') {
 			contact.resetTl();
 		}
 	}
 
 	navHandler() {
 		$navItemLink.on('click', (e) => {
-
 			// Scroll to the right position
-			let slideInIndex = $(e.target).attr('href').substring(6,8),
-				offset = $('div#slide' + slideInIndex + '-pos').offset().top,
-				wH = window.innerHeight,
-				finalOffset = offset - (wH * 0.4);
+			const slideInIndex = $(e.target).attr('href').substring(6, 8);
+			const offset = $(`div#slide${slideInIndex}-pos`).offset().top;
+			const wH = window.innerHeight;
+			const finalOffset = offset - (wH * 0.4);
 
 			TweenMax.to(window, 0.7, { scrollTo: finalOffset, ease: Power4.easeOut });
 
@@ -300,11 +293,10 @@ export default class OnePager {
 	}
 
 	galleryHandler() {
-		let self = this;
+		const self = this;
 
-		galleryLinks.on('click', function(e) {
-
-			let galleryIndex = $(this).data('model-url').substring(1,10);
+		galleryLinks.on('click', function (e) {
+			const galleryIndex = $(this).data('model-url').substring(1, 10);
 
 			// disable body scrolling
 			controller.enabled(false);
@@ -320,14 +312,13 @@ export default class OnePager {
 	}
 
 	modalContentUpdate(galleryIndex) {
-		let modalHeading = galleryModal.find('[data-modal-heading]'),
-			modalCopy1 = galleryModal.find('[data-modal-copy1]'),
-			modalCopy2 = galleryModal.find('[data-modal-copy2]'),
-			modalImage1 = galleryModal.find('[data-modal-image1] img'),
-			modalImage2 = galleryModal.find('[data-modal-image2] img');
+		const modalHeading = galleryModal.find('[data-modal-heading]');
+		const modalCopy1 = galleryModal.find('[data-modal-copy1]');
+		const modalCopy2 = galleryModal.find('[data-modal-copy2]');
+		const modalImage1 = galleryModal.find('[data-modal-image1] img');
+		const modalImage2 = galleryModal.find('[data-modal-image2] img');
 
-		$.getJSON( '/data/data.json', ( data ) => {
-
+		$.getJSON('/data/data.json', (data) => {
 			modalHeading.text(data.modal[galleryIndex].heading);
 			modalCopy1.text(data.modal[galleryIndex].copy1);
 			modalCopy2.text(data.modal[galleryIndex].copy2);
@@ -340,12 +331,10 @@ export default class OnePager {
 			TweenMax.set(galleryModal, { display: 'block', autoAlpha: 1 });
 			modal.playTl();
 		});
-
 	}
 
 	closeModal() {
-		galleryModalClose.on('click', function(e) {
-
+		galleryModalClose.on('click', (e) => {
 			controller.enabled(true);
 			controller.update(true);
 
@@ -359,5 +348,4 @@ export default class OnePager {
 			e.preventDefault();
 		});
 	}
-
 }

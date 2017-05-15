@@ -3,7 +3,7 @@ import { TimelineMax, TweenLite } from 'gsap';
 import enquire from 'enquire.js';
 import breakpoints from '../breakpoints';
 
-let mainTl = new TimelineMax();
+const mainTl = new TimelineMax();
 
 export default class GalleryModal {
 
@@ -42,8 +42,10 @@ export default class GalleryModal {
 	reverseLinesLeftAnimTl() {
 		const tlReverseLines = new TimelineMax();
 
-		for ( let i = this.linesLeftBottom.length-1; i >= 0; i-- ) {
-			tlReverseLines.fromTo(this.linesLeftBottom[i], 0.02, { scaleX: 0, transformOrigin: '100% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
+		for (let i = this.linesLeftBottom.length - 1; i >= 0; i--) {
+			tlReverseLines.fromTo(this.linesLeftBottom[i], 0.02,
+                { scaleX: 0, transformOrigin: '100% 50%' },
+                { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
 		}
 
 		return tlReverseLines;
@@ -52,8 +54,10 @@ export default class GalleryModal {
 	reverseLinesRightAnimTl() {
 		const tlReverseLines = new TimelineMax();
 
-		for ( let i = this.linesRightBottom.length-1; i >= 0; i-- ) {
-			tlReverseLines.fromTo(this.linesRightBottom[i], 0.02, { scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
+		for (let i = this.linesRightBottom.length - 1; i >= 0; i--) {
+			tlReverseLines.fromTo(this.linesRightBottom[i], 0.02,
+                { scaleX: 0, transformOrigin: '0% 50%' },
+                { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
 		}
 
 		return tlReverseLines;
@@ -62,8 +66,10 @@ export default class GalleryModal {
 	reverseBlocksLeftAnimTl() {
 		const tlReverseBlocks = new TimelineMax();
 
-		for ( let i = this.blocksLeftBottom.length-1; i >= 0; i-- ) {
-			tlReverseBlocks.fromTo(this.blocksLeftBottom[i], 0.05, { scaleX: 0, transformOrigin: '100% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
+		for (let i = this.blocksLeftBottom.length - 1; i >= 0; i--) {
+			tlReverseBlocks.fromTo(this.blocksLeftBottom[i], 0.05,
+                { scaleX: 0, transformOrigin: '100% 50%' },
+                { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
 		}
 
 		return tlReverseBlocks;
@@ -72,32 +78,51 @@ export default class GalleryModal {
 	reverseBlocksRightAnimTl() {
 		const tlReverseBlocks = new TimelineMax();
 
-		for ( let i = this.blocksRightBottom.length-1; i >= 0; i-- ) {
-			tlReverseBlocks.fromTo(this.blocksRightBottom[i], 0.05, { scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
+		for (let i = this.blocksRightBottom.length - 1; i >= 0; i--) {
+			tlReverseBlocks.fromTo(this.blocksRightBottom[i], 0.05,
+                { scaleX: 0, transformOrigin: '0% 50%' },
+                { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) });
 		}
 
 		return tlReverseBlocks;
 	}
 
 	mainTl() {
-
 		mainTl
 			.add('panelsIn')
-			.fromTo(this.contentBkgnd, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut })
-			.fromTo(this.contentFrgnd, 0.5, { scaleX: 0, transformOrigin: 'center center' }, { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.15')
-			.to(this.contentInner, 0.75, { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
-			.staggerTo(this.contentImages, 0.5, { autoAlpha: 1, ease: Power4.easeIn }, 0.5, '-=0.25')
+			.fromTo(this.contentBkgnd, 0.5,
+                { scaleX: 0, transformOrigin: 'center center' },
+                { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut })
+			.fromTo(this.contentFrgnd, 0.5,
+                { scaleX: 0, transformOrigin: 'center center' },
+                { scaleX: 1, autoAlpha: 1, ease: Power4.easeInOut }, '-=0.15')
+			.to(this.contentInner, 0.75,
+                { autoAlpha: 1, ease: Power4.easeInOut }, '-=0.25')
+			.staggerTo(this.contentImages, 0.5,
+                { autoAlpha: 1, ease: Power4.easeIn }, 0.5, '-=0.25')
 
 			.add('blocksIn')
-			.staggerFromTo(this.blocksLeftTop, 0.5, { scaleX: 0.5, transformOrigin: '100% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.05, 'panelsIn+=0.75')
+			.staggerFromTo(this.blocksLeftTop, 0.5,
+                { scaleX: 0.5, transformOrigin: '100% 50%' },
+                { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) },
+                0.05, 'panelsIn+=0.75')
 			.add(this.reverseBlocksLeftAnimTl(), 'panelsIn+=0.75')
-			.staggerFromTo(this.blocksRightTop, 0.5, { scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.05, 'panelsIn+=0.75')
+			.staggerFromTo(this.blocksRightTop, 0.5,
+                { scaleX: 0, transformOrigin: '0% 50%' },
+                { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) },
+                0.05, 'panelsIn+=0.75')
 			.add(this.reverseBlocksRightAnimTl(), 'panelsIn+=0.75')
 
 			.add('linesIn')
-			.staggerFromTo(this.linesLeftTop, 0.5, { scaleX: 0, transformOrigin: '100% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
+			.staggerFromTo(this.linesLeftTop, 0.5,
+                { scaleX: 0, transformOrigin: '100% 50%' },
+                { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) },
+                0.02, 'panelsIn+=1.00')
 			.add(this.reverseLinesLeftAnimTl(), 'panelsIn+=1.00')
-			.staggerFromTo(this.linesRightTop, 0.5, { scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) }, 0.02, 'panelsIn+=1.00')
+			.staggerFromTo(this.linesRightTop, 0.5,
+                { scaleX: 0, transformOrigin: '0% 50%' },
+                { scaleX: 1, autoAlpha: 1, ease: Elastic.easeOut.config(1.75, 0.3) },
+                0.02, 'panelsIn+=1.00')
 			.add(this.reverseLinesRightAnimTl(), 'panelsIn+=1.00')
 		;
 
@@ -120,7 +145,8 @@ export default class GalleryModal {
 		const hideModalTl = new TimelineMax();
 
 		hideModalTl
-			.to(this.panel, 0.75, { autoAlpha: 0, transformOrigin: 'center center', ease: Power4.easeInOut })
+			.to(this.panel, 0.75,
+                { autoAlpha: 0, transformOrigin: 'center center', ease: Power4.easeInOut })
 			.set(this.panel, { display: 'none' })
 		;
 	}
